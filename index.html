@@ -20,6 +20,7 @@
     --ink: #5a4738;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  ::selection { background: var(--wine); color: var(--cream); }
   html { scroll-behavior: smooth; }
   body {
     background: var(--cream);
@@ -27,6 +28,13 @@
     font-family: "Heebo", sans-serif;
     font-weight: 300;
     overflow-x: hidden;
+  }
+
+  /* ---------- paper grain — stationery feel ---------- */
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 90; pointer-events: none;
+    opacity: .5; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.93 0 0 0 0 0.89 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   /* ---------- falling petals (subtle) ---------- */
@@ -43,8 +51,8 @@
   @keyframes spin { to { transform: rotate(360deg); } }
 
   /* ---------- shared ---------- */
-  .fade-up { opacity: 0; transform: translateY(26px); transition: opacity 1.2s ease, transform 1.2s ease; }
-  .fade-up.show { opacity: 1; transform: translateY(0); }
+  .fade-up { opacity: 0; transform: translateY(26px); filter: blur(6px); transition: opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease; }
+  .fade-up.show { opacity: 1; transform: translateY(0); filter: blur(0); }
   .rule {
     width: 70px; height: 1px; background: var(--gold-light); border: none;
     margin: 1.4rem auto; position: relative;
@@ -117,19 +125,22 @@
 
   /* ---------- sticky essentials bar ---------- */
   .sticky-bar {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
-    display: flex; align-items: center; justify-content: space-between; gap: .6rem;
-    background: rgba(251,248,243,.92); backdrop-filter: blur(10px);
-    border-top: 1px solid #eadfce; padding: .55rem .9rem calc(.55rem + env(safe-area-inset-bottom));
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 95;
+    display: flex; align-items: center; justify-content: space-between; gap: .7rem;
+    background: #fffdf9;
+    border-top: 1px solid #e2d5bf; box-shadow: 0 -6px 24px rgba(109,46,60,.12);
+    padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
     transform: translateY(110%); transition: transform .45s ease;
   }
   .sticky-bar.on { transform: translateY(0); }
-  .sb-text { font-size: .88rem; color: var(--ink); letter-spacing: .03em; }
-  .sb-text b { color: var(--wine); font-weight: 500; }
+  .sb-text { font-size: .95rem; color: var(--ink); letter-spacing: .02em; }
+  .sb-text b { color: var(--wine); font-weight: 600; }
   .sb-btn {
     flex-shrink: 0; background: var(--wine); color: #fff; text-decoration: none;
-    padding: .5rem 1.1rem; border-radius: 999px; font-size: .85rem; letter-spacing: .05em;
+    padding: .65rem 1.5rem; border-radius: 999px; font-size: .95rem; font-weight: 500; letter-spacing: .05em;
+    box-shadow: 0 3px 10px rgba(109,46,60,.35);
   }
+  .sb-btn:active { transform: scale(.96); }
 
   /* ---------- countdown (minimal, classy) ---------- */
   .count-section { text-align: center; padding: 4.5rem 1rem 1.5rem; }
@@ -152,11 +163,18 @@
   .timeline-title {
     text-align: center; color: var(--wine); font-weight: 400; letter-spacing: .35em;
     font-family: "Frank Ruhl Libre", serif; font-size: 1.4rem; margin-bottom: 3.5rem;
+    display: flex; align-items: center; gap: 1.2rem;
   }
+  .timeline-title::before { content: ''; flex: 1; height: 1px; background: linear-gradient(to left, transparent, var(--gold-light)); }
+  .timeline-title::after  { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--gold-light)); }
   .timeline { position: relative; }
   .tl-svg { position: absolute; top: 0; right: 50%; transform: translateX(50%); height: 100%; width: 120px; overflow: visible; }
   .tl-path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; }
-  .tl-dot { fill: var(--gold); opacity: 0; transition: opacity .8s ease .4s; }
+  .tl-dot {
+    fill: var(--gold); opacity: 0; transition: opacity .8s ease .4s;
+    animation: dotpulse 3.5s ease-in-out infinite; transform-origin: center; transform-box: fill-box;
+  }
+  @keyframes dotpulse { 0%,100% { transform: scale(1);} 50% { transform: scale(1.35);} }
   .tl-item {
     width: 46%; display: flex; align-items: center; justify-content: center;
     direction: ltr; flex-wrap: nowrap;
@@ -320,6 +338,12 @@
     p.appendChild(img);
     document.body.appendChild(p);
   });
+
+  // gentle parallax on the hero bouquet
+  const bq = document.querySelector('.bouquet');
+  addEventListener('scroll', () => {
+    if (scrollY < innerHeight) bq.style.translate = '0 ' + (scrollY * 0.12) + 'px';
+  }, { passive: true });
 
   // sticky essentials bar — appears after the hero
   const bar = document.getElementById('stickyBar');
