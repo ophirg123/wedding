@@ -39,8 +39,11 @@
   }
 
   /* ---------- falling petals (subtle) ---------- */
+  .petals-layer {
+    position: fixed; inset: 0; overflow: clip; pointer-events: none; z-index: 6;
+  }
   .petal {
-    position: fixed; top: 0; pointer-events: none; z-index: 6;
+    position: absolute; top: 0;
     animation: rise linear infinite;
   }
   .petal img { width: 100%; animation: spin 9s linear infinite; opacity: .55; }
@@ -367,7 +370,10 @@
 </div>
 
 <script>
-  // falling watercolor petals — fewer & subtler
+  // floating watercolor petals — contained in a clipped fixed layer
+  const petalLayer = document.createElement('div');
+  petalLayer.className = 'petals-layer';
+  document.body.appendChild(petalLayer);
   const sprites = ['petal6','petal7','petal0','petal6','petal4','petal7','petal5','petal6'];
   sprites.forEach((s, i) => {
     const p = document.createElement('div');
@@ -383,7 +389,7 @@
     img.src = 'assets/' + s + '.png';
     img.style.animationDuration = (7 + Math.random()*6) + 's';
     p.appendChild(img);
-    document.body.appendChild(p);
+    petalLayer.appendChild(p);
   });
 
   // gentle parallax on the hero bouquet
