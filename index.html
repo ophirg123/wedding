@@ -144,15 +144,27 @@
     font-family: "Frank Ruhl Libre", serif;
   }
   .scroll-line {
-    display: block; width: 1.5px; height: 46px; margin-top: .4rem;
-    background: linear-gradient(to bottom, var(--gold), rgba(143,115,64,.15));
+    display: block; width: 1.5px; height: 34px; margin-top: .4rem;
+    background: linear-gradient(to bottom, var(--gold), rgba(143,115,64,.25));
     transform-origin: top; animation: linegrow 2.6s ease-in-out .8s infinite both;
   }
   @keyframes linegrow {
     0%        { transform: scaleY(0); opacity: 0; }
     12%       { opacity: 1; }
-    55%       { transform: scaleY(1); opacity: 1; }
+    45%       { transform: scaleY(1); opacity: 1; }
     85%, 100% { transform: scaleY(1); opacity: 0; }
+  }
+  .chevrons { width: 26px; height: 23px; overflow: visible; margin-top: 2px; }
+  .chev {
+    fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    animation: chevpulse 2.6s ease-in-out infinite both;
+  }
+  .c1 { animation-delay: 1.7s; }
+  .c2 { animation-delay: 1.95s; }
+  @keyframes chevpulse {
+    0%, 8%    { opacity: 0; transform: translateY(-2px); }
+    22%, 55%  { opacity: 1; transform: translateY(0); }
+    78%, 100% { opacity: 0; transform: translateY(2px); }
   }
 
 
@@ -311,6 +323,10 @@
   <a class="scroll-hint heb" href="#countdown-sec">
     <span class="sh-text" data-i18n="scroll">גללו למטה</span>
     <span class="scroll-line" aria-hidden="true"></span>
+    <svg class="chevrons" viewBox="0 0 30 26" aria-hidden="true">
+      <path class="chev c1" d="M4 2 C 8 5.5, 11.5 8.5, 15 11 C 18.5 8.5, 22 5.5, 26 2"/>
+      <path class="chev c2" d="M4 13 C 8 16.5, 11.5 19.5, 15 22 C 18.5 19.5, 22 16.5, 26 13"/>
+    </svg>
   </a>
 </section>
 
