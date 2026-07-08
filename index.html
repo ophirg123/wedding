@@ -267,15 +267,17 @@
 
   /* ---------- actions ---------- */
   .actions {
-    text-align: center; padding: 3rem 1rem 8rem; position: relative;
-    background: url('assets/border.png') center bottom/cover no-repeat;
+    text-align: center; padding: 3rem 1rem calc(min(42vw, 380px) + 2.5rem); position: relative;
+    background: url('assets/border_bottom.png') center bottom/min(100%, 905px) auto no-repeat;
   }
+  .actions-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; max-width: 560px; margin: 0 auto; }
   .btn {
-    display: inline-block; margin: .45rem; padding: .8rem 2rem; border-radius: 999px;
-    background: transparent; color: var(--wine); text-decoration: none; letter-spacing: .15em;
-    border: 1px solid var(--wine); font-size: .92rem;
+    display: inline-flex; align-items: center; gap: .55rem; padding: .95rem 1.9rem; border-radius: 999px;
+    background: rgba(255,253,249,.92); color: var(--wine); text-decoration: none; letter-spacing: .1em;
+    border: 1px solid var(--wine); font-size: 1.02rem;
     transition: all .3s ease;
   }
+  .btn-ic { width: 20px; height: 20px; }
   .btn:hover { background: var(--wine); color: var(--cream); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(109,46,60,.22); }
   .btn.gold { border-color: var(--gold); color: var(--gold); }
   .btn.gold:hover { background: var(--gold); color: var(--cream); }
@@ -387,9 +389,11 @@
 
 <!-- ACTIONS -->
 <section class="actions">
-  <a class="btn" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes" data-i18n="btn_waze">ניווט עם Waze</a>
-  <a class="btn" id="calBtn" href="#" data-i18n="btn_cal">הוסיפו ליומן</a>
-  <a class="btn gold" href="https://wa.me/972000000000?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%99%D7%9B%D7%9C%20%D7%95%D7%90%D7%95%D7%A4%D7%99%D7%A8!%20%D7%9E%D7%90%D7%A9%D7%A8%D7%99%D7%9D%20%D7%94%D7%92%D7%A2%D7%94%20%D7%9C%D7%97%D7%AA%D7%95%D7%A0%D7%94%20%F0%9F%92%8D%20%D7%9E%D7%A1%D7%A4%D7%A8%20%D7%94%D7%9E%D7%92%D7%99%D7%A2%D7%99%D7%9D%3A%20" data-i18n="btn_rsvp">אישור הגעה</a>
+  <div class="actions-inner">
+    <a class="btn heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes"><img class="btn-ic" src="assets/icon_waze.svg" alt=""><span data-i18n="btn_waze">ניווט עם Waze</span></a>
+    <a class="btn heb" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%94%D7%97%D7%AA%D7%95%D7%A0%D7%94%20%D7%A9%D7%9C%20%D7%9E%D7%99%D7%9B%D7%9C%20%D7%95%D7%90%D7%95%D7%A4%D7%99%D7%A8&dates=20261103T170000Z/20261104T000000Z&location=%D7%91%D7%99%D7%A2%D7%A8%2C%20%D7%97%D7%93%D7%A8%D7%94" target="_blank" rel="noopener"><img class="btn-ic" src="assets/icon_googlecalendar.svg" alt=""><span data-i18n="btn_gcal">יומן Google</span></a>
+    <a class="btn heb" id="calBtn" href="#"><img class="btn-ic" src="assets/icon_apple.svg" alt=""><span data-i18n="btn_acal">יומן Apple</span></a>
+  </div>
 </section>
 
 <div class="credit heb" data-i18n="credit">מיכל ואופיר · 3.11.2026</div>
@@ -418,7 +422,7 @@
     tl_title: 'PROGRAMMA',
     tl_reception: 'Ontvangst', tl_chuppah: 'Choepa (ceremonie)', tl_dinner: 'Diner',
     tl_dance: 'Dansfeest', tl_desserts: 'Zoetigheden', tl_end: 'Afsluitende kring',
-    btn_waze: 'Navigeer met Waze', btn_cal: 'Zet in agenda', btn_rsvp: 'RSVP',
+    btn_waze: 'Navigeer met Waze', btn_gcal: 'Google Agenda', btn_acal: 'Apple Agenda',
     sb_text: '<b>3.11.26</b> \u00b7 dinsdag \u00b7 19:00 \u00b7 <b>Hadera, Isra\u00ebl</b>',
     sb_btn: 'Route',
     credit: 'Michal & Ophir \u00b7 3.11.2026'
