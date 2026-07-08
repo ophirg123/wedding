@@ -6,7 +6,10 @@
 <title>מיכל ואופיר מתחתנים · 3.11.2026 · ביער, חדרה</title>
 <meta property="og:title" content="מיכל ואופיר מתחתנים! 💍">
 <meta property="og:description" content="יום שלישי · 3.11.2026 · קבלת פנים 19:00 · ביער, חדרה">
-<meta property="og:image" content="https://ophirg123.github.io/wedding/assets/og.png">
+<meta property="og:image" content="https://ophirg123.github.io/wedding/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ophirg123.github.io/wedding/">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&family=Heebo:wght@200;300;400&display=swap" rel="stylesheet">
@@ -90,8 +93,8 @@
   }
   .bouquet-wrap { display: flex; justify-content: flex-start; align-items: center; }
   .bouquet {
-    width: min(48vw, 430px);
-    max-height: 88vh; object-fit: contain;
+    width: min(51vw, 470px);
+    max-height: 90vh; object-fit: contain;
     transform-origin: 50% 95%;
     animation: sway 8s ease-in-out infinite;
     -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, #000 60%, transparent 98%);
@@ -132,15 +135,23 @@
   .parent-names { color: var(--ink); font-size: .95rem; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; }
 
   .scroll-hint {
-    position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
-    color: var(--wine); animation: bounce 2.2s infinite; font-size: .85rem; letter-spacing: .15em;
+    position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+    color: #fff; animation: bounce 2.2s infinite; font-size: .95rem; letter-spacing: .12em; font-weight: 500;
     text-decoration: none; cursor: pointer;
-    display: flex; flex-direction: column; align-items: center; gap: .1rem;
-    background: rgba(255,253,249,.85); border: 1px solid #eadfce; border-radius: 999px;
-    padding: .45rem 1.2rem; box-shadow: 0 3px 12px rgba(109,46,60,.12);
+    display: flex; flex-direction: column; align-items: center; gap: .05rem;
+    background: var(--wine); border-radius: 999px;
+    padding: .6rem 1.5rem .45rem; box-shadow: 0 5px 18px rgba(109,46,60,.35);
   }
-  .scroll-hint .arr { font-size: 1.1rem; color: var(--gold); line-height: .8; }
+  .scroll-hint .arr {
+    font-size: 1.25rem; color: #e9cfa0; line-height: .75;
+    animation: arrowdrop 1.6s ease-in-out infinite;
+  }
   @keyframes bounce { 0%,100% { transform: translate(-50%,0);} 50% { transform: translate(-50%,7px);} }
+  @keyframes arrowdrop {
+    0%, 20% { transform: translateY(-2px); opacity: .4; }
+    60%     { transform: translateY(3px);  opacity: 1; }
+    100%    { transform: translateY(-2px); opacity: .4; }
+  }
 
 
 
@@ -166,10 +177,10 @@
   /* mobile hero — same frame, delicate flowers, big type */
   @media (max-width: 640px) {
     .hero {
-      grid-template-columns: minmax(0,1fr) minmax(0,1.42fr); gap: 0; padding: 2.5rem .5rem 14svh 0; min-height: 100svh;
+      grid-template-columns: minmax(0,1fr) minmax(0,1.42fr); gap: 0; padding: 2.5rem .5rem 12svh 0; min-height: 88svh;
       background-image: url('assets/border_mobile.png');
     }
-    .bouquet { width: 47vw; max-height: 62svh; margin-left: -3vw; }
+    .bouquet { width: 53vw; max-height: 66svh; margin-left: -4vw; }
     .hero-text { padding-right: 1.1rem; }
     .invite1 { font-size: 1.45rem; letter-spacing: .06em; }
     .invite2 { font-size: 1.08rem; letter-spacing: .08em; }
@@ -181,6 +192,7 @@
     .parents { margin-top: 1.2rem; gap: .9rem; }
     .parent-label { font-size: .68rem; letter-spacing: .18em; }
     .parent-names { font-size: .88rem; }
+    .scroll-hint { bottom: 12svh; }
     .forwedding { font-size: .85rem; letter-spacing: .24em; margin-top: 1.3rem; }
   }
 
@@ -425,6 +437,14 @@
     p.appendChild(img);
     petalLayer.appendChild(p);
   });
+
+  // one-time gentle scroll nudge if the user hasn't scrolled after 3s
+  setTimeout(() => {
+    if (scrollY < 10) {
+      scrollTo({ top: 90, behavior: 'smooth' });
+      setTimeout(() => { if (scrollY <= 95) scrollTo({ top: 0, behavior: 'smooth' }); }, 700);
+    }
+  }, 3000);
 
   // gentle parallax on the hero bouquet
   const bq = document.querySelector('.bouquet');
