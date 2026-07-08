@@ -106,7 +106,9 @@
     font-size: clamp(2rem, 6.6vw, 2.8rem); letter-spacing: .3em; text-indent: .3em;
     color: var(--ink); margin-top: 1rem; font-weight: 400;
   }
+  .hebdate { margin-top: .35rem; color: var(--sage); font-size: .9rem; letter-spacing: .2em; }
   .venue { margin-top: .7rem; color: var(--gold); font-size: 1.2rem; letter-spacing: .25em; }
+  .parents { margin-top: 1.5rem; color: var(--ink); font-size: .92rem; letter-spacing: .08em; opacity: .85; }
 
   .scroll-hint { position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
     color: var(--gold); animation: bounce 2.4s infinite; font-size: 1.2rem; }
@@ -146,6 +148,10 @@
     .names { font-size: 1.6rem; }
     .date { font-size: 1.8rem; letter-spacing: .1em; text-indent: .1em; }
     .venue { font-size: 1.05rem; letter-spacing: .18em; }
+    .hebdate { font-size: .8rem; letter-spacing: .14em; }
+    .parents { font-size: .85rem; letter-spacing: .04em; margin-top: 1.1rem; line-height: 1.7; }
+    .parents .psep { display: none; }
+    .parents span { display: block; }
     .forwedding { font-size: .85rem; letter-spacing: .24em; margin-top: 1.3rem; }
   }
 
@@ -234,7 +240,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="bouquet-wrap fade-up">
-    <img class="bouquet" src="assets/bouquet.png" alt="">
+    <img class="bouquet" src="assets/bouquet_alpha.png" alt="">
   </div>
   <div class="hero-text">
     <div class="save fade-up">SAVE</div>
@@ -244,7 +250,9 @@
     <div class="forwedding fade-up heb">לחתונה של</div>
     <div class="names fade-up heb">אופיר <span class="amp">&</span> מיכל</div>
     <div class="date fade-up">3 . 11 . 26</div>
+    <div class="hebdate fade-up heb">כ״ג בחשון תשפ״ז</div>
     <div class="venue fade-up heb">״ביער״ · חדרה</div>
+    <div class="parents fade-up heb"><span>רודי וחגית חרותקה</span><span class="psep">&ensp;·&ensp;</span><span>רונן ונירית פלד</span></div>
   </div>
   <div class="scroll-hint">⌄</div>
 </section>
