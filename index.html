@@ -65,6 +65,7 @@
   /* ---------- hero ---------- */
   .hero {
     min-height: 100vh;
+    min-height: 100svh;
     background: url('assets/border.png') center/cover no-repeat;
     display: grid;
     direction: ltr;              /* bouquet pinned to the physical left, like the original card */
@@ -135,10 +136,10 @@
   /* mobile hero — same frame, delicate flowers, big type */
   @media (max-width: 640px) {
     .hero {
-      grid-template-columns: .9fr 1.5fr; gap: 0; padding: 3rem 0 16vh; min-height: 100vh;
+      grid-template-columns: 1fr 1.42fr; gap: 0; padding: 2.5rem 0 14svh; min-height: 100svh;
       background-image: url('assets/border_mobile.png');
     }
-    .bouquet { width: 40vw; max-height: 56vh; margin-left: -5vw; }
+    .bouquet { width: 47vw; max-height: 62svh; margin-left: -3vw; }
     .hero-text { padding-right: 1.1rem; }
     .save { font-size: 2rem; letter-spacing: .27em; text-indent: .27em; }
     .the { font-size: 2.1rem; }
