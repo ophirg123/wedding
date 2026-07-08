@@ -29,21 +29,6 @@
     overflow-x: hidden;
   }
 
-  /* ---------- opening intro ---------- */
-  .intro {
-    position: fixed; inset: 0; z-index: 100; background: var(--cream);
-    display: flex; align-items: center; justify-content: center;
-    transition: opacity 1.4s ease;
-  }
-  .intro.done { opacity: 0; pointer-events: none; }
-  .intro video { height: 100%; width: 100%; object-fit: contain; }
-  .intro-skip {
-    position: absolute; bottom: max(1.4rem, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%);
-    color: var(--gold); background: none; border: 1px solid var(--gold-light); border-radius: 999px;
-    padding: .4rem 1.3rem; font-family: "Heebo"; font-size: .85rem; letter-spacing: .1em; cursor: pointer;
-  }
-  @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
-
   /* ---------- falling petals (subtle) ---------- */
   .petal {
     position: fixed; top: -12vh; pointer-events: none; z-index: 6;
@@ -129,21 +114,6 @@
     .venue { font-size: .85rem; letter-spacing: .18em; }
     .forwedding { font-size: .8rem; letter-spacing: .22em; margin-top: 1.2rem; }
   }
-
-  /* ---------- when & where ---------- */
-  .whenwhere { padding: 3.5rem 1rem 0; max-width: 640px; margin: 0 auto; }
-  .ww-box {
-    background: rgba(255,255,255,.72); border: 1px solid #eadfce; border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(109,46,60,.07); padding: 2rem 1rem; backdrop-filter: blur(4px);
-  }
-  .ww-row { display: flex; align-items: stretch; justify-content: center; }
-  .ww-cell { flex: 1; text-align: center; padding: 0 .8rem; }
-  .ww-sep { width: 1px; background: #eadfce; }
-  .ww-icon { font-size: 1.3rem; margin-bottom: .4rem; }
-  .ww-big { color: var(--ink); letter-spacing: .1em; font-size: 1rem; }
-  .ww-huge { font-family: "Cormorant Garamond", "Frank Ruhl Libre", serif; color: var(--wine); font-size: clamp(1.6rem, 5.5vw, 2.2rem); font-weight: 500; margin: .15rem 0; }
-  .ww-small { color: var(--sage); font-size: .95rem; }
-  .ww-nav { display: inline-block; margin-top: .3rem; color: var(--gold); font-size: .95rem; text-decoration: none; border-bottom: 1px solid var(--gold-light); }
 
   /* ---------- sticky essentials bar ---------- */
   .sticky-bar {
@@ -236,12 +206,6 @@
 </head>
 <body>
 
-<!-- OPENING INTRO -->
-<div class="intro" id="intro">
-  <video id="introVid" src="assets/intro.mp4" autoplay muted playsinline></video>
-  <button class="intro-skip heb" id="introSkip">דלגו ›</button>
-</div>
-
 <!-- HERO -->
 <section class="hero">
   <div class="bouquet-wrap fade-up">
@@ -258,27 +222,6 @@
     <div class="venue fade-up heb">״ביער״ · חדרה</div>
   </div>
   <div class="scroll-hint">⌄</div>
-</section>
-
-<!-- WHEN & WHERE — the essentials -->
-<section class="whenwhere fade-up">
-  <div class="ww-box">
-    <div class="ww-row">
-      <div class="ww-cell">
-        <div class="ww-icon">📅</div>
-        <div class="ww-big heb">יום שלישי</div>
-        <div class="ww-huge">3.11.2026</div>
-        <div class="ww-small heb">קבלת פנים ב-19:00</div>
-      </div>
-      <div class="ww-sep"></div>
-      <div class="ww-cell">
-        <div class="ww-icon">📍</div>
-        <div class="ww-big heb">גן האירועים ”ביער“</div>
-        <div class="ww-huge heb">חדרה</div>
-        <a class="ww-nav heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes">🚗 נווטו עכשיו</a>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- COUNTDOWN -->
@@ -361,15 +304,6 @@
 </div>
 
 <script>
-  // opening intro — plays once, then fades into the hero
-  const intro = document.getElementById('intro'), iv = document.getElementById('introVid');
-  const endIntro = () => { intro.classList.add('done'); setTimeout(() => intro.remove(), 1600); };
-  iv.addEventListener('ended', endIntro);
-  iv.addEventListener('error', endIntro);
-  document.getElementById('introSkip').addEventListener('click', endIntro);
-  setTimeout(() => { if (document.body.contains(intro)) endIntro(); }, 9000); // safety
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) endIntro();
-
   // falling watercolor petals — fewer & subtler
   const sprites = ['petal6','petal7','petal0','petal6','petal4','petal7','petal5','petal6'];
   sprites.forEach((s, i) => {
