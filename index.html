@@ -130,6 +130,10 @@
   .hebdate { margin-top: .35rem; color: var(--sage); font-size: .9rem; letter-spacing: .2em; }
   .reception { margin-top: .9rem; color: var(--wine); font-size: 1.05rem; letter-spacing: .12em; font-family: "Frank Ruhl Libre", serif; }
   .venue { margin-top: .7rem; color: var(--gold); font-size: 1.2rem; letter-spacing: .25em; }
+  .pasuk {
+    color: var(--gold); font-size: .95rem; letter-spacing: .06em; margin-top: .5rem;
+    font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  }
   .parents { margin-top: 1.6rem; display: flex; justify-content: center; gap: 2.2rem; }
   .parent-label { color: var(--gold); font-size: .72rem; letter-spacing: .28em; margin-bottom: .25rem; }
   .parent-names { color: var(--ink); font-size: .95rem; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
@@ -304,6 +308,7 @@
     <div class="invite2 fade-up heb" data-i18n="invite2">לחגוג עמנו את יום נישואינו</div>
     <hr class="rule fade-up">
     <div class="names fade-up heb" data-i18n="names">מיכל <span class="amp">&</span> אופיר</div>
+    <div class="pasuk fade-up heb" hidden>קוֹל שָׂשׂוֹן וְקוֹל שִׂמְחָה קוֹל חָתָן וְקוֹל כַּלָּה</div>
     <div class="date fade-up">3 . 11 . 26</div>
     <div class="hebdate fade-up heb" data-i18n="hebdate">כ״ג בחשון תשפ״ז</div>
     <div class="venue fade-up heb" data-i18n="venue">״ביער״ · חדרה</div>
@@ -437,7 +442,17 @@
     sb_btn: 'Route',
     credit: 'Michal & Ophir \u00b7 3.11.2026'
   };
+  // ---- religious (dati) variant — same page, ?lang=dati ----
+  const DATI = {
+    invite1: 'בשבח והודיה לה׳ יתברך',
+    invite2: 'הננו שמחים להזמינכם לשמחת נישואינו שתתקיים אי״ה בשעה טובה ומוצלחת',
+    reception: 'קבלת פנים · 19:00 · חופה · 20:30'
+  };
   const lang = new URLSearchParams(location.search).get('lang');
+  if (lang === 'dati') {
+    document.querySelectorAll('[data-i18n]').forEach(el => { const t = DATI[el.dataset.i18n]; if (t) el.innerHTML = t; });
+    document.querySelector('.pasuk').hidden = false;
+  }
   if (lang === 'nl') {
     document.documentElement.lang = 'nl';
     document.documentElement.dir = 'ltr';
