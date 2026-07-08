@@ -144,9 +144,9 @@
     background: #fffdf9;
     border-top: 1px solid #e2d5bf; box-shadow: 0 -6px 24px rgba(109,46,60,.12);
     padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
-    transform: translateY(110%); transition: transform .45s ease;
+    opacity: 0; pointer-events: none; transition: opacity .45s ease;
   }
-  .sticky-bar.on { transform: translateY(0); }
+  .sticky-bar.on { opacity: 1; pointer-events: auto; }
   .sb-text { font-size: .95rem; color: var(--ink); letter-spacing: .02em; }
   .sb-text b { color: var(--wine); font-weight: 600; }
   .sb-btn {
