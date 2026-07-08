@@ -507,7 +507,9 @@
     dots.forEach((d, i) => d.style.opacity = prog > (i + .6) / dots.length ? 1 : 0);
   }, { passive: true });
 
-  // never land mid-page: neutralize shared/restored #hash and start at the top
+  // never land mid-page: always start at the top (no browser scroll restoration)
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  addEventListener('pageshow', e => { if (e.persisted) scrollTo(0, 0); });
   if (location.hash) {
     history.replaceState(null, '', location.pathname + location.search);
     scrollTo(0, 0);
