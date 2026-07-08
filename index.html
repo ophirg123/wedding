@@ -89,10 +89,10 @@
   @keyframes sway { 0%,100% { transform: rotate(-1.4deg); } 50% { transform: rotate(1.4deg); } }
 
   .bsd {
-    position: absolute; top: .5rem; right: .7rem; z-index: 8;
-    color: var(--ink); font-size: .9rem;
+    position: absolute; top: .6rem; right: .8rem; z-index: 8;
+    color: var(--wine); font-size: 1.1rem; font-weight: 500;
     font-family: "Frank Ruhl Libre", serif;
-    text-shadow: 0 0 6px var(--cream), 0 0 3px var(--cream);
+    text-shadow: 0 0 8px var(--cream), 0 0 5px var(--cream), 0 0 3px var(--cream), 0 1px 2px var(--cream);
   }
   .hero-text { text-align: center; direction: ltr; min-width: 0; }
   .save {
@@ -123,6 +123,7 @@
   .scroll-hint {
     position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
     color: var(--wine); animation: bounce 2.2s infinite; font-size: .85rem; letter-spacing: .15em;
+    text-decoration: none; cursor: pointer;
     display: flex; flex-direction: column; align-items: center; gap: .1rem;
     background: rgba(255,253,249,.85); border: 1px solid #eadfce; border-radius: 999px;
     padding: .45rem 1.2rem; box-shadow: 0 3px 12px rgba(109,46,60,.12);
@@ -282,11 +283,11 @@
       </div>
     </div>
   </div>
-  <div class="scroll-hint heb">גללו למטה<span class="arr">⌄</span></div>
+  <a class="scroll-hint heb" href="#countdown-sec">גללו למטה<span class="arr">⌄</span></a>
 </section>
 
 <!-- COUNTDOWN -->
-<section class="count-section">
+<section class="count-section" id="countdown-sec">
   <div class="count-title fade-up heb">הספירה לאחור החלה</div>
   <div class="countdown fade-up">
     <div class="cd-unit"><div class="cd-num" id="cd-d">–</div><div class="cd-lbl heb">ימים</div></div>
