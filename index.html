@@ -76,6 +76,7 @@
     margin: 0 auto;
     padding: 3rem 0;
     position: relative;
+    overflow: clip;
   }
   .bouquet-wrap { display: flex; justify-content: flex-start; align-items: center; }
   .bouquet {
@@ -388,7 +389,7 @@
   // gentle parallax on the hero bouquet
   const bq = document.querySelector('.bouquet');
   addEventListener('scroll', () => {
-    if (scrollY < innerHeight) bq.style.translate = '0 ' + (scrollY * 0.12) + 'px';
+    bq.style.translate = '0 ' + Math.min(scrollY * 0.12, 70) + 'px';
   }, { passive: true });
 
   // sticky essentials bar — appears after the hero
