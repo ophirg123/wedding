@@ -135,8 +135,8 @@
   .parent-names { color: var(--ink); font-size: .95rem; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
 
   .scroll-hint {
-    display: inline-flex; flex-direction: row; align-items: center; gap: .6rem;
-    margin-top: 1.8rem; justify-content: center;
+    position: absolute; bottom: 1.4rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: row; align-items: center; gap: .6rem;
     text-decoration: none; cursor: pointer; white-space: nowrap;
   }
   .sh-text {
@@ -195,7 +195,7 @@
     .parents { margin-top: 1.2rem; gap: .9rem; }
     .parent-label { font-size: .68rem; letter-spacing: .18em; }
     .parent-names { font-size: .88rem; }
-    .scroll-hint { margin-top: 1.3rem; }
+    .scroll-hint { bottom: 17svh; }
     .bouquet { width: 52vw; margin-left: -6vw; margin-top: 7svh; }
     .forwedding { font-size: .85rem; letter-spacing: .24em; margin-top: 1.3rem; }
   }
@@ -309,14 +309,14 @@
 חרותקה</div>
       </div>
     </div>
-    <a class="scroll-hint heb fade-up" href="#countdown-sec">
-      <span class="sh-text" data-i18n="scroll">גללו למטה</span>
-      <svg class="chevrons" viewBox="0 0 30 26" aria-hidden="true">
-        <path class="chev c1" d="M4 2 C 8 5.5, 11.5 8.5, 15 11 C 18.5 8.5, 22 5.5, 26 2"/>
-        <path class="chev c2" d="M4 13 C 8 16.5, 11.5 19.5, 15 22 C 18.5 19.5, 22 16.5, 26 13"/>
-      </svg>
-    </a>
   </div>
+  <a class="scroll-hint heb" href="#countdown-sec">
+    <span class="sh-text" data-i18n="scroll">גללו למטה</span>
+    <svg class="chevrons" viewBox="0 0 30 26" aria-hidden="true">
+      <path class="chev c1" d="M4 2 C 8 5.5, 11.5 8.5, 15 11 C 18.5 8.5, 22 5.5, 26 2"/>
+      <path class="chev c2" d="M4 13 C 8 16.5, 11.5 19.5, 15 22 C 18.5 19.5, 22 16.5, 26 13"/>
+    </svg>
+  </a>
 </section>
 
 <!-- COUNTDOWN -->
