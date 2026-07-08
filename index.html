@@ -142,14 +142,16 @@
   .sh-text {
     color: var(--wine); font-size: .82rem; letter-spacing: .22em;
     font-family: "Frank Ruhl Libre", serif;
+    opacity: 0; animation: shfade 1.1s ease .9s forwards;
   }
+  @keyframes shfade { to { opacity: 1; } }
   .chevrons { width: 22px; height: 19px; overflow: visible; }
   .chev {
     fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
     animation: chevpulse 2.6s ease-in-out infinite both;
   }
-  .c1 { animation-delay: 1.7s; }
-  .c2 { animation-delay: 1.95s; }
+  .c1 { animation-delay: 2.1s; }
+  .c2 { animation-delay: 2.35s; }
   @keyframes chevpulse {
     0%, 8%    { opacity: 0; transform: translateY(-2px); }
     22%, 55%  { opacity: 1; transform: translateY(0); }
