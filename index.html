@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אופיר ומיכל מתחתנים · 3.11.2026 · ביער, חדרה</title>
+<meta property="og:title" content="אופיר ומיכל מתחתנים! 💍">
+<meta property="og:description" content="יום שלישי · 3.11.2026 · קבלת פנים 19:00 · ביער, חדרה">
+<meta property="og:image" content="https://ophirg123.github.io/wedding/assets/og.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ophirg123.github.io/wedding/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&family=Heebo:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fbf8f3;
+    --wine: #6d2e3c;
+    --gold: #a8894f;
+    --gold-light: #c7ae7d;
+    --sage: #7d8b6a;
+    --ink: #5a4738;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Heebo", sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ---------- falling petals (subtle) ---------- */
+  .petal {
+    position: fixed; top: -12vh; pointer-events: none; z-index: 6;
+    animation: fall linear infinite;
+  }
+  .petal img { width: 100%; animation: spin 9s linear infinite; opacity: .55; }
+  @keyframes fall {
+    0%   { transform: translateY(-12vh) translateX(0); }
+    50%  { transform: translateY(50vh) translateX(4vw); }
+    100% { transform: translateY(112vh) translateX(-3vw); }
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---------- shared ---------- */
+  .fade-up { opacity: 0; transform: translateY(26px); transition: opacity 1.2s ease, transform 1.2s ease; }
+  .fade-up.show { opacity: 1; transform: translateY(0); }
+  .rule {
+    width: 70px; height: 1px; background: var(--gold-light); border: none;
+    margin: 1.4rem auto; position: relative;
+  }
+  .rule::after {
+    content: '✦'; position: absolute; top: -0.66em; left: 50%; transform: translateX(-50%);
+    background: var(--cream); padding: 0 .55em; color: var(--gold); font-size: .8rem;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    min-height: 100vh;
+    background: url('assets/border.png') center/cover no-repeat;
+    display: grid;
+    direction: ltr;              /* bouquet pinned to the physical left, like the original card */
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 0;
+    position: relative;
+  }
+  .bouquet-wrap { display: flex; justify-content: flex-start; align-items: center; }
+  .bouquet {
+    width: min(48vw, 430px);
+    max-height: 88vh; object-fit: contain;
+    transform-origin: 50% 95%;
+    animation: sway 8s ease-in-out infinite;
+    -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, #000 60%, transparent 98%);
+            mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, #000 60%, transparent 98%);
+  }
+  @keyframes sway { 0%,100% { transform: rotate(-1.4deg); } 50% { transform: rotate(1.4deg); } }
+
+  .hero-text { text-align: center; direction: ltr; }
+  .save {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.4rem, 7.5vw, 4rem);
+    letter-spacing: .4em; text-indent: .4em; color: var(--wine); font-weight: 300;
+  }
+  .the {
+    font-family: "Snell Roundhand", "Savoye LET", cursive;
+    font-size: clamp(2.4rem, 7vw, 3.4rem); color: var(--wine); margin: .02em 0;
+  }
+  .heb { direction: rtl; font-family: "Frank Ruhl Libre", serif; }
+  .forwedding { margin-top: 1.8rem; color: var(--ink); letter-spacing: .3em; font-size: .95rem; font-weight: 300; }
+  .names { font-size: clamp(1.6rem, 5vw, 2.3rem); margin-top: .5rem; color: var(--wine); font-weight: 400; }
+  .amp { font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--gold); }
+  .date {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.7rem, 6vw, 2.4rem); letter-spacing: .3em; text-indent: .3em;
+    color: var(--ink); margin-top: 1rem; font-weight: 400;
+  }
+  .venue { margin-top: .7rem; color: var(--gold); font-size: 1rem; letter-spacing: .25em; }
+
+  .scroll-hint { position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+    color: var(--gold); animation: bounce 2.4s infinite; font-size: 1.2rem; }
+  @keyframes bounce { 0%,100% { transform: translate(-50%,0);} 50% { transform: translate(-50%,7px);} }
+
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr 1.2fr; gap: 0; padding: 3.5rem 0 18vh; min-height: 100vh; }
+    .bouquet { width: 54vw; max-height: 72vh; margin-left: -8vw; }
+    .hero-text { padding-right: .6rem; }
+    .save { font-size: 1.65rem; letter-spacing: .28em; text-indent: .28em; }
+    .the { font-size: 1.9rem; }
+    .names { font-size: 1.35rem; }
+    .date { font-size: 1.5rem; letter-spacing: .18em; text-indent: .18em; }
+    .venue { font-size: .85rem; letter-spacing: .18em; }
+    .forwedding { font-size: .8rem; letter-spacing: .22em; margin-top: 1.2rem; }
+  }
+
+  /* ---------- when & where ---------- */
+  .whenwhere { padding: 3.5rem 1rem 0; max-width: 640px; margin: 0 auto; }
+  .ww-box {
+    background: rgba(255,255,255,.72); border: 1px solid #eadfce; border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(109,46,60,.07); padding: 2rem 1rem; backdrop-filter: blur(4px);
+  }
+  .ww-row { display: flex; align-items: stretch; justify-content: center; }
+  .ww-cell { flex: 1; text-align: center; padding: 0 .8rem; }
+  .ww-sep { width: 1px; background: #eadfce; }
+  .ww-icon { font-size: 1.3rem; margin-bottom: .4rem; }
+  .ww-big { color: var(--ink); letter-spacing: .1em; font-size: 1rem; }
+  .ww-huge { font-family: "Cormorant Garamond", "Frank Ruhl Libre", serif; color: var(--wine); font-size: clamp(1.6rem, 5.5vw, 2.2rem); font-weight: 500; margin: .15rem 0; }
+  .ww-small { color: var(--sage); font-size: .95rem; }
+  .ww-nav { display: inline-block; margin-top: .3rem; color: var(--gold); font-size: .95rem; text-decoration: none; border-bottom: 1px solid var(--gold-light); }
+
+  /* ---------- sticky essentials bar ---------- */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between; gap: .6rem;
+    background: rgba(251,248,243,.92); backdrop-filter: blur(10px);
+    border-top: 1px solid #eadfce; padding: .55rem .9rem calc(.55rem + env(safe-area-inset-bottom));
+    transform: translateY(110%); transition: transform .45s ease;
+  }
+  .sticky-bar.on { transform: translateY(0); }
+  .sb-text { font-size: .88rem; color: var(--ink); letter-spacing: .03em; }
+  .sb-text b { color: var(--wine); font-weight: 500; }
+  .sb-btn {
+    flex-shrink: 0; background: var(--wine); color: #fff; text-decoration: none;
+    padding: .5rem 1.1rem; border-radius: 999px; font-size: .85rem; letter-spacing: .05em;
+  }
+
+  /* ---------- countdown (minimal, classy) ---------- */
+  .count-section { text-align: center; padding: 4.5rem 1rem 1.5rem; }
+  .count-title {
+    color: var(--gold); letter-spacing: .4em; font-size: .85rem; margin-bottom: 1.6rem;
+  }
+  .countdown {
+    display: flex; justify-content: center; align-items: baseline; direction: ltr;
+    font-family: "Cormorant Garamond", serif;
+  }
+  .cd-unit { padding: 0 1.1rem; position: relative; }
+  .cd-unit + .cd-unit::before {
+    content: '·'; position: absolute; left: -0.32em; top: 0; color: var(--gold-light); font-size: 1.6rem;
+  }
+  .cd-num { font-size: clamp(2.2rem, 7vw, 3.2rem); color: var(--wine); font-weight: 300; font-variant-numeric: tabular-nums; }
+  .cd-lbl { font-family: "Heebo"; font-size: .72rem; color: var(--sage); letter-spacing: .25em; margin-top: .1rem; }
+
+  /* ---------- timeline ---------- */
+  .timeline-section { position: relative; padding: 4.5rem 1rem 3rem; max-width: 580px; margin: 0 auto; }
+  .timeline-title {
+    text-align: center; color: var(--wine); font-weight: 400; letter-spacing: .35em;
+    font-family: "Frank Ruhl Libre", serif; font-size: 1.4rem; margin-bottom: 3.5rem;
+  }
+  .timeline { position: relative; }
+  .tl-svg { position: absolute; top: 0; right: 50%; transform: translateX(50%); height: 100%; width: 120px; overflow: visible; }
+  .tl-path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; }
+  .tl-dot { fill: var(--gold); opacity: 0; transition: opacity .8s ease .4s; }
+  .tl-item {
+    width: 46%; display: flex; align-items: center; justify-content: center;
+    direction: ltr; flex-wrap: nowrap;
+    gap: .4rem; min-height: 165px; padding: 0 .2rem;
+    opacity: 0; transition: opacity 1s ease, transform 1s ease;
+  }
+  .tl-item:nth-of-type(odd)  { margin-left: 54%; margin-right: 0; transform: translateX(40px); text-align: right; }
+  .tl-item:nth-of-type(even) { margin-right: 54%; margin-left: 0; transform: translateX(-40px); text-align: left; }
+  .tl-item > div { direction: rtl; min-width: 0; flex: 0 1 auto; }
+  .tl-item.show { opacity: 1; transform: translateX(0); }
+  .tl-time { font-family: "Cormorant Garamond", serif; color: var(--gold); font-weight: 500; font-size: 1.4rem; letter-spacing: .08em; direction: ltr; }
+  .tl-label { color: var(--wine); letter-spacing: .1em; font-size: .95rem; margin-top: .2rem; font-family: "Frank Ruhl Libre", serif; }
+
+  @media (max-width: 640px) {
+    .tl-item { flex-direction: column; gap: 0; align-items: center; justify-content: center; }
+    .tl-item:nth-of-type(odd), .tl-item:nth-of-type(even) { text-align: center; }
+    .tl-time { font-size: 1.25rem; }
+    .tl-label { font-size: .88rem; }
+  }
+
+  /* living ink icons (generated videos) */
+  .tl-vid {
+    width: 94px; height: 94px; flex-shrink: 0;
+    mix-blend-mode: multiply;
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 72%);
+            mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 72%);
+    opacity: 0; transform: scale(.85); transition: opacity 1.2s ease .3s, transform 1.2s ease .3s;
+  }
+  .tl-item.show .tl-vid { opacity: 1; transform: scale(1); }
+
+  /* ---------- actions ---------- */
+  .actions {
+    text-align: center; padding: 3rem 1rem 8rem; position: relative;
+    background: url('assets/border.png') center bottom/cover no-repeat;
+  }
+  .btn {
+    display: inline-block; margin: .45rem; padding: .8rem 2rem; border-radius: 999px;
+    background: transparent; color: var(--wine); text-decoration: none; letter-spacing: .15em;
+    border: 1px solid var(--wine); font-size: .92rem;
+    transition: all .3s ease;
+  }
+  .btn:hover { background: var(--wine); color: var(--cream); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(109,46,60,.22); }
+  .btn.gold { border-color: var(--gold); color: var(--gold); }
+  .btn.gold:hover { background: var(--gold); color: var(--cream); }
+  .credit { text-align:center; color:#c8bfb1; font-size:.78rem; letter-spacing:.15em; padding: 1rem 0 2rem; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bouquet-wrap fade-up">
+    <img class="bouquet" src="assets/bouquet.png" alt="">
+  </div>
+  <div class="hero-text">
+    <div class="save fade-up">SAVE</div>
+    <div class="the fade-up">the</div>
+    <div class="save fade-up">DATE</div>
+    <hr class="rule fade-up">
+    <div class="forwedding fade-up heb">לחתונה של</div>
+    <div class="names fade-up heb">אופיר <span class="amp">&</span> מיכל</div>
+    <div class="date fade-up">3 . 11 . 26</div>
+    <div class="venue fade-up heb">״ביער״ · חדרה</div>
+  </div>
+  <div class="scroll-hint">⌄</div>
+</section>
+
+<!-- WHEN & WHERE — the essentials -->
+<section class="whenwhere fade-up">
+  <div class="ww-box">
+    <div class="ww-row">
+      <div class="ww-cell">
+        <div class="ww-icon">📅</div>
+        <div class="ww-big heb">יום שלישי</div>
+        <div class="ww-huge">3.11.2026</div>
+        <div class="ww-small heb">קבלת פנים ב-19:00</div>
+      </div>
+      <div class="ww-sep"></div>
+      <div class="ww-cell">
+        <div class="ww-icon">📍</div>
+        <div class="ww-big heb">גן האירועים ”ביער“</div>
+        <div class="ww-huge heb">חדרה</div>
+        <a class="ww-nav heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes">🚗 נווטו עכשיו</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="count-section">
+  <div class="count-title fade-up heb">הספירה לאחור החלה</div>
+  <div class="countdown fade-up">
+    <div class="cd-unit"><div class="cd-num" id="cd-d">–</div><div class="cd-lbl heb">ימים</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-h">–</div><div class="cd-lbl heb">שעות</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-m">–</div><div class="cd-lbl heb">דקות</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-s">–</div><div class="cd-lbl heb">שניות</div></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <h2 class="timeline-title fade-up">לוח הזמנים של הערב</h2>
+  <div class="timeline" id="timeline">
+    <svg class="tl-svg" viewBox="0 0 120 990" preserveAspectRatio="none">
+      <path class="tl-path" id="goldPath"
+        d="M60 0 C 20 88, 100 154, 60 242 C 20 330, 100 396, 60 484 C 20 572, 100 638, 60 726 C 20 814, 100 880, 60 990"/>
+      <circle class="tl-dot" cx="43" cy="83"  r="4"/>
+      <circle class="tl-dot" cx="77" cy="248" r="4"/>
+      <circle class="tl-dot" cx="43" cy="413" r="4"/>
+      <circle class="tl-dot" cx="77" cy="578" r="4"/>
+      <circle class="tl-dot" cx="43" cy="743" r="4"/>
+      <circle class="tl-dot" cx="77" cy="908" r="4"/>
+    </svg>
+
+    <!-- 19:00 reception -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_glasses_sq.mp4" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">19:00</div><div class="tl-label">קבלת פנים</div></div>
+    </div>
+
+    <!-- 20:30 chuppah -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_rings_sq.mp4" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">20:30</div><div class="tl-label">חופה</div></div>
+    </div>
+
+    <!-- 21:15 dinner -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_dinner_sq.mp4" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">21:15</div><div class="tl-label">ארוחת ערב</div></div>
+    </div>
+
+    <!-- 22:00 dance -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_dance_sq.mp4" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">22:00</div><div class="tl-label">רחבה</div></div>
+    </div>
+
+    <!-- 23:30 desserts -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_desserts_sq.mp4" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">23:30</div><div class="tl-label">מתוקים</div></div>
+    </div>
+
+    <!-- end — wedding car -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_car_sq.mp4" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">04:00</div><div class="tl-label">סוף הערב</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIONS -->
+<section class="actions">
+  <a class="btn" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes">ניווט עם Waze</a>
+  <a class="btn" id="calBtn" href="#">הוסיפו ליומן</a>
+  <a class="btn gold" href="https://wa.me/972000000000?text=%D7%94%D7%99%D7%99%20%D7%90%D7%95%D7%A4%D7%99%D7%A8%20%D7%95%D7%9E%D7%99%D7%9B%D7%9C!%20%D7%9E%D7%90%D7%A9%D7%A8%D7%99%D7%9D%20%D7%94%D7%92%D7%A2%D7%94%20%D7%9C%D7%97%D7%AA%D7%95%D7%A0%D7%94%20%F0%9F%92%8D%20%D7%9E%D7%A1%D7%A4%D7%A8%20%D7%94%D7%9E%D7%92%D7%99%D7%A2%D7%99%D7%9D%3A%20">אישור הגעה</a>
+</section>
+
+<div class="credit heb">אופיר ומיכל · 3.11.2026</div>
+
+<!-- sticky essentials -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sb-text heb"><b>3.11.26</b> · יום שלישי · 19:00 · <b>ביער, חדרה</b></div>
+  <a class="sb-btn heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes">ניווט</a>
+</div>
+
+<script>
+  // falling watercolor petals — fewer & subtler
+  const sprites = ['petal6','petal7','petal0','petal6','petal4','petal7','petal5','petal6'];
+  sprites.forEach((s, i) => {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    const size = (s === 'petal6' || s === 'petal7') ? 18 + Math.random()*10 : 24 + Math.random()*14;
+    p.style.width = size + 'px';
+    p.style.left = (i / sprites.length * 100 + Math.random()*8) + 'vw';
+    p.style.animationDuration = (16 + Math.random()*14) + 's';
+    p.style.animationDelay = (-Math.random()*25) + 's';
+    const img = document.createElement('img');
+    img.src = 'assets/' + s + '.png';
+    img.style.animationDuration = (7 + Math.random()*6) + 's';
+    p.appendChild(img);
+    document.body.appendChild(p);
+  });
+
+  // sticky essentials bar — appears after the hero
+  const bar = document.getElementById('stickyBar');
+  addEventListener('scroll', () => {
+    bar.classList.toggle('on', scrollY > innerHeight * 0.9);
+  }, { passive: true });
+
+  // fade-up + icon draw on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('show')), { threshold: .25 });
+  document.querySelectorAll('.fade-up, .tl-item').forEach(el => io.observe(el));
+
+  // countdown to 3.11.2026 19:00
+  const target = new Date('2026-11-03T19:00:00+02:00');
+  function tick() {
+    const s = Math.max(0, Math.floor((target - new Date())/1000));
+    document.getElementById('cd-d').textContent = Math.floor(s/86400);
+    document.getElementById('cd-h').textContent = Math.floor(s/3600)%24;
+    document.getElementById('cd-m').textContent = Math.floor(s/60)%60;
+    document.getElementById('cd-s').textContent = s%60;
+  }
+  tick(); setInterval(tick, 1000);
+
+  // scroll-drawn gold path + dots
+  const path = document.getElementById('goldPath');
+  const len = path.getTotalLength();
+  path.style.strokeDasharray = len;
+  path.style.strokeDashoffset = len;
+  const tl = document.getElementById('timeline');
+  const dots = [...document.querySelectorAll('.tl-dot')];
+  addEventListener('scroll', () => {
+    const r = tl.getBoundingClientRect();
+    const prog = Math.min(1, Math.max(0, (innerHeight - r.top) / (r.height + innerHeight*0.5)));
+    path.style.strokeDashoffset = len * (1 - prog);
+    dots.forEach((d, i) => d.style.opacity = prog > (i + .6) / dots.length ? 1 : 0);
+  }, { passive: true });
+
+  // add to calendar (ICS)
+  document.getElementById('calBtn').addEventListener('click', e => {
+    e.preventDefault();
+    const ics = ['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT',
+      'DTSTART:20261103T170000Z','DTEND:20261104T010000Z',
+      'SUMMARY:החתונה של אופיר ומיכל 💍','LOCATION:ביער, חדרה',
+      'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'}));
+    a.download = 'ophir-michal-wedding.ics'; a.click();
+  });
+</script>
+</body>
+</html>
