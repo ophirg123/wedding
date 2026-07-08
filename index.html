@@ -89,10 +89,10 @@
   @keyframes sway { 0%,100% { transform: rotate(-1.4deg); } 50% { transform: rotate(1.4deg); } }
 
   .bsd {
-    position: absolute; top: .6rem; right: .8rem; z-index: 8;
-    color: var(--wine); font-size: 1.1rem; font-weight: 500;
+    text-align: right; direction: rtl;
+    color: var(--ink); font-size: .95rem;
     font-family: "Frank Ruhl Libre", serif;
-    text-shadow: 0 0 8px var(--cream), 0 0 5px var(--cream), 0 0 3px var(--cream), 0 1px 2px var(--cream);
+    margin-bottom: .8rem; padding-right: .4rem;
   }
   .hero-text { text-align: center; direction: ltr; min-width: 0; }
   .save {
@@ -257,11 +257,11 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="bsd heb">ב״ה</div>
   <div class="bouquet-wrap fade-up">
     <img class="bouquet" src="assets/bouquet_alpha.png" alt="">
   </div>
   <div class="hero-text">
+    <div class="bsd heb fade-up">ב״ה</div>
     <div class="save fade-up">SAVE</div>
     <div class="the fade-up">the</div>
     <div class="save fade-up">DATE</div>
