@@ -14,10 +14,10 @@
   :root {
     --cream: #fbf8f3;
     --wine: #6d2e3c;
-    --gold: #a8894f;
+    --gold: #8f7340;
     --gold-light: #c7ae7d;
     --sage: #7d8b6a;
-    --ink: #5a4738;
+    --ink: #46362c;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   ::selection { background: var(--wine); color: var(--cream); }
@@ -27,9 +27,16 @@
     background: var(--cream);
     color: var(--ink);
     font-family: "Heebo", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     overflow-x: hidden;
   }
+
+
+  /* Dutch (LTR) mode */
+  html[dir="ltr"] .heb, html[dir="ltr"] .tl-item > div { direction: ltr; }
+  html[dir="ltr"] .bsd { display: none; }
+  html[dir="ltr"] .heb { font-family: "Cormorant Garamond", "Frank Ruhl Libre", serif; }
+  html[dir="ltr"] .sb-text, html[dir="ltr"] .cd-lbl, html[dir="ltr"] .count-title { font-family: "Heebo", sans-serif; }
 
   /* ---------- paper grain — stationery feel ---------- */
   body::after {
@@ -266,42 +273,42 @@
   </div>
   <div class="hero-text">
     <div class="bsd heb fade-up">ב״ה</div>
-    <div class="invite1 fade-up heb">מתרגשים להזמינכם</div>
-    <div class="invite2 fade-up heb">לחגוג עמנו את יום נישואינו</div>
+    <div class="invite1 fade-up heb" data-i18n="invite1">מתרגשים להזמינכם</div>
+    <div class="invite2 fade-up heb" data-i18n="invite2">לחגוג עמנו את יום נישואינו</div>
     <hr class="rule fade-up">
-    <div class="names fade-up heb">מיכל <span class="amp">&</span> אופיר</div>
+    <div class="names fade-up heb" data-i18n="names">מיכל <span class="amp">&</span> אופיר</div>
     <div class="date fade-up">3 . 11 . 26</div>
-    <div class="hebdate fade-up heb">כ״ג בחשון תשפ״ז</div>
-    <div class="venue fade-up heb">״ביער״ · חדרה</div>
-    <div class="reception fade-up heb">קבלת פנים · 19:00</div>
+    <div class="hebdate fade-up heb" data-i18n="hebdate">כ״ג בחשון תשפ״ז</div>
+    <div class="venue fade-up heb" data-i18n="venue">״ביער״ · חדרה</div>
+    <div class="reception fade-up heb" data-i18n="reception">קבלת פנים · 19:00</div>
     <div class="parents fade-up heb">
       <div class="parent-block">
-        <div class="parent-label">הורי הכלה</div>
-        <div class="parent-names">רונן ונירית פלד-חדד</div>
+        <div class="parent-label" data-i18n="plabel_bride">הורי הכלה</div>
+        <div class="parent-names" data-i18n="pnames_bride">רונן ונירית פלד-חדד</div>
       </div>
       <div class="parent-block">
-        <div class="parent-label">הורי החתן</div>
-        <div class="parent-names">רודי וחגית חרותקה</div>
+        <div class="parent-label" data-i18n="plabel_groom">הורי החתן</div>
+        <div class="parent-names" data-i18n="pnames_groom">רודי וחגית חרותקה</div>
       </div>
     </div>
   </div>
-  <a class="scroll-hint heb" href="#countdown-sec">גללו למטה<span class="arr">⌄</span></a>
+  <a class="scroll-hint heb" href="#countdown-sec"><span data-i18n="scroll">גללו למטה</span><span class="arr">⌄</span></a>
 </section>
 
 <!-- COUNTDOWN -->
 <section class="count-section" id="countdown-sec">
-  <div class="count-title fade-up heb">הספירה לאחור החלה</div>
+  <div class="count-title fade-up heb" data-i18n="count_title">הספירה לאחור החלה</div>
   <div class="countdown fade-up">
-    <div class="cd-unit"><div class="cd-num" id="cd-d">–</div><div class="cd-lbl heb">ימים</div></div>
-    <div class="cd-unit"><div class="cd-num" id="cd-h">–</div><div class="cd-lbl heb">שעות</div></div>
-    <div class="cd-unit"><div class="cd-num" id="cd-m">–</div><div class="cd-lbl heb">דקות</div></div>
-    <div class="cd-unit"><div class="cd-num" id="cd-s">–</div><div class="cd-lbl heb">שניות</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-d">–</div><div class="cd-lbl heb" data-i18n="days">ימים</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-h">–</div><div class="cd-lbl heb" data-i18n="hours">שעות</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-m">–</div><div class="cd-lbl heb" data-i18n="minutes">דקות</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-s">–</div><div class="cd-lbl heb" data-i18n="seconds">שניות</div></div>
   </div>
 </section>
 
 <!-- TIMELINE -->
 <section class="timeline-section">
-  <h2 class="timeline-title fade-up">לוח הזמנים של הערב</h2>
+  <h2 class="timeline-title fade-up" data-i18n="tl_title">לוח הזמנים של הערב</h2>
   <div class="timeline" id="timeline">
     <svg class="tl-svg" viewBox="0 0 120 990" preserveAspectRatio="none">
       <path class="tl-path" id="goldPath"
@@ -317,57 +324,86 @@
     <!-- 19:00 reception -->
     <div class="tl-item">
       <video class="tl-vid" src="assets/icon_glasses_sq.mp4" autoplay muted loop playsinline></video>
-      <div><div class="tl-time">19:00</div><div class="tl-label">קבלת פנים</div></div>
+      <div><div class="tl-time">19:00</div><div class="tl-label" data-i18n="tl_reception">קבלת פנים</div></div>
     </div>
 
     <!-- 20:30 chuppah -->
     <div class="tl-item">
       <video class="tl-vid" src="assets/icon_rings_sq.mp4" autoplay muted loop playsinline></video>
-      <div><div class="tl-time">20:30</div><div class="tl-label">חופה</div></div>
+      <div><div class="tl-time">20:30</div><div class="tl-label" data-i18n="tl_chuppah">חופה</div></div>
     </div>
 
     <!-- 21:15 dinner -->
     <div class="tl-item">
       <video class="tl-vid" src="assets/icon_dinner_sq.mp4" autoplay muted loop playsinline></video>
-      <div><div class="tl-time">21:15</div><div class="tl-label">ארוחת ערב</div></div>
+      <div><div class="tl-time">21:15</div><div class="tl-label" data-i18n="tl_dinner">ארוחת ערב</div></div>
     </div>
 
     <!-- 22:00 dance -->
     <div class="tl-item">
       <video class="tl-vid" src="assets/icon_dance_sq.mp4" autoplay muted loop playsinline></video>
-      <div><div class="tl-time">22:00</div><div class="tl-label">רחבה</div></div>
+      <div><div class="tl-time">22:00</div><div class="tl-label" data-i18n="tl_dance">ריקודים</div></div>
     </div>
 
     <!-- 23:30 desserts -->
     <div class="tl-item">
       <video class="tl-vid" src="assets/icon_desserts_sq.mp4" autoplay muted loop playsinline></video>
-      <div><div class="tl-time">23:30</div><div class="tl-label">מתוקים</div></div>
+      <div><div class="tl-time">22:30</div><div class="tl-label" data-i18n="tl_desserts">מתוקים</div></div>
     </div>
 
     <!-- end — wedding car -->
     <div class="tl-item">
       <video class="tl-vid" src="assets/icon_car_sq.mp4" autoplay muted loop playsinline></video>
-      <div><div class="tl-time">02:00</div><div class="tl-label">סוף הערב</div></div>
+      <div><div class="tl-time">02:00</div><div class="tl-label" data-i18n="tl_end">מעגל סיום</div></div>
     </div>
   </div>
 </section>
 
 <!-- ACTIONS -->
 <section class="actions">
-  <a class="btn" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes">ניווט עם Waze</a>
-  <a class="btn" id="calBtn" href="#">הוסיפו ליומן</a>
-  <a class="btn gold" href="https://wa.me/972000000000?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%99%D7%9B%D7%9C%20%D7%95%D7%90%D7%95%D7%A4%D7%99%D7%A8!%20%D7%9E%D7%90%D7%A9%D7%A8%D7%99%D7%9D%20%D7%94%D7%92%D7%A2%D7%94%20%D7%9C%D7%97%D7%AA%D7%95%D7%A0%D7%94%20%F0%9F%92%8D%20%D7%9E%D7%A1%D7%A4%D7%A8%20%D7%94%D7%9E%D7%92%D7%99%D7%A2%D7%99%D7%9D%3A%20">אישור הגעה</a>
+  <a class="btn" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes" data-i18n="btn_waze">ניווט עם Waze</a>
+  <a class="btn" id="calBtn" href="#" data-i18n="btn_cal">הוסיפו ליומן</a>
+  <a class="btn gold" href="https://wa.me/972000000000?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%99%D7%9B%D7%9C%20%D7%95%D7%90%D7%95%D7%A4%D7%99%D7%A8!%20%D7%9E%D7%90%D7%A9%D7%A8%D7%99%D7%9D%20%D7%94%D7%92%D7%A2%D7%94%20%D7%9C%D7%97%D7%AA%D7%95%D7%A0%D7%94%20%F0%9F%92%8D%20%D7%9E%D7%A1%D7%A4%D7%A8%20%D7%94%D7%9E%D7%92%D7%99%D7%A2%D7%99%D7%9D%3A%20" data-i18n="btn_rsvp">אישור הגעה</a>
 </section>
 
-<div class="credit heb">מיכל ואופיר · 3.11.2026</div>
+<div class="credit heb" data-i18n="credit">מיכל ואופיר · 3.11.2026</div>
 
 <!-- sticky essentials -->
 <div class="sticky-bar" id="stickyBar">
-  <div class="sb-text heb"><b>3.11.26</b> · יום שלישי · 19:00 · <b>ביער, חדרה</b></div>
-  <a class="sb-btn heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes">ניווט</a>
+  <div class="sb-text heb" data-i18n="sb_text"><b>3.11.26</b> · יום שלישי · 19:00 · <b>ביער, חדרה</b></div>
+  <a class="sb-btn heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes" data-i18n="sb_btn">ניווט</a>
 </div>
 
 <script>
+
+  // ---- i18n (Dutch) — single page, ?lang=nl ----
+  const NL = {
+    invite1: 'Met veel liefde nodigen wij jullie uit',
+    invite2: 'om onze bruiloft samen te vieren',
+    names: 'Michal <span class="amp">&</span> Ophir',
+    hebdate: 'dinsdag 3 november 2026',
+    venue: '\u201cBaYaar\u201d \u00b7 Hadera, Isra\u00ebl',
+    reception: 'Ontvangst \u00b7 19:00',
+    plabel_bride: 'Ouders van de bruid', pnames_bride: 'Ronen & Nirit Peled-Hadad',
+    plabel_groom: 'Ouders van de bruidegom', pnames_groom: 'Rudy & Hagit Gruteke',
+    scroll: 'scroll omlaag',
+    count_title: 'Aftellen naar de grote dag',
+    days: 'dagen', hours: 'uren', minutes: 'minuten', seconds: 'seconden',
+    tl_title: 'PROGRAMMA',
+    tl_reception: 'Ontvangst', tl_chuppah: 'Choepa (ceremonie)', tl_dinner: 'Diner',
+    tl_dance: 'Dansfeest', tl_desserts: 'Zoetigheden', tl_end: 'Afsluitende kring',
+    btn_waze: 'Navigeer met Waze', btn_cal: 'Zet in agenda', btn_rsvp: 'RSVP',
+    sb_text: '<b>3.11.26</b> \u00b7 dinsdag \u00b7 19:00 \u00b7 <b>Hadera, Isra\u00ebl</b>',
+    sb_btn: 'Route',
+    credit: 'Michal & Ophir \u00b7 3.11.2026'
+  };
+  const lang = new URLSearchParams(location.search).get('lang');
+  if (lang === 'nl') {
+    document.documentElement.lang = 'nl';
+    document.documentElement.dir = 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(el => { const t = NL[el.dataset.i18n]; if (t) el.innerHTML = t; });
+    document.title = 'Michal & Ophir gaan trouwen \u00b7 3.11.2026 \u00b7 Hadera';
+  }
   // floating watercolor petals — contained in a clipped fixed layer
   const petalLayer = document.createElement('div');
   petalLayer.className = 'petals-layer';
