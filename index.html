@@ -507,6 +507,18 @@
     dots.forEach((d, i) => d.style.opacity = prog > (i + .6) / dots.length ? 1 : 0);
   }, { passive: true });
 
+  // never land mid-page: neutralize shared/restored #hash and start at the top
+  if (location.hash) {
+    history.replaceState(null, '', location.pathname + location.search);
+    scrollTo(0, 0);
+    addEventListener('load', () => scrollTo(0, 0));
+  }
+  // scroll-hint: smooth scroll without putting a #hash in the URL
+  document.querySelector('.scroll-hint').addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('countdown-sec').scrollIntoView({ behavior: 'smooth' });
+  });
+
   // iOS Low-Power Mode blocks video autoplay -> swap blocked videos to their poster image
   document.querySelectorAll('video.tl-vid').forEach(v => {
     const toImg = () => {
