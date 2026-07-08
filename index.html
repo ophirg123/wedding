@@ -278,6 +278,13 @@
     transition: all .3s ease;
   }
   .btn-ic { width: 20px; height: 20px; }
+  .cal-group { display: inline-flex; align-items: center; gap: .6rem; }
+  .cal-label {
+    color: var(--wine); font-size: 1.02rem; letter-spacing: .1em;
+    font-family: "Frank Ruhl Libre", serif;
+  }
+  .btn.icon-only { padding: .8rem; border-radius: 50%; }
+  .btn.icon-only .btn-ic { width: 22px; height: 22px; }
   .btn:hover { background: var(--wine); color: var(--cream); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(109,46,60,.22); }
   .btn.gold { border-color: var(--gold); color: var(--gold); }
   .btn.gold:hover { background: var(--gold); color: var(--cream); }
@@ -391,8 +398,11 @@
 <section class="actions">
   <div class="actions-inner">
     <a class="btn heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes"><img class="btn-ic" src="assets/icon_waze.svg" alt=""><span data-i18n="btn_waze">ניווט עם Waze</span></a>
-    <a class="btn heb" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%94%D7%97%D7%AA%D7%95%D7%A0%D7%94%20%D7%A9%D7%9C%20%D7%9E%D7%99%D7%9B%D7%9C%20%D7%95%D7%90%D7%95%D7%A4%D7%99%D7%A8&dates=20261103T170000Z/20261104T000000Z&location=%D7%91%D7%99%D7%A2%D7%A8%2C%20%D7%97%D7%93%D7%A8%D7%94" target="_blank" rel="noopener"><img class="btn-ic" src="assets/icon_googlecalendar.svg" alt=""><span data-i18n="btn_gcal">יומן Google</span></a>
-    <a class="btn heb" id="calBtn" href="#"><img class="btn-ic" src="assets/icon_apple.svg" alt=""><span data-i18n="btn_acal">יומן Apple</span></a>
+    <div class="cal-group heb">
+      <span class="cal-label" data-i18n="btn_cal">הוסיפו ליומן</span>
+      <a class="btn icon-only" aria-label="Google Calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%94%D7%97%D7%AA%D7%95%D7%A0%D7%94%20%D7%A9%D7%9C%20%D7%9E%D7%99%D7%9B%D7%9C%20%D7%95%D7%90%D7%95%D7%A4%D7%99%D7%A8&dates=20261103T170000Z/20261104T000000Z&location=%D7%91%D7%99%D7%A2%D7%A8%2C%20%D7%97%D7%93%D7%A8%D7%94" target="_blank" rel="noopener"><img class="btn-ic" src="assets/icon_googlecalendar.svg" alt="Google"></a>
+      <a class="btn icon-only" aria-label="Apple Calendar" id="calBtn" href="#"><img class="btn-ic" src="assets/icon_apple.svg" alt="Apple"></a>
+    </div>
   </div>
 </section>
 
@@ -422,7 +432,7 @@
     tl_title: 'PROGRAMMA',
     tl_reception: 'Ontvangst', tl_chuppah: 'Choepa (ceremonie)', tl_dinner: 'Diner',
     tl_dance: 'Dansfeest', tl_desserts: 'Zoetigheden', tl_end: 'Afsluitende kring',
-    btn_waze: 'Navigeer met Waze', btn_gcal: 'Google Agenda', btn_acal: 'Apple Agenda',
+    btn_waze: 'Navigeer met Waze', btn_cal: 'Zet in agenda:',
     sb_text: '<b>3.11.26</b> \u00b7 dinsdag \u00b7 19:00 \u00b7 <b>Hadera, Isra\u00ebl</b>',
     sb_btn: 'Route',
     credit: 'Michal & Ophir \u00b7 3.11.2026'
