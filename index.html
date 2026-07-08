@@ -29,6 +29,21 @@
     overflow-x: hidden;
   }
 
+  /* ---------- opening intro ---------- */
+  .intro {
+    position: fixed; inset: 0; z-index: 100; background: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 1.4s ease;
+  }
+  .intro.done { opacity: 0; pointer-events: none; }
+  .intro video { height: 100%; width: 100%; object-fit: contain; }
+  .intro-skip {
+    position: absolute; bottom: max(1.4rem, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%);
+    color: var(--gold); background: none; border: 1px solid var(--gold-light); border-radius: 999px;
+    padding: .4rem 1.3rem; font-family: "Heebo"; font-size: .85rem; letter-spacing: .1em; cursor: pointer;
+  }
+  @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
+
   /* ---------- falling petals (subtle) ---------- */
   .petal {
     position: fixed; top: -12vh; pointer-events: none; z-index: 6;
@@ -221,6 +236,12 @@
 </head>
 <body>
 
+<!-- OPENING INTRO -->
+<div class="intro" id="intro">
+  <video id="introVid" src="assets/intro.mp4" autoplay muted playsinline></video>
+  <button class="intro-skip heb" id="introSkip">דלגו ›</button>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="bouquet-wrap fade-up">
@@ -340,6 +361,15 @@
 </div>
 
 <script>
+  // opening intro — plays once, then fades into the hero
+  const intro = document.getElementById('intro'), iv = document.getElementById('introVid');
+  const endIntro = () => { intro.classList.add('done'); setTimeout(() => intro.remove(), 1600); };
+  iv.addEventListener('ended', endIntro);
+  iv.addEventListener('error', endIntro);
+  document.getElementById('introSkip').addEventListener('click', endIntro);
+  setTimeout(() => { if (document.body.contains(intro)) endIntro(); }, 9000); // safety
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) endIntro();
+
   // falling watercolor petals — fewer & subtler
   const sprites = ['petal6','petal7','petal0','petal6','petal4','petal7','petal5','petal6'];
   sprites.forEach((s, i) => {
