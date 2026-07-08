@@ -108,7 +108,9 @@
   }
   .hebdate { margin-top: .35rem; color: var(--sage); font-size: .9rem; letter-spacing: .2em; }
   .venue { margin-top: .7rem; color: var(--gold); font-size: 1.2rem; letter-spacing: .25em; }
-  .parents { margin-top: 1.5rem; color: var(--ink); font-size: .92rem; letter-spacing: .08em; opacity: .85; }
+  .parents { margin-top: 1.6rem; display: flex; justify-content: center; gap: 2.2rem; }
+  .parent-label { color: var(--gold); font-size: .72rem; letter-spacing: .28em; margin-bottom: .25rem; }
+  .parent-names { color: var(--ink); font-size: .95rem; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; }
 
   .scroll-hint { position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
     color: var(--gold); animation: bounce 2.4s infinite; font-size: 1.2rem; }
@@ -149,9 +151,9 @@
     .date { font-size: 1.8rem; letter-spacing: .1em; text-indent: .1em; }
     .venue { font-size: 1.05rem; letter-spacing: .18em; }
     .hebdate { font-size: .8rem; letter-spacing: .14em; }
-    .parents { font-size: .85rem; letter-spacing: .04em; margin-top: 1.1rem; line-height: 1.7; }
-    .parents .psep { display: none; }
-    .parents span { display: block; }
+    .parents { margin-top: 1.2rem; flex-direction: column; gap: .7rem; }
+    .parent-label { font-size: .66rem; }
+    .parent-names { font-size: .85rem; }
     .forwedding { font-size: .85rem; letter-spacing: .24em; margin-top: 1.3rem; }
   }
 
@@ -252,7 +254,16 @@
     <div class="date fade-up">3 . 11 . 26</div>
     <div class="hebdate fade-up heb">כ״ג בחשון תשפ״ז</div>
     <div class="venue fade-up heb">״ביער״ · חדרה</div>
-    <div class="parents fade-up heb"><span>רודי וחגית חרותקה</span><span class="psep">&ensp;·&ensp;</span><span>רונן ונירית פלד</span></div>
+    <div class="parents fade-up heb">
+      <div class="parent-block">
+        <div class="parent-label">הורי החתן</div>
+        <div class="parent-names">רודי וחגית חרותקה</div>
+      </div>
+      <div class="parent-block">
+        <div class="parent-label">הורי הכלה</div>
+        <div class="parent-names">רונן ונירית פלד</div>
+      </div>
+    </div>
   </div>
   <div class="scroll-hint">⌄</div>
 </section>
