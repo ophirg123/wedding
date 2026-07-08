@@ -111,17 +111,7 @@
     color: var(--gold); animation: bounce 2.4s infinite; font-size: 1.2rem; }
   @keyframes bounce { 0%,100% { transform: translate(-50%,0);} 50% { transform: translate(-50%,7px);} }
 
-  @media (max-width: 640px) {
-    .hero { grid-template-columns: 1fr 1.2fr; gap: 0; padding: 3.5rem 0 18vh; min-height: 100vh; }
-    .bouquet { width: 54vw; max-height: 72vh; margin-left: -8vw; }
-    .hero-text { padding-right: .6rem; }
-    .save { font-size: 1.65rem; letter-spacing: .28em; text-indent: .28em; }
-    .the { font-size: 1.9rem; }
-    .names { font-size: 1.35rem; }
-    .date { font-size: 1.5rem; letter-spacing: .18em; text-indent: .18em; }
-    .venue { font-size: .85rem; letter-spacing: .18em; }
-    .forwedding { font-size: .8rem; letter-spacing: .22em; margin-top: 1.2rem; }
-  }
+
 
   /* ---------- sticky essentials bar ---------- */
   .sticky-bar {
@@ -141,6 +131,22 @@
     box-shadow: 0 3px 10px rgba(109,46,60,.35);
   }
   .sb-btn:active { transform: scale(.96); }
+
+  /* mobile hero — same frame, delicate flowers, big type */
+  @media (max-width: 640px) {
+    .hero {
+      grid-template-columns: .9fr 1.5fr; gap: 0; padding: 3rem 0 16vh; min-height: 100vh;
+      background-image: url('assets/border_mobile.png');
+    }
+    .bouquet { width: 40vw; max-height: 56vh; margin-left: -5vw; }
+    .hero-text { padding-right: 1.1rem; }
+    .save { font-size: 2rem; letter-spacing: .27em; text-indent: .27em; }
+    .the { font-size: 2.1rem; }
+    .names { font-size: 1.45rem; }
+    .date { font-size: 1.6rem; letter-spacing: .16em; text-indent: .16em; }
+    .venue { font-size: .9rem; letter-spacing: .2em; }
+    .forwedding { font-size: .85rem; letter-spacing: .24em; margin-top: 1.3rem; }
+  }
 
   /* ---------- countdown (minimal, classy) ---------- */
   .count-section { text-align: center; padding: 4.5rem 1rem 1.5rem; }
@@ -301,7 +307,7 @@
     <!-- end — wedding car -->
     <div class="tl-item">
       <video class="tl-vid" src="assets/icon_car_sq.mp4" autoplay muted loop playsinline></video>
-      <div><div class="tl-time">04:00</div><div class="tl-label">סוף הערב</div></div>
+      <div><div class="tl-time">02:00</div><div class="tl-label">סוף הערב</div></div>
     </div>
   </div>
 </section>
@@ -327,7 +333,9 @@
   sprites.forEach((s, i) => {
     const p = document.createElement('div');
     p.className = 'petal';
-    const size = (s === 'petal6' || s === 'petal7') ? 18 + Math.random()*10 : 24 + Math.random()*14;
+    const mobile = innerWidth < 640;
+    let size = (s === 'petal6' || s === 'petal7') ? 18 + Math.random()*10 : 24 + Math.random()*14;
+    if (mobile) size *= 0.7;
     p.style.width = size + 'px';
     p.style.left = (i / sprites.length * 100 + Math.random()*8) + 'vw';
     p.style.animationDuration = (16 + Math.random()*14) + 's';
@@ -384,7 +392,7 @@
   document.getElementById('calBtn').addEventListener('click', e => {
     e.preventDefault();
     const ics = ['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT',
-      'DTSTART:20261103T170000Z','DTEND:20261104T010000Z',
+      'DTSTART:20261103T170000Z','DTEND:20261104T000000Z',
       'SUMMARY:החתונה של אופיר ומיכל 💍','LOCATION:ביער, חדרה',
       'END:VEVENT','END:VCALENDAR'].join('\r\n');
     const a = document.createElement('a');
