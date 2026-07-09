@@ -204,8 +204,14 @@
     .parent-names { font-size: clamp(.64rem, 3.5vw, .88rem); }
     .sh-text { font-size: clamp(.66rem, 3.3vw, .82rem); }
     .sb-text { font-size: clamp(.68rem, 3.8vw, .95rem); }
+    /* Dutch/LTR: longer lines — wrap naturally instead of overflowing */
+    html[dir="ltr"] .invite1 { white-space: normal; font-size: clamp(.95rem, 5vw, 1.3rem); }
+    html[dir="ltr"] .venue { white-space: normal; font-size: clamp(.9rem, 4.6vw, 1.2rem); }
+    html[dir="ltr"] .reception { white-space: normal; font-size: clamp(.78rem, 4vw, 1rem); }
+    html[dir="ltr"] .hebdate { white-space: normal; }
     .scroll-hint { bottom: 17svh; }
     .bouquet { width: 52vw; margin-left: -6vw; margin-top: 7svh; }
+    body.dati .bouquet { width: 45vw; margin-left: -9vw; }
     .forwedding { font-size: .85rem; letter-spacing: .24em; margin-top: 1.3rem; }
   }
 
@@ -315,7 +321,7 @@
     <div class="date fade-up">3 . 11 . 26</div>
     <div class="hebdate fade-up heb" data-i18n="hebdate">כ״ג בחשון תשפ״ז</div>
     <div class="venue fade-up heb" data-i18n="venue">״ביער״ · חדרה</div>
-    <div class="reception fade-up heb" data-i18n="reception">קבלת פנים · 19:00</div>
+    <div class="reception fade-up heb" data-i18n="reception">קבלת פנים · 19:00 · חופה · 20:30</div>
     <div class="parents fade-up heb">
       <div class="parent-block">
         <div class="parent-label" data-i18n="plabel_bride">הורי הכלה</div>
@@ -431,7 +437,7 @@
     names: 'Michal <span class="amp">&</span> Ophir',
     hebdate: 'dinsdag 3 november 2026',
     venue: '\u201cBaYaar\u201d \u00b7 Hadera, Isra\u00ebl',
-    reception: 'Ontvangst \u00b7 19:00',
+    reception: 'Ontvangst · 19:00 · Choepa · 20:30',
     plabel_bride: 'Ouders van de bruid', pnames_bride: 'Ronen & Nirit Peled‑Hadad',
     plabel_groom: 'Ouders van de bruidegom', pnames_groom: 'Rudy & Hagit Gruteke',
     scroll: 'scroll omlaag',
@@ -448,11 +454,11 @@
   // ---- religious (dati) variant — same page, ?lang=dati ----
   const DATI = {
     invite1: 'בשבח והודיה לה׳ יתברך',
-    invite2: 'הננו שמחים להזמינכם לשמחת נישואינו שתתקיים אי״ה בשעה טובה ומוצלחת',
-    reception: 'קבלת פנים · 19:00 · חופה · 20:30'
+    invite2: 'הננו שמחים להזמינכם לשמחת נישואינו שתתקיים אי״ה בשעה טובה ומוצלחת'
   };
   const lang = new URLSearchParams(location.search).get('lang');
   if (lang === 'dati') {
+    document.body.classList.add('dati');
     document.querySelectorAll('[data-i18n]').forEach(el => { const t = DATI[el.dataset.i18n]; if (t) el.innerHTML = t; });
     document.querySelector('.pasuk').hidden = false;
   }
