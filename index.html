@@ -24,7 +24,7 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   ::selection { background: var(--wine); color: var(--cream); }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   html, body { overflow-x: clip; }
   body {
     background: var(--cream);
@@ -191,16 +191,19 @@
     }
     .bouquet { max-height: 70svh; }
     .hero-text { padding-right: 1.1rem; }
-    .invite1 { font-size: 1.45rem; letter-spacing: .06em; }
-    .invite2 { font-size: 1.08rem; letter-spacing: .08em; }
-    .names { font-size: 2.1rem; }
-    .date { font-size: 2rem; letter-spacing: .1em; text-indent: .1em; }
-    .venue { font-size: 1.35rem; letter-spacing: .1em; color: var(--wine); font-weight: 500; margin-top: .85rem; }
-    .reception { font-size: 1.1rem; margin-top: .55rem; }
-    .hebdate { font-size: .9rem; letter-spacing: .12em; }
-    .parents { margin-top: 1.2rem; gap: .9rem; }
-    .parent-label { font-size: .68rem; letter-spacing: .18em; }
-    .parent-names { font-size: .88rem; }
+    .invite1 { font-size: clamp(1rem, 5.8vw, 1.45rem); letter-spacing: .06em; white-space: nowrap; }
+    .invite2 { font-size: clamp(.78rem, 4.3vw, 1.08rem); letter-spacing: .08em; }
+    .names { font-size: clamp(1.45rem, 8.4vw, 2.1rem); white-space: nowrap; }
+    .date { font-size: clamp(1.4rem, 8vw, 2rem); letter-spacing: .1em; text-indent: .1em; white-space: nowrap; }
+    .venue { font-size: clamp(.95rem, 5.4vw, 1.35rem); letter-spacing: .1em; color: var(--wine); font-weight: 500; margin-top: .85rem; white-space: nowrap; }
+    .reception { font-size: clamp(.8rem, 4.4vw, 1.1rem); margin-top: .55rem; white-space: nowrap; }
+    .hebdate { font-size: clamp(.66rem, 3.6vw, .9rem); letter-spacing: .12em; white-space: nowrap; }
+    .pasuk { font-size: clamp(.7rem, 3.8vw, .95rem); }
+    .parents { margin-top: 1.2rem; gap: clamp(.5rem, 3.6vw, .9rem); }
+    .parent-label { font-size: clamp(.5rem, 2.7vw, .68rem); letter-spacing: .18em; }
+    .parent-names { font-size: clamp(.64rem, 3.5vw, .88rem); }
+    .sh-text { font-size: clamp(.66rem, 3.3vw, .82rem); }
+    .sb-text { font-size: clamp(.68rem, 3.8vw, .95rem); }
     .scroll-hint { bottom: 17svh; }
     .bouquet { width: 52vw; margin-left: -6vw; margin-top: 7svh; }
     .forwedding { font-size: .85rem; letter-spacing: .24em; margin-top: 1.3rem; }
