@@ -134,6 +134,34 @@
     color: var(--gold); font-size: .95rem; letter-spacing: .06em; margin-top: .5rem;
     font-family: "Frank Ruhl Libre", serif; font-style: italic;
   }
+  .aye {
+    color: var(--ink); font-size: .92rem; letter-spacing: .05em; margin-top: .5rem;
+    font-family: "Frank Ruhl Libre", serif;
+  }
+  .seeyou {
+    color: var(--wine); font-size: 1.05rem; letter-spacing: .08em; margin-top: 1.1rem;
+    font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  }
+  body.dati .invite1, body.dati .invite2, body.dati .reception { white-space: normal; }
+  body.dati .pasuk { margin: 0 0 .7rem; }
+  body.dati .invite1 { font-size: clamp(.9rem, 4.6vw, 1.15rem); line-height: 1.45; }
+  body.dati .invite2 { line-height: 1.45; }
+  /* dati adds lines — tighten vertical rhythm so the hero still fits one screen */
+  body.dati .rule { margin: .7rem auto; }
+  body.dati .names { font-size: clamp(1.3rem, 7.2vw, 1.9rem); }
+  body.dati .hebdate {
+    color: var(--ink); font-size: clamp(1.15rem, 6vw, 1.7rem); letter-spacing: .08em;
+    margin-top: .9rem; font-weight: 500;
+  }
+  body.dati .date {
+    font-size: clamp(.95rem, 4.6vw, 1.25rem); color: var(--sage);
+    letter-spacing: .18em; text-indent: .18em; margin-top: .2rem;
+  }
+  body.dati .venue { margin-top: .55rem; }
+  body.dati .reception { margin-top: .35rem; }
+  body.dati .seeyou { margin-top: .7rem; }
+  body.dati .parents { margin-top: .8rem; }
+  body.dati .bouquet { margin-top: 3svh; }
   .parents { margin-top: 1.6rem; display: flex; justify-content: center; gap: 2.2rem; }
   .parent-label { color: var(--gold); font-size: .72rem; letter-spacing: .28em; margin-bottom: .25rem; }
   .parent-names { color: var(--ink); font-size: .95rem; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
@@ -191,6 +219,9 @@
     }
     .bouquet { max-height: 70svh; }
     .hero-text { padding-right: 1.1rem; }
+    .bsd { margin-top: clamp(1.4rem, 5svh, 3rem); }
+    body.dati .bsd { margin-top: clamp(2rem, 7svh, 4rem); }
+    body.dati .scroll-hint { position: static; transform: none; margin: 1.2rem auto 0; display: inline-flex; }
     .invite1 { font-size: clamp(1rem, 5.8vw, 1.45rem); letter-spacing: .06em; white-space: nowrap; }
     .invite2 { font-size: clamp(.78rem, 4.3vw, 1.08rem); letter-spacing: .08em; }
     .names { font-size: clamp(1.45rem, 8.4vw, 2.1rem); white-space: nowrap; }
@@ -199,6 +230,8 @@
     .reception { font-size: clamp(.8rem, 4.4vw, 1.1rem); margin-top: .55rem; white-space: nowrap; }
     .hebdate { font-size: clamp(.66rem, 3.6vw, .9rem); letter-spacing: .12em; white-space: nowrap; }
     .pasuk { font-size: clamp(.7rem, 3.8vw, .95rem); }
+    .aye { font-size: clamp(.68rem, 3.6vw, .92rem); }
+    .seeyou { font-size: clamp(.8rem, 4.2vw, 1.05rem); }
     .parents { margin-top: 1.2rem; gap: clamp(.5rem, 3.6vw, .9rem); }
     .parent-label { font-size: clamp(.5rem, 2.7vw, .68rem); letter-spacing: .18em; }
     .parent-names { font-size: clamp(.64rem, 3.5vw, .88rem); }
@@ -278,6 +311,14 @@
   }
   .tl-item.show .tl-vid { opacity: 1; transform: scale(1); }
 
+  /* ---------- rebbe blessing (dati) ---------- */
+  .blessing { text-align: center; padding: 3.5rem 1.5rem 2.5rem; }
+  .bl-img { width: min(78vw, 480px); opacity: .88; }
+  .bl-caption {
+    margin-top: 1.4rem; color: var(--gold); font-size: .8rem; letter-spacing: .22em;
+    font-family: "Frank Ruhl Libre", serif;
+  }
+
   /* ---------- actions ---------- */
   .actions {
     text-align: center; padding: 3rem 1rem calc(min(42vw, 380px) + 2.5rem); position: relative;
@@ -312,16 +353,18 @@
     <img class="bouquet" src="assets/bouquet_alpha.png" alt="">
   </div>
   <div class="hero-text">
-    <div class="bsd heb fade-up">ב״ה</div>
+    <div class="bsd heb fade-up" data-i18n="bsd">ב״ה</div>
     <div class="invite1 fade-up heb" data-i18n="invite1">מתרגשים להזמינכם</div>
     <div class="invite2 fade-up heb" data-i18n="invite2">לחגוג עמנו את יום נישואינו</div>
     <hr class="rule fade-up">
     <div class="names fade-up heb" data-i18n="names">מיכל <span class="amp">&</span> אופיר</div>
-    <div class="pasuk fade-up heb" hidden>קוֹל שָׂשׂוֹן וְקוֹל שִׂמְחָה קוֹל חָתָן וְקוֹל כַּלָּה</div>
+    <div class="pasuk fade-up heb" hidden>קוֹל שָׂשׂוֹן וְקוֹל שִׂמְחָה, קוֹל חָתָן וְקוֹל כַּלָּה</div>
+    <div class="aye fade-up heb" hidden>שתתקיים אי״ה בשעה טובה ומוצלחת</div>
     <div class="date fade-up">3 . 11 . 26</div>
     <div class="hebdate fade-up heb" data-i18n="hebdate">כ״ג בחשון תשפ״ז</div>
     <div class="venue fade-up heb" data-i18n="venue">״ביער״ · חדרה</div>
     <div class="reception fade-up heb" data-i18n="reception">קבלת פנים · 19:00 · חופה · 20:30</div>
+    <div class="seeyou fade-up heb" hidden>נשמח לראותכם</div>
     <div class="parents fade-up heb">
       <div class="parent-block">
         <div class="parent-label" data-i18n="plabel_bride">הורי הכלה</div>
@@ -408,6 +451,13 @@
   </div>
 </section>
 
+<!-- REBBE BLESSING (dati only) -->
+<section class="blessing" hidden>
+  <hr class="rule fade-up">
+  <img class="bl-img fade-up" src="assets/rebbe_blessing.png" alt="ברכת הרבי — בנין עדי עד על יסודי התורה והמצוה">
+  <div class="bl-caption fade-up heb">מברכתו של הרבי מליובאוויטש</div>
+</section>
+
 <!-- ACTIONS -->
 <section class="actions">
   <div class="actions-inner">
@@ -453,14 +503,25 @@
   };
   // ---- religious (dati) variant — same page, ?lang=dati ----
   const DATI = {
-    invite1: 'בשבח והודיה לה׳ יתברך',
-    invite2: 'הננו שמחים להזמינכם לשמחת נישואינו שתתקיים אי״ה בשעה טובה ומוצלחת'
+    bsd: 'בעזה״ת',
+    invite1: 'בלב מלא שמחה והודיה לה׳ יתברך על כל הטוב אשר גמלנו',
+    invite2: 'אנו מתכבדים להזמינכם להשתתף עמנו בשמחת כלולות ילדינו היקרים',
+    reception: 'קבלת פנים · 19:00 · חופה וקידושין · 20:30'
   };
   const lang = new URLSearchParams(location.search).get('lang');
   if (lang === 'dati') {
     document.body.classList.add('dati');
     document.querySelectorAll('[data-i18n]').forEach(el => { const t = DATI[el.dataset.i18n]; if (t) el.innerHTML = t; });
-    document.querySelector('.pasuk').hidden = false;
+    const pasuk = document.querySelector('.pasuk'), inv1 = document.querySelector('.invite1');
+    inv1.parentNode.insertBefore(pasuk, inv1);
+    pasuk.hidden = false;
+    document.querySelector('.aye').hidden = false;
+    document.querySelector('.seeyou').hidden = false;
+    document.querySelector('.blessing').hidden = false;
+    document.querySelector('.timeline-section').style.display = 'none';
+    const hd = document.querySelector('.hebdate'), dt = document.querySelector('.date');
+    dt.parentNode.insertBefore(hd, dt);
+    document.querySelector('.hero-text').appendChild(document.querySelector('.scroll-hint'));
   }
   if (lang === 'nl') {
     document.documentElement.lang = 'nl';
