@@ -109,8 +109,6 @@
   .hero::before {
     content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background: url('assets/g_bg.png') center center / 118% 100% no-repeat;
-    -webkit-mask-image: linear-gradient(to bottom, #000 90%, rgba(0,0,0,.55) 96%, transparent 100%);
-            mask-image: linear-gradient(to bottom, #000 90%, rgba(0,0,0,.55) 96%, transparent 100%);
   }
   .hero-text { position: absolute; top: 19%; left: 11.5%; right: 11.5%; width: auto; z-index: 2;  padding-block: 2.5rem 1rem; text-align: center; direction: ltr; min-width: 0; }
   .invite1 {
@@ -374,18 +372,30 @@
   .timeline, .timeline-title, .countdown, .count-title { max-width: 100%; }
   .tl-item { max-width: 100%; }
   .count-section, .timeline-section { position: relative; }
-  .count-section { margin-top: -9svh; padding-top: 11svh; }
   .count-section > *, .timeline-section > * { position: relative; z-index: 1; }
 
-  /* gentle botanical CLUSTERS — like the hero, not a continuous border */
-  .sprig {
     position: absolute; z-index: 0; pointer-events: none; user-select: none;
     width: auto; opacity: .34;
   }
-  .sprig.s1 { top: -3svh;  left: -5%;  height: min(13svh, 118px); }
-  .sprig.s2 { top: 31%;    right: -7%;  height: min(9svh, 82px);  transform: scaleX(-1); opacity: .3; }
-  .sprig.s3 { top: 45%;    left: -4%;   height: min(10svh, 92px);  opacity: .28; }
-  .sprig.s4 { top: 86%;    right: -7%;  height: min(9svh, 82px);  transform: scaleX(-1) rotate(6deg); opacity: .28; }
+
+  /* ---- soft botanical groups through the middle of the page ---- */
+  .count-section, .timeline-section { position: relative; }
+  .count-section > *, .timeline-section > * { position: relative; z-index: 1; }
+  .grp { position: absolute; z-index: 0; pointer-events: none; user-select: none; width: auto; }
+  .grp.blossom { opacity: .55; }
+  .grp.leafy   { opacity: .6; }
+
+  /* countdown: a pale blossom watermark only - the section is too short for foliage */
+  .g-c1 { top: -14%; right: -16%; height: min(30svh, 300px); }
+
+  /* timeline: leafy groups sit in the bands where the item is on the OTHER side */
+  .g-t1 { top: 12%;  left: -9%;   height: min(19svh, 185px); }
+  .g-t2 { top: 27%;  right: -9%;  height: min(19svh, 185px); transform: scaleX(-1); }
+  .g-t3 { top: 42%;  left: -8%;   height: min(18svh, 175px); }
+  .g-t4 { top: 55.5%; right: -8%; height: min(17svh, 165px); transform: scaleX(-1); }
+  /* plus two pale blossom drifts that may pass behind the text, as in the hero */
+  .g-t5 { top: 55%;  left: 4%;    height: min(26svh, 260px); }
+  .g-t6 { top: 86%;  right: 2%;   height: min(24svh, 240px); }
 </style>
 </head>
 <body>
@@ -428,7 +438,7 @@
 
 <!-- COUNTDOWN -->
 <section class="count-section" id="countdown-sec">
-    <img class="sprig s1" src="assets/g_leftflank.png" alt="" aria-hidden="true">
+    <img class="grp blossom g-c1" src="assets/g_blossoms.png" alt="" aria-hidden="true">
   <div class="count-title fade-up heb" data-i18n="count_title">הספירה לאחור החלה</div>
   <div class="countdown fade-up">
     <div class="cd-unit"><div class="cd-num" id="cd-d">–</div><div class="cd-lbl heb" data-i18n="days">ימים</div></div>
@@ -440,9 +450,12 @@
 
 <!-- TIMELINE -->
 <section class="timeline-section">
-    <img class="sprig s2" src="assets/g_leftflank.png" alt="" aria-hidden="true">
-    <img class="sprig s3" src="assets/g_sprig_tr.png" alt="" aria-hidden="true">
-    <img class="sprig s4" src="assets/g_leftflank.png" alt="" aria-hidden="true">
+    <img class="grp leafy g-t1" src="assets/g_group_b.png" alt="" aria-hidden="true">
+    <img class="grp leafy g-t2" src="assets/g_group_a.png" alt="" aria-hidden="true">
+    <img class="grp leafy g-t3" src="assets/g_group_b.png" alt="" aria-hidden="true">
+    <img class="grp leafy g-t4" src="assets/g_group_b.png" alt="" aria-hidden="true">
+    <img class="grp blossom g-t5" src="assets/g_blossoms.png" alt="" aria-hidden="true">
+    <img class="grp blossom g-t6" src="assets/g_blossoms.png" alt="" aria-hidden="true">
   <h2 class="timeline-title fade-up" data-i18n="tl_title">לוח הזמנים של הערב</h2>
   <div class="timeline" id="timeline">
     <svg class="tl-svg" viewBox="0 0 120 990" preserveAspectRatio="none">
