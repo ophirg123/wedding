@@ -1,0 +1,18 @@
+Use the input image ONLY as a STYLE reference — copy its painting medium, its palette and its density. Do not copy its layout and do not reproduce any of its text, lines or arcs.
+
+Generate: a single botanical corner spray of trailing houseplants, isolated on a fully transparent background.
+
+STYLE TO MATCH EXACTLY (from the input image):
+- Medium: soft semi-translucent watercolour wash with a faint dry-brush edge, no ink outlines, no cel shading, no gloss, no highlights, no drop shadow.
+- Palette: near-monochrome muted grey-sage. Use only these colours — deep olive #4a4f36, mid sage #686c4f, soft sage #787b5d, dusty pale sage #919274, pale eucalyptus #b6b396, and cream-white buds #e6e0cc. Warm gold only as a few tiny dots, never on a leaf.
+- LOW SATURATION. The greens must look dusty, greyed and desaturated — as if mixed with grey. Absolutely NO bright green, NO yellow-green, NO variegation, NO golden or yellow patches inside the leaves, NO two-tone leaves.
+- Density: AIRY and sparse, with a lot of empty space between elements. Leaves sit apart from one another, never overlapping into a solid mass. This is a delicate scattered spray, not a bouquet and not a tropical arrangement.
+- Every leaf is a flat, even wash of one single colour with a slightly darker centre vein. No mottling.
+
+SUBJECT:
+- A few large heart-shaped pothos leaves on a thin trailing vine that cascades downward.
+- Two or three fenestrated monstera leaves with natural splits and holes.
+- Fine thread-like stems carrying many tiny cream-white teardrop buds, threading loosely through the gaps.
+- The spray flows diagonally, dense at the top-left and thinning to single small leaves at the lower right.
+
+Output: isolated artwork, crisp silhouette, no halos or fringing, clean alpha transparency. Do NOT add a solid backdrop, checkerboard, paper texture, scenery, frame, shadow or text.

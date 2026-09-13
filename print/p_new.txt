@@ -1,0 +1,18 @@
+Use the input image ONLY as a STYLE reference — copy its painting medium, palette, leaf drawing and density. Do NOT copy its layout, and do NOT reproduce any text, Hebrew letters, gold arcs, lines or background flowers.
+
+Generate: a botanical corner spray of trailing houseplants, isolated on a fully transparent background.
+
+STYLE TO MATCH EXACTLY:
+- Medium: soft semi-translucent watercolour/gouache wash with a faint dry-brush edge and a slightly darker painted central vein. No ink outlines, no cel shading, no gloss, no drop shadow.
+- Palette — use ONLY these: deep olive #4b4f39, mid sage #6c6e54, soft sage #7f8065, dusty sage #8f8f74, pale eucalyptus #a4a389, cream-white buds #d1cebb. Tiny warm gold dots #c3ac7d, never on a leaf.
+- Muted and greyed. NO bright green, NO yellow-green, NO variegation, NO golden patches inside leaves, NO two-tone leaves.
+- Leaves are LARGE, confident and generous — big heart-shaped pothos leaves and big monstera leaves, each a flat even wash with a darker painted vein and a soft pale edge highlight.
+- Density: leaves grouped near the corner and thinning to a delicate trailing vine, with clear empty space between elements. Airy, never a solid mass.
+
+SUBJECT:
+- Several LARGE heart-shaped pothos leaves on a woody trailing vine.
+- Two or three LARGE fenestrated monstera leaves with natural splits and holes.
+- Fine thread-like stems with small cream-white teardrop buds threading through the gaps.
+- The arrangement anchors in one corner and cascades diagonally, ending in a thin vine with small single leaves.
+
+Output: isolated artwork, crisp silhouette, no halos or fringing, clean alpha transparency. Do NOT add a solid backdrop, checkerboard, paper texture, scenery, frame, shadow, flowers or text.

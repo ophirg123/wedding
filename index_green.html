@@ -369,8 +369,16 @@
   .hero .hebdate    { font-size: 3.3cqw !important; margin-top: 1cqw; letter-spacing: .1em; }
   .hero .venue      { font-size: 4.0cqw !important; margin-top: 5cqw; letter-spacing: .18em; }
   .hero .reception  { font-size: 3.3cqw !important; margin-top: 2.6cqw; white-space: nowrap; }
+  .hero .seeyou-wrap { padding-right: 13cqw; }   /* clear the monstera leaf on the right */
+  .hero .rule { padding-right: 13cqw; }          /* keep the heart rule centred over it */
   .hero .seeyou     { font-size: 3.3cqw !important; margin-top: 2.2cqw; color: #b99a6b; letter-spacing: .16em; font-style: normal; }
   .hero .parents    { margin-top: 7.5cqw !important; gap: 6cqw !important; }
+  /* Dutch names are far longer than the Hebrew ones and ran under the monstera */
+  body.nl .hero .parents      { padding-right: 7cqw; gap: 4cqw !important; }
+  body.nl .hero .parent-label { font-size: 2.4cqw !important; white-space: nowrap; }
+  body.nl .hero .parent-names { font-size: 2.8cqw !important; }
+  body.nl .hero .seeyou       { letter-spacing: .1em; }
+  body.nl .bsd-fixed          { display: none; }   /* Dutch guests: no בס״ד */
   .hero .parent-label { font-size: 2.7cqw !important; letter-spacing: .12em; }
   .hero .parent-names { font-size: 3.2cqw !important; line-height: 1.45; white-space: nowrap; }
   .hero .rule       { margin: 4.5cqw auto !important; width: 52%; gap: .7em; }
@@ -434,7 +442,7 @@
         <div class="parent-names" data-i18n="pnames_groom">רודי וחגית חרותקה</div>
       </div>
     </div>
-    <div class="rule fade-up"><span class="rule-line"></span><svg class="rule-heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 20.5C12 20.5 2.5 14.6 2.5 8.2 2.5 4.9 5 2.5 8 2.5c1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 3 0 5.5 2.4 5.5 5.7 0 6.4-9.5 12.3-9.5 12.3z" fill="none" stroke="#c3ac7d" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="rule-line"></span></div><div class="seeyou fade-up heb">נשמח לראותכם</div>
+    <div class="rule fade-up"><span class="rule-line"></span><svg class="rule-heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 20.5C12 20.5 2.5 14.6 2.5 8.2 2.5 4.9 5 2.5 8 2.5c1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 3 0 5.5 2.4 5.5 5.7 0 6.4-9.5 12.3-9.5 12.3z" fill="none" stroke="#c3ac7d" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="rule-line"></span></div><div class="seeyou-wrap"><div class="seeyou fade-up heb" data-i18n="seeyou">נשמח לראותכם</div></div>
   </div>
   <a class="scroll-hint heb" href="#countdown-sec">
     <span class="sh-text" data-i18n="scroll">גללו למטה</span>
@@ -556,6 +564,7 @@
     tl_dance: 'Dansfeest', tl_desserts: 'Zoetigheden', tl_end: 'Afsluitende kring',
     btn_waze: 'Navigeer met Waze', btn_cal: 'Zet in agenda:',
     sb_text: '<b>3.11.26</b> · ontvangst 19:00 · choepa 20:30 · <b>Hadera</b>',
+    seeyou: 'Graag tot dan!',
     sb_btn: 'Route',
     credit: 'Michal & Ophir \u00b7 3.11.2026'
   };
@@ -584,6 +593,7 @@
   if (lang === 'nl') {
     document.documentElement.lang = 'nl';
     document.documentElement.dir = 'ltr';
+    document.body.classList.add('nl');
     document.querySelectorAll('[data-i18n]').forEach(el => { const t = NL[el.dataset.i18n]; if (t) el.innerHTML = t; });
     document.title = 'Michal & Ophir gaan trouwen \u00b7 3.11.2026 \u00b7 Hadera';
   }

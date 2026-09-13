@@ -80,10 +80,13 @@
   .hero {
     min-height: 100vh;
     min-height: 100svh;
-    background: url('assets/border.png') center/cover no-repeat;
+    background:
+      url('assets/border_top.png') center top / 100% auto no-repeat,
+      url('assets/side_left.png') left top / min(10vw, 150px) auto repeat-y,
+      url('assets/side_right.png') right top / min(10vw, 150px) auto repeat-y;
     display: grid;
-    direction: ltr;              /* bouquet pinned to the physical left, like the original card */
-    grid-template-columns: minmax(0,1.05fr) minmax(0,1fr);
+    direction: ltr;
+    grid-template-columns: minmax(0,1fr);
     align-items: center;
     max-width: 980px;
     margin: 0 auto;
@@ -214,11 +217,14 @@
   /* mobile hero — same frame, delicate flowers, big type */
   @media (max-width: 640px) {
     .hero {
-      grid-template-columns: minmax(0,1fr) minmax(0,1.42fr); gap: 0; padding: 2.5rem .5rem 14svh 0; min-height: 100svh;
-      background-image: url('assets/border_mobile.png');
+      grid-template-columns: minmax(0,1fr); gap: 0; padding: 2.5rem 0 10svh; min-height: 100svh;
+      background:
+        url('assets/border_top_mobile.png') center top / 100% auto no-repeat,
+        url('assets/side_left.png') left top / min(15vw, 68px) auto repeat-y,
+        url('assets/side_right.png') right top / min(15vw, 68px) auto repeat-y;
     }
+    .hero-text { padding: 0 clamp(3.4rem, 17vw, 5rem); }
     .bouquet { max-height: 70svh; }
-    .hero-text { padding-right: 1.1rem; }
     .bsd { margin-top: clamp(1.4rem, 5svh, 3rem); }
     body.dati .bsd { margin-top: clamp(2rem, 7svh, 4rem); }
     body.dati .scroll-hint { position: static; transform: none; margin: 1.2rem auto 0; display: inline-flex; }
@@ -265,7 +271,11 @@
   .cd-lbl { font-family: "Heebo"; font-size: .72rem; color: var(--sage); letter-spacing: .25em; margin-top: .1rem; }
 
   /* ---------- timeline ---------- */
-  .timeline-section { position: relative; padding: 4.5rem 1rem 3rem; max-width: 580px; margin: 0 auto; overflow: hidden; }
+  .timeline-section {
+    background:
+      url('assets/side_left.png') left top / min(11vw, 110px) auto repeat-y,
+      url('assets/side_right.png') right top / min(11vw, 110px) auto repeat-y;
+    padding-left: min(13vw, 130px); padding-right: min(13vw, 130px); position: relative; padding: 4.5rem 1rem 3rem; max-width: 580px; margin: 0 auto; overflow: hidden; }
   .timeline-title {
     text-align: center; color: var(--wine); font-weight: 400; letter-spacing: .35em;
     font-family: "Frank Ruhl Libre", serif; font-size: 1.4rem; margin-bottom: 3.5rem;
@@ -349,9 +359,6 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="bouquet-wrap fade-up">
-    <img class="bouquet" src="assets/bouquet_alpha.png" alt="">
-  </div>
   <div class="hero-text">
     <div class="bsd heb fade-up" data-i18n="bsd">ב״ה</div>
     <div class="invite1 fade-up heb" data-i18n="invite1">מתרגשים להזמינכם</div>
@@ -553,7 +560,7 @@
 
   // gentle parallax on the hero bouquet
   const bq = document.querySelector('.bouquet');
-  addEventListener('scroll', () => {
+  if (bq) addEventListener('scroll', () => {
     bq.style.translate = '0 ' + Math.min(scrollY * 0.12, 70) + 'px';
   }, { passive: true });
 
