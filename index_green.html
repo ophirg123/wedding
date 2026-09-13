@@ -270,15 +270,15 @@
   /* ---------- timeline ---------- */
   .timeline-section {
     background: none;
-    position: relative; padding: 4.5rem 3.4rem 3rem; max-width: 580px; margin: 0 auto; overflow: hidden; }
-  .timeline-title {
+    position: relative; padding: 4.5rem 1.6rem 3rem; overflow: hidden; }
+  .timeline-title { white-space: nowrap;
     text-align: center; color: var(--wine); font-weight: 400; letter-spacing: .35em;
     font-family: "Frank Ruhl Libre", serif; font-size: 1.4rem; margin-bottom: 3.5rem;
     display: flex; align-items: center; gap: 1.2rem;
   }
   .timeline-title::before { content: ''; flex: 1; height: 1px; background: linear-gradient(to left, transparent, var(--gold-light)); }
   .timeline-title::after  { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--gold-light)); }
-  .timeline { position: relative; }
+  .timeline { max-width: 580px; margin-left: auto; margin-right: auto; position: relative; }
   .tl-svg { position: absolute; top: 0; right: 50%; transform: translateX(50%); height: 100%; width: 120px; overflow: visible; }
   .tl-path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; }
   .tl-dot {
@@ -369,13 +369,17 @@
   .hero .rule       { margin: 4.5cqw auto !important; width: 52%; gap: .7em; }
   .hero .scroll-hint { display: none; }
   html, body { overflow-x: clip; max-width: 100%; }
-  .timeline, .timeline-title, .countdown, .count-title { max-width: 100%; }
+  .timeline-title, .countdown, .count-title { max-width: 100%; }
+  .timeline { max-width: min(580px, 100%); }
   .tl-item { max-width: 100%; }
   .count-section, .timeline-section {
     position: relative;
+    max-width: 980px; margin-left: auto; margin-right: auto;
     background-image: url('assets/g_paper_tile.png');
-    background-repeat: repeat-y;
-    background-size: 100% auto;
+    background-repeat: repeat;
+    /* fixed size so the blossoms are the SAME scale as on the hero sheet
+       (the hero shows its 1024px-wide art at 118% of a 430px card = ~507px) */
+    background-size: 1014px auto;
     background-position: top center;
   }
   .count-section > *, .timeline-section > * { position: relative; z-index: 1; }
@@ -387,21 +391,15 @@
   /* ---- soft botanical groups through the middle of the page ---- */
   .count-section, .timeline-section {
     position: relative;
+    max-width: 980px; margin-left: auto; margin-right: auto;
     background-image: url('assets/g_paper_tile.png');
-    background-repeat: repeat-y;
-    background-size: 100% auto;
+    background-repeat: repeat;
+    /* fixed size so the blossoms are the SAME scale as on the hero sheet
+       (the hero shows its 1024px-wide art at 118% of a 430px card = ~507px) */
+    background-size: 1014px auto;
     background-position: top center;
   }
   .count-section > *, .timeline-section > * { position: relative; z-index: 1; }
-  .grp { position: absolute; z-index: 0; pointer-events: none; user-select: none; width: auto; }
-  .grp.blossom { display: none; }
-  .grp.leafy   { opacity: .9; }
-
-  .g-c1 { display: none; }
-  .g-t1 { top:  5%;  left: -30%;  height: min(40svh, 410px); }
-  .g-t2 { top: 25%;  right: -31%; height: min(38svh, 390px); transform: scaleX(-1); }
-  .g-t3 { top: 48%;  left: -30%;  height: min(36svh, 370px); }
-  .g-t4 { top: 70%;  right: -31%; height: min(38svh, 390px); transform: scaleX(-1); }
 </style>
 </head>
 <body>
@@ -444,7 +442,6 @@
 
 <!-- COUNTDOWN -->
 <section class="count-section" id="countdown-sec">
-    <img class="grp blossom g-c1" src="assets/g_blossoms.png" alt="" aria-hidden="true">
   <div class="count-title fade-up heb" data-i18n="count_title">הספירה לאחור החלה</div>
   <div class="countdown fade-up">
     <div class="cd-unit"><div class="cd-num" id="cd-d">–</div><div class="cd-lbl heb" data-i18n="days">ימים</div></div>
@@ -456,12 +453,6 @@
 
 <!-- TIMELINE -->
 <section class="timeline-section">
-    <img class="grp leafy g-t1" src="assets/g_group_b.png" alt="" aria-hidden="true">
-    <img class="grp leafy g-t2" src="assets/g_group_a.png" alt="" aria-hidden="true">
-    <img class="grp leafy g-t3" src="assets/g_group_b.png" alt="" aria-hidden="true">
-    <img class="grp leafy g-t4" src="assets/g_group_b.png" alt="" aria-hidden="true">
-    <img class="grp blossom g-t5" src="assets/g_blossoms.png" alt="" aria-hidden="true">
-    <img class="grp blossom g-t6" src="assets/g_blossoms.png" alt="" aria-hidden="true">
   <h2 class="timeline-title fade-up" data-i18n="tl_title">לוח הזמנים של הערב</h2>
   <div class="timeline" id="timeline">
     <svg class="tl-svg" viewBox="0 0 120 990" preserveAspectRatio="none">
