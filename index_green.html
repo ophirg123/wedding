@@ -270,7 +270,7 @@
   /* ---------- timeline ---------- */
   .timeline-section {
     background: none;
-    padding-left: min(13vw, 130px); padding-right: min(13vw, 130px); position: relative; padding: 4.5rem 1rem 3rem; max-width: 580px; margin: 0 auto; overflow: hidden; }
+    position: relative; padding: 4.5rem 3.4rem 3rem; max-width: 580px; margin: 0 auto; overflow: hidden; }
   .timeline-title {
     text-align: center; color: var(--wine); font-weight: 400; letter-spacing: .35em;
     font-family: "Frank Ruhl Libre", serif; font-size: 1.4rem; margin-bottom: 3.5rem;
@@ -371,7 +371,13 @@
   html, body { overflow-x: clip; max-width: 100%; }
   .timeline, .timeline-title, .countdown, .count-title { max-width: 100%; }
   .tl-item { max-width: 100%; }
-  .count-section, .timeline-section { position: relative; }
+  .count-section, .timeline-section {
+    position: relative;
+    background-image: url('assets/g_paper_tile.png');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: top center;
+  }
   .count-section > *, .timeline-section > * { position: relative; z-index: 1; }
 
     position: absolute; z-index: 0; pointer-events: none; user-select: none;
@@ -379,23 +385,23 @@
   }
 
   /* ---- soft botanical groups through the middle of the page ---- */
-  .count-section, .timeline-section { position: relative; }
+  .count-section, .timeline-section {
+    position: relative;
+    background-image: url('assets/g_paper_tile.png');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: top center;
+  }
   .count-section > *, .timeline-section > * { position: relative; z-index: 1; }
   .grp { position: absolute; z-index: 0; pointer-events: none; user-select: none; width: auto; }
-  .grp.blossom { opacity: .55; }
-  .grp.leafy   { opacity: .6; }
+  .grp.blossom { display: none; }
+  .grp.leafy   { opacity: .9; }
 
-  /* countdown: a pale blossom watermark only - the section is too short for foliage */
-  .g-c1 { top: -14%; right: -16%; height: min(30svh, 300px); }
-
-  /* timeline: leafy groups sit in the bands where the item is on the OTHER side */
-  .g-t1 { top: 12%;  left: -9%;   height: min(19svh, 185px); }
-  .g-t2 { top: 27%;  right: -9%;  height: min(19svh, 185px); transform: scaleX(-1); }
-  .g-t3 { top: 42%;  left: -8%;   height: min(18svh, 175px); }
-  .g-t4 { top: 55.5%; right: -8%; height: min(17svh, 165px); transform: scaleX(-1); }
-  /* plus two pale blossom drifts that may pass behind the text, as in the hero */
-  .g-t5 { top: 55%;  left: 4%;    height: min(26svh, 260px); }
-  .g-t6 { top: 86%;  right: 2%;   height: min(24svh, 240px); }
+  .g-c1 { display: none; }
+  .g-t1 { top:  5%;  left: -30%;  height: min(40svh, 410px); }
+  .g-t2 { top: 25%;  right: -31%; height: min(38svh, 390px); transform: scaleX(-1); }
+  .g-t3 { top: 48%;  left: -30%;  height: min(36svh, 370px); }
+  .g-t4 { top: 70%;  right: -31%; height: min(38svh, 390px); transform: scaleX(-1); }
 </style>
 </head>
 <body>
