@@ -108,7 +108,9 @@
   }
   .hero::before {
     content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-    background: url('assets/g_bg.jpg') center center / 118% 100% no-repeat;
+    /* cover, NOT '118% 100%': the hero's aspect already matches the art, so a
+       separate width/height stretched every leaf 18% wider than drawn */
+    background: url('assets/g_bg.jpg') center center / cover no-repeat;
   }
   .hero-text { position: absolute; top: 19%; left: 11.5%; right: 11.5%; width: auto; z-index: 2;  padding-block: 2.5rem 1rem; text-align: center; direction: ltr; min-width: 0; }
   .invite1 {
@@ -379,11 +381,17 @@
   .hero .hebdate    { font-size: 3.3cqw !important; margin-top: 1cqw; letter-spacing: .1em; }
   .hero .venue      { font-size: 4.0cqw !important; margin-top: 5cqw; letter-spacing: .18em; }
   .hero .reception  { font-size: 3.3cqw !important; margin-top: 2.6cqw; white-space: nowrap; }
-  .hero .seeyou-wrap { padding-right: 13cqw; }   /* clear the monstera leaf on the right */
-  .hero .rule { padding-right: 13cqw; }          /* keep the heart rule centred over it */
+  /* the leaf still reaches this line, but far less than when the art was
+     stretched - 13cqw was tuned against the distorted version */
+  .hero .seeyou-wrap { padding-right: 10cqw; }
+  .hero .rule        { padding-right: 10cqw; }
   .hero .seeyou     { font-size: 3.3cqw !important; margin-top: 2.2cqw; color: #b99a6b; letter-spacing: .16em; font-style: normal; }
   .hero .parents    { margin-top: 7.5cqw !important; gap: 6cqw !important; }
   /* Dutch names are far longer than the Hebrew ones and ran under the monstera */
+  /* 'Met veel liefde nodigen wij jullie uit' is far longer than the Hebrew and
+     is nowrap, so at hero scale it ran under the left-hand leaf */
+  body.nl .hero .invite1      { font-size: 3.9cqw !important; }
+  body.nl .hero .invite2      { font-size: 3.1cqw !important; }
   body.nl .hero .parents      { padding-right: 7cqw; gap: 4cqw !important; }
   body.nl .hero .parent-label { font-size: 2.4cqw !important; white-space: nowrap; }
   body.nl .hero .parent-names { font-size: 2.8cqw !important; }
