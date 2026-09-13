@@ -325,7 +325,11 @@
   .tl-item.show .tl-vid { opacity: 1; transform: none; }
 
   /* ---------- rebbe blessing (dati) ---------- */
-  .blessing { text-align: center; padding: 3.5rem 1.5rem 2.5rem; }
+  .blessing {
+    text-align: center; padding: 3.5rem 1.5rem 2.5rem;
+    max-width: 980px; margin-left: auto; margin-right: auto;
+    background: url('assets/g_paper_tile.png') top center/1014px auto repeat;
+  }
   /* the Rebbe's ksav yad kodesh is reproduced as-is, like a signature:
      no tint, no recolour, no opacity - his own ink, unchanged */
   .bl-img { width: min(62vw, 340px); }   /* below the scan's native size, so it stays crisp */
@@ -394,6 +398,11 @@
   body.dati .hero .hebdate { font-size: 3.1cqw !important; }
   body.dati .hero .venue   { font-size: 3.7cqw !important; margin-top: 3.4cqw; }
   body.dati .hero .parents { margin-top: 4.5cqw !important; padding-right: 11cqw; gap: 4cqw !important; }
+  /* חופה וקידושין makes this line much longer than the secular one, and it ran
+     into the vine on the right */
+  body.dati .hero .venue     { padding-right: 9cqw; }
+  body.dati .hero .reception { padding-right: 9cqw; font-size: 3.0cqw !important; }
+  body.dati .count-section   { display: none; }   /* no countdown on the dati card */
   body.dati .hero .rule, body.dati .hero .seeyou-wrap { padding-right: 11cqw; }
   body.nl .bsd-fixed          { display: none; }   /* Dutch guests: no בס״ד */
   .hero .parent-label { font-size: 2.7cqw !important; letter-spacing: .12em; }
