@@ -22,7 +22,7 @@ try:
         while True:
             r=json.loads(ws.recv())
             if r.get("id")==i[0]: return r
-    cmd("Emulation.setDeviceMetricsOverride",{"width":W,"height":H,"deviceScaleFactor":2,"mobile":True})
+    cmd("Emulation.setDeviceMetricsOverride",{"width":W,"height":H,"deviceScaleFactor":float(os.environ.get("DPR","2")),"mobile":True})
     cmd("Page.enable"); cmd("Page.navigate",{"url":url}); time.sleep(float(os.environ.get("WAIT","3.0")))
     sy=os.environ.get("SCROLLY")
     if sy: cmd("Runtime.evaluate",{"expression":f"scrollTo(0,{sy})"}); time.sleep(1.5)
