@@ -2,6 +2,7 @@
 """Phone-accurate screenshot via CDP. macOS Chrome enforces a ~500px min window,
 so --window-size lies; only Emulation.setDeviceMetricsOverride gives a true 430px viewport.
 Usage: shot.py <url> <out.png> [W] [H] [full]   env SCROLLY=<px> to scroll first."""
+import os
 import json,subprocess,time,base64,urllib.request,sys,os
 from websocket import create_connection
 url,out = sys.argv[1],sys.argv[2]
@@ -22,7 +23,7 @@ try:
             r=json.loads(ws.recv())
             if r.get("id")==i[0]: return r
     cmd("Emulation.setDeviceMetricsOverride",{"width":W,"height":H,"deviceScaleFactor":2,"mobile":True})
-    cmd("Page.enable"); cmd("Page.navigate",{"url":url}); time.sleep(3.0)
+    cmd("Page.enable"); cmd("Page.navigate",{"url":url}); time.sleep(float(os.environ.get("WAIT","3.0")))
     sy=os.environ.get("SCROLLY")
     if sy: cmd("Runtime.evaluate",{"expression":f"scrollTo(0,{sy})"}); time.sleep(1.5)
     r=cmd("Page.captureScreenshot",{"format":"png","captureBeyondViewport":full})
