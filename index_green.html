@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מיכל ואופיר מתחתנים · 3.11.2026 · ביער, חדרה</title>
+<meta property="og:title" content="מיכל ואופיר מתחתנים! 💍">
+<meta property="og:description" content="יום שלישי · 3.11.2026 · קבלת פנים 19:00 · חופה 20:30 · ביער, חדרה">
+<meta property="og:image" content="https://ophirg123.github.io/wedding/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ophirg123.github.io/wedding/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&family=Heebo:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f8f5ef;
+    --wine: #4b4f39;
+    --gold: #c3ac7d;
+    --gold-light: #d8c9a4;
+    --sage: #6c6e54;
+    --ink: #3f4231;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  ::selection { background: var(--wine); color: var(--cream); }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  html, body { overflow-x: clip; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Heebo", sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+
+  /* Dutch (LTR) mode */
+  html[dir="ltr"] .heb, html[dir="ltr"] .tl-item > div { direction: ltr; }
+  html[dir="ltr"] .bsd { display: none; }
+  html[dir="ltr"] .heb { font-family: "Cormorant Garamond", "Frank Ruhl Libre", serif; }
+  html[dir="ltr"] .sb-text, html[dir="ltr"] .cd-lbl, html[dir="ltr"] .count-title { font-family: "Heebo", sans-serif; }
+
+  /* ---------- paper grain — stationery feel ---------- */
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 90; pointer-events: none;
+    opacity: .5; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.93 0 0 0 0 0.89 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- falling petals (subtle) ---------- */
+  .petals-layer {
+    position: fixed; inset: 0; overflow: clip; pointer-events: none; z-index: 6;
+  }
+  .petal {
+    position: absolute; top: 0;
+    animation: rise linear infinite;
+  }
+  .petal img { display:none; width: 100%; animation: spin 9s linear infinite; opacity: .55; }
+  @keyframes rise {
+    0%   { transform: translateY(108vh) translateX(0); }
+    50%  { transform: translateY(50vh) translateX(4vw); }
+    100% { transform: translateY(-14vh) translateX(-3vw); }
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---------- shared ---------- */
+  .fade-up { opacity: 0; transform: translateY(26px); filter: blur(6px); transition: opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease; }
+  .fade-up.show { opacity: 1; transform: translateY(0); filter: blur(0); }
+  .rule {
+    display: flex; align-items: center; justify-content: center; gap: .5em;
+    width: 70px; margin: 1.4rem auto; border: none; background: none; height: auto;
+  }
+  .rule-line { flex: 1; height: 1px; background: var(--gold-light); }
+  .rule-heart { width: .85em; height: .85em; flex: none; overflow: visible; }
+
+  /* ---------- hero ---------- */
+  .hero { container-type: inline-size;
+    min-height: 0;
+    aspect-ratio: 1024 / 1536;
+    background: none;
+    display: grid;
+    direction: ltr;
+    grid-template-columns: minmax(0,1fr);
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .bouquet-wrap { display: flex; justify-content: flex-start; align-items: center; }
+  .bouquet {
+    width: min(51vw, 470px);
+    max-height: 90vh; object-fit: contain;
+    transform-origin: 50% 95%;
+    animation: sway 8s ease-in-out infinite;
+    -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, #000 60%, transparent 98%);
+            mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, #000 60%, transparent 98%);
+  }
+  @keyframes sway { 0%,100% { transform: rotate(-1.4deg); } 50% { transform: rotate(1.4deg); } }
+
+  .bsd {
+    text-align: right; direction: rtl;
+    color: var(--ink); font-size: .95rem;
+    font-family: "Frank Ruhl Libre", serif;
+    margin-bottom: .8rem; padding-right: .4rem;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background: url('assets/g_bg.png') center center / 118% 100% no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, #000 90%, rgba(0,0,0,.55) 96%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 90%, rgba(0,0,0,.55) 96%, transparent 100%);
+  }
+  .hero-text { position: absolute; top: 19%; left: 11.5%; right: 11.5%; width: auto; z-index: 2;  padding-block: 2.5rem 1rem; text-align: center; direction: ltr; min-width: 0; }
+  .invite1 {
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+    letter-spacing: .12em; color: var(--wine); font-weight: 400;
+  }
+  .invite2 {
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: clamp(1.05rem, 3.2vw, 1.4rem);
+    letter-spacing: .14em; color: var(--wine); font-weight: 300; margin-top: .4rem;
+  }
+  .heb { direction: rtl; font-family: "Frank Ruhl Libre", serif; }
+  .names { font-size: 10.5cqw; line-height:1.05; letter-spacing:.01em; margin-top: .4rem; color: var(--wine); font-weight: 400; }
+  .amp { font-family: "Cormorant Garamond", serif; font-style: italic; color: #b98a86; font-size:.95em; }
+  .date {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 6.6cqw; letter-spacing: .28em; text-indent: .3em;
+    color: var(--wine); margin-top: 1.1rem; font-weight: 400;
+  }
+  .hebdate { margin-top: .5rem; color: var(--sage); font-size: 1.05rem; letter-spacing: .2em; }
+  .reception { margin-top: .9rem; color: var(--wine); font-size: 1.05rem; letter-spacing: .12em; font-family: "Frank Ruhl Libre", serif; }
+  .venue { margin-top: .7rem; color: var(--gold); font-size: 1.2rem; letter-spacing: .25em; }
+  .pasuk {
+    color: var(--gold); font-size: .95rem; letter-spacing: .06em; margin-top: .5rem;
+    font-family: "Frank Ruhl Libre", serif; font-style: italic;
+  }
+  .aye {
+    color: var(--ink); font-size: .92rem; letter-spacing: .05em; margin-top: .5rem;
+    font-family: "Frank Ruhl Libre", serif;
+  }
+  .seeyou {
+    color: #b99a6b; font-size: 1.05rem; letter-spacing: .16em; margin-top: 1.1rem;
+    font-family: "Frank Ruhl Libre", serif; font-style: normal;
+  }
+  body.dati .invite1, body.dati .invite2, body.dati .reception { white-space: normal; }
+  body.dati .pasuk { margin: 0 0 .7rem; }
+  body.dati .invite1 { font-size: clamp(.9rem, 4.6vw, 1.15rem); line-height: 1.45; }
+  body.dati .invite2 { line-height: 1.45; }
+  /* dati adds lines — tighten vertical rhythm so the hero still fits one screen */
+  body.dati .rule { margin: .7rem auto; }
+  body.dati .names { font-size: clamp(1.3rem, 7.2vw, 1.9rem); }
+  body.dati .hebdate {
+    color: var(--ink); font-size: clamp(1.15rem, 6vw, 1.7rem); letter-spacing: .08em;
+    margin-top: .9rem; font-weight: 500;
+  }
+  body.dati .date {
+    font-size: clamp(.95rem, 4.6vw, 1.25rem); color: var(--sage);
+    letter-spacing: .18em; text-indent: .18em; margin-top: .2rem;
+  }
+  body.dati .venue { margin-top: .55rem; }
+  body.dati .reception { margin-top: .35rem; }
+  body.dati .seeyou { margin-top: .7rem; }
+  body.dati .parents { margin-top: .8rem; }
+  body.dati .bouquet { margin-top: 3svh; }
+  .parents { margin-top: 2rem; display: flex; justify-content: center; gap: 2.8rem; }
+  .parent-label { color: var(--gold); font-size: .72rem; letter-spacing: .28em; margin-bottom: .25rem; }
+  .parent-names { color: var(--ink); font-size: .95rem; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
+
+  .scroll-hint {
+    position: absolute; bottom: 1.4rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: row; align-items: center; gap: .6rem;
+    text-decoration: none; cursor: pointer; white-space: nowrap;
+  }
+  .sh-text {
+    color: var(--wine); font-size: .82rem; letter-spacing: .22em;
+    font-family: "Frank Ruhl Libre", serif;
+    opacity: 0; animation: shfade 1.1s ease .9s forwards;
+  }
+  @keyframes shfade { to { opacity: 1; } }
+  .chevrons { width: 22px; height: 19px; overflow: visible; }
+  .chev {
+    fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    animation: chevpulse 2.6s ease-in-out infinite both;
+  }
+  .c1 { animation-delay: 2.1s; }
+  .c2 { animation-delay: 2.35s; }
+  @keyframes chevpulse {
+    0%, 8%    { opacity: 0; transform: translateY(-2px); }
+    22%, 55%  { opacity: 1; transform: translateY(0); }
+    78%, 100% { opacity: 0; transform: translateY(2px); }
+  }
+
+
+
+  /* ---------- sticky essentials bar ---------- */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 95;
+    display: flex; align-items: center; justify-content: space-between; gap: .7rem;
+    background: #fffdf9;
+    border-top: 1px solid #e2d5bf; box-shadow: 0 -6px 24px rgba(109,46,60,.12);
+    padding: .7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
+    opacity: 0; pointer-events: none; transition: opacity .45s ease;
+  }
+  .sticky-bar.on { opacity: 1; pointer-events: auto; }
+  .sb-text { font-size: .95rem; color: var(--ink); letter-spacing: .02em; }
+  .sb-text b { color: var(--wine); font-weight: 600; }
+  .sb-btn {
+    flex-shrink: 0; background: var(--wine); color: #fff; text-decoration: none;
+    padding: .65rem 1.5rem; border-radius: 999px; font-size: .95rem; font-weight: 500; letter-spacing: .05em;
+    box-shadow: 0 3px 10px rgba(109,46,60,.35);
+  }
+  .sb-btn:active { transform: scale(.96); }
+
+  /* mobile hero — same frame, delicate flowers, big type */
+  @media (max-width: 640px) {
+    .hero {
+      grid-template-columns: minmax(0,1fr); gap: 0; padding: 0; min-height: 0;
+      aspect-ratio: 1024 / 1536;
+      background: none;
+    }
+    .hero-text { padding: 0; }
+    .bouquet { max-height: 70svh; }
+    .bsd { margin-top: clamp(1.4rem, 5svh, 3rem); }
+    body.dati .bsd { margin-top: clamp(2rem, 7svh, 4rem); }
+    body.dati .scroll-hint { position: static; transform: none; margin: 1.2rem auto 0; display: inline-flex; }
+    .invite1 { font-size: clamp(1rem, 5.8vw, 1.45rem); letter-spacing: .06em; white-space: nowrap; }
+    .invite2 { font-size: clamp(.78rem, 4.3vw, 1.08rem); letter-spacing: .08em; }
+    .names { font-size: clamp(1.45rem, 8.4vw, 2.1rem); white-space: nowrap; }
+    .date { font-size: clamp(1.4rem, 8vw, 2rem); letter-spacing: .1em; text-indent: .1em; white-space: nowrap; }
+    .venue { font-size: clamp(.95rem, 5.4vw, 1.35rem); letter-spacing: .1em; color: var(--wine); font-weight: 500; margin-top: .85rem; white-space: nowrap; }
+    .reception { font-size: clamp(.8rem, 4.4vw, 1.1rem); margin-top: .55rem; white-space: nowrap; }
+    .hebdate { font-size: clamp(.66rem, 3.6vw, .9rem); letter-spacing: .12em; white-space: nowrap; }
+    .pasuk { font-size: clamp(.7rem, 3.8vw, .95rem); }
+    .aye { font-size: clamp(.68rem, 3.6vw, .92rem); }
+    .seeyou { font-size: clamp(.8rem, 4.2vw, 1.05rem); }
+    .parents { margin-top: 1.2rem; gap: clamp(.5rem, 3.6vw, .9rem); }
+    .parent-label { font-size: clamp(.62rem, 3.2vw, .8rem); letter-spacing: .18em; }
+    .parent-names { font-size: clamp(.82rem, 4.2vw, 1.05rem); }
+    .sh-text { font-size: clamp(.66rem, 3.3vw, .82rem); }
+    .sb-text { font-size: clamp(.68rem, 3.8vw, .95rem); }
+    /* Dutch/LTR: longer lines — wrap naturally instead of overflowing */
+    html[dir="ltr"] .invite1 { white-space: normal; font-size: clamp(.95rem, 5vw, 1.3rem); }
+    html[dir="ltr"] .venue { white-space: normal; font-size: clamp(.9rem, 4.6vw, 1.2rem); }
+    html[dir="ltr"] .reception { white-space: normal; font-size: clamp(.78rem, 4vw, 1rem); }
+    html[dir="ltr"] .hebdate { white-space: normal; }
+    .scroll-hint { bottom: 17svh; }
+    .bouquet { width: 52vw; margin-left: -6vw; margin-top: 7svh; }
+    body.dati .bouquet { width: 46vw; margin-left: -2vw; }
+    .forwedding { font-size: .85rem; letter-spacing: .24em; margin-top: 1.3rem; }
+  }
+
+  /* ---------- countdown (minimal, classy) ---------- */
+  .count-section { text-align: center; padding: 4.5rem 1rem 1.5rem; overflow: hidden; }
+  .count-title {
+    color: var(--gold); letter-spacing: .4em; font-size: .85rem; margin-bottom: 1.6rem;
+  }
+  .countdown {
+    display: flex; justify-content: center; align-items: baseline; direction: ltr;
+    font-family: "Cormorant Garamond", serif;
+  }
+  .cd-unit { padding: 0 clamp(.5rem, 2.4vw, 1.1rem); position: relative; }
+  .cd-unit + .cd-unit::before {
+    content: '·'; position: absolute; left: -0.32em; top: 0; color: var(--gold-light); font-size: 1.6rem;
+  }
+  .cd-num { font-size: clamp(1.8rem, 6.5vw, 3.2rem); color: var(--wine); font-weight: 300; font-variant-numeric: tabular-nums; }
+  .cd-lbl { font-family: "Heebo"; font-size: .72rem; color: var(--sage); letter-spacing: .25em; margin-top: .1rem; }
+
+  /* ---------- timeline ---------- */
+  .timeline-section {
+    background: none;
+    padding-left: min(13vw, 130px); padding-right: min(13vw, 130px); position: relative; padding: 4.5rem 1rem 3rem; max-width: 580px; margin: 0 auto; overflow: hidden; }
+  .timeline-title {
+    text-align: center; color: var(--wine); font-weight: 400; letter-spacing: .35em;
+    font-family: "Frank Ruhl Libre", serif; font-size: 1.4rem; margin-bottom: 3.5rem;
+    display: flex; align-items: center; gap: 1.2rem;
+  }
+  .timeline-title::before { content: ''; flex: 1; height: 1px; background: linear-gradient(to left, transparent, var(--gold-light)); }
+  .timeline-title::after  { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--gold-light)); }
+  .timeline { position: relative; }
+  .tl-svg { position: absolute; top: 0; right: 50%; transform: translateX(50%); height: 100%; width: 120px; overflow: visible; }
+  .tl-path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; }
+  .tl-dot {
+    fill: var(--gold); opacity: 0; transition: opacity .8s ease .4s;
+    animation: dotpulse 3.5s ease-in-out infinite; transform-origin: center; transform-box: fill-box;
+  }
+  @keyframes dotpulse { 0%,100% { transform: scale(1);} 50% { transform: scale(1.35);} }
+  .tl-item {
+    width: 46%; display: flex; align-items: center; justify-content: center;
+    direction: ltr; flex-wrap: nowrap;
+    gap: .4rem; min-height: 165px; padding: 0 .2rem;
+    opacity: 0; transition: opacity 1s ease, transform 1s ease;
+  }
+  .tl-item:nth-of-type(odd)  { margin-left: 54%; margin-right: 0; transform: translateX(40px); text-align: right; }
+  .tl-item:nth-of-type(even) { margin-right: 54%; margin-left: 0; transform: translateX(-40px); text-align: left; }
+  .tl-item > div { direction: rtl; min-width: 0; flex: 0 1 auto; }
+  .tl-item.show { opacity: 1; transform: translateX(0); }
+  .tl-time { font-family: "Cormorant Garamond", serif; color: var(--gold); font-weight: 500; font-size: 1.4rem; letter-spacing: .08em; direction: ltr; }
+  .tl-label { color: var(--wine); letter-spacing: .1em; font-size: .95rem; margin-top: .2rem; font-family: "Frank Ruhl Libre", serif; }
+
+  @media (max-width: 640px) {
+    .tl-item { flex-direction: column; gap: 0; align-items: center; justify-content: center; }
+    .tl-item:nth-of-type(odd), .tl-item:nth-of-type(even) { text-align: center; }
+    .tl-time { font-size: 1.25rem; }
+    .tl-label { font-size: .88rem; }
+  }
+
+  /* living ink icons (generated videos) */
+  .tl-vid {
+    width: 94px; height: 94px; flex-shrink: 0;
+    mix-blend-mode: multiply;
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 72%);
+            mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 72%);
+    opacity: 0; transform: scale(.85); transition: opacity 1.2s ease .3s, transform 1.2s ease .3s;
+  }
+  .tl-item.show .tl-vid { opacity: 1; transform: scale(1); }
+
+  /* ---------- rebbe blessing (dati) ---------- */
+  .blessing { text-align: center; padding: 3.5rem 1.5rem 2.5rem; }
+  .bl-img { width: min(78vw, 480px); opacity: .88; }
+  .bl-caption {
+    margin-top: 1.4rem; color: var(--gold); font-size: .8rem; letter-spacing: .22em;
+    font-family: "Frank Ruhl Libre", serif;
+  }
+
+  /* ---------- actions ---------- */
+  .actions {
+    text-align: center; padding: 3rem 1rem calc(min(42vw, 380px) + 2.5rem); position: relative;
+    background: url('assets/g_border_bottom.png') center bottom/min(100%, 905px) auto no-repeat;
+  }
+  .actions-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; max-width: 560px; margin: 0 auto; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .55rem; padding: .95rem 1.9rem; border-radius: 999px;
+    background: rgba(255,253,249,.92); color: var(--wine); text-decoration: none; letter-spacing: .1em;
+    border: 1px solid var(--wine); font-size: 1.02rem;
+    transition: all .3s ease;
+  }
+  .btn-ic { width: 20px; height: 20px; }
+  .cal-group { display: inline-flex; align-items: center; gap: .6rem; }
+  .cal-label {
+    color: var(--wine); font-size: 1.02rem; letter-spacing: .1em;
+    font-family: "Frank Ruhl Libre", serif;
+  }
+  .btn.icon-only { padding: .8rem; border-radius: 50%; }
+  .btn.icon-only .btn-ic { width: 22px; height: 22px; }
+  .btn:hover { background: var(--wine); color: var(--cream); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(109,46,60,.22); }
+  .btn.gold { border-color: var(--gold); color: var(--gold); }
+  .btn.gold:hover { background: var(--gold); color: var(--cream); }
+  .credit { text-align:center; color:#c8bfb1; font-size:.78rem; letter-spacing:.15em; padding: 1rem 0 2rem; }
+
+  /* ===== green variant: hero type locked to the card, like the reference ===== */
+  .hero .bsd-fixed { position: absolute; top: 4.5%; right: 7%; font-size: 2.5cqw; color: var(--sage); letter-spacing: .05em; z-index: 2; }
+  .hero .invite1    { font-size: 4.6cqw !important; letter-spacing: .04em !important; white-space: nowrap; line-height: 1.5; }
+  .hero .invite2    { font-size: 3.5cqw !important; letter-spacing: .04em !important; line-height: 1.5; }
+  .hero .names      { font-size: 9.6cqw !important; margin-top: 4.5cqw; line-height: 1.15; }
+  .hero .date       { font-size: 6.6cqw !important; margin-top: 4.5cqw; }
+  .hero .hebdate    { font-size: 3.3cqw !important; margin-top: 1cqw; letter-spacing: .1em; }
+  .hero .venue      { font-size: 4.0cqw !important; margin-top: 5cqw; letter-spacing: .18em; }
+  .hero .reception  { font-size: 3.3cqw !important; margin-top: 2.6cqw; white-space: nowrap; }
+  .hero .seeyou     { font-size: 3.3cqw !important; margin-top: 2.2cqw; color: #b99a6b; letter-spacing: .16em; font-style: normal; }
+  .hero .parents    { margin-top: 7.5cqw !important; gap: 6cqw !important; }
+  .hero .parent-label { font-size: 2.7cqw !important; letter-spacing: .12em; }
+  .hero .parent-names { font-size: 3.2cqw !important; line-height: 1.45; white-space: nowrap; }
+  .hero .rule       { margin: 4.5cqw auto !important; width: 52%; gap: .7em; }
+  .hero .scroll-hint { display: none; }
+  html, body { overflow-x: clip; max-width: 100%; }
+  .timeline, .timeline-title, .countdown, .count-title { max-width: 100%; }
+  .tl-item { max-width: 100%; }
+  .count-section, .timeline-section { position: relative; }
+  .count-section { margin-top: -9svh; padding-top: 11svh; }
+  .count-section > *, .timeline-section > * { position: relative; z-index: 1; }
+
+  /* gentle botanical CLUSTERS — like the hero, not a continuous border */
+  .sprig {
+    position: absolute; z-index: 0; pointer-events: none; user-select: none;
+    width: auto; opacity: .34;
+  }
+  .sprig.s1 { top: -3svh;  left: -5%;  height: min(13svh, 118px); }
+  .sprig.s2 { top: 31%;    right: -7%;  height: min(9svh, 82px);  transform: scaleX(-1); opacity: .3; }
+  .sprig.s3 { top: 45%;    left: -4%;   height: min(10svh, 92px);  opacity: .28; }
+  .sprig.s4 { top: 86%;    right: -7%;  height: min(9svh, 82px);  transform: scaleX(-1) rotate(6deg); opacity: .28; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="bsd-fixed heb">ב״ה</div>
+    <div class="hero-text">
+    
+    <div class="invite1 fade-up heb" data-i18n="invite1">מתרגשים להזמינכם</div>
+    <div class="invite2 fade-up heb" data-i18n="invite2">לחגוג עמנו את יום נישואינו</div>
+    <div class="rule fade-up"><span class="rule-line"></span><svg class="rule-heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 20.5C12 20.5 2.5 14.6 2.5 8.2 2.5 4.9 5 2.5 8 2.5c1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 3 0 5.5 2.4 5.5 5.7 0 6.4-9.5 12.3-9.5 12.3z" fill="none" stroke="#c3ac7d" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="rule-line"></span></div>
+    <div class="names fade-up heb" data-i18n="names">מיכל <span class="amp">&</span> אופיר</div>
+    <div class="pasuk fade-up heb" hidden>קוֹל שָׂשׂוֹן וְקוֹל שִׂמְחָה, קוֹל חָתָן וְקוֹל כַּלָּה</div>
+    <div class="aye fade-up heb" hidden>שתתקיים אי״ה בשעה טובה ומוצלחת</div>
+    <div class="date fade-up">3 . 11 . 26</div>
+    <div class="hebdate fade-up heb" data-i18n="hebdate">כ״ג בחשון תשפ״ז</div>
+    <div class="venue fade-up heb" data-i18n="venue">״ביער״ · חדרה</div>
+    <div class="reception fade-up heb" data-i18n="reception">קבלת פנים 19:00 · חופה 20:30</div>
+    <div class="parents fade-up heb">
+      <div class="parent-block">
+        <div class="parent-label" data-i18n="plabel_bride">הורי הכלה</div>
+        <div class="parent-names" data-i18n="pnames_bride">רונן ונירית פלד‑חדד</div>
+      </div>
+      <div class="parent-block">
+        <div class="parent-label" data-i18n="plabel_groom">הורי החתן</div>
+        <div class="parent-names" data-i18n="pnames_groom">רודי וחגית חרותקה</div>
+      </div>
+    </div>
+    <div class="rule fade-up"><span class="rule-line"></span><svg class="rule-heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 20.5C12 20.5 2.5 14.6 2.5 8.2 2.5 4.9 5 2.5 8 2.5c1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 3 0 5.5 2.4 5.5 5.7 0 6.4-9.5 12.3-9.5 12.3z" fill="none" stroke="#c3ac7d" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="rule-line"></span></div><div class="seeyou fade-up heb">נשמח לראותכם</div>
+  </div>
+  <a class="scroll-hint heb" href="#countdown-sec">
+    <span class="sh-text" data-i18n="scroll">גללו למטה</span>
+    <svg class="chevrons" viewBox="0 0 30 26" aria-hidden="true">
+      <path class="chev c1" d="M4 2 C 8 5.5, 11.5 8.5, 15 11 C 18.5 8.5, 22 5.5, 26 2"/>
+      <path class="chev c2" d="M4 13 C 8 16.5, 11.5 19.5, 15 22 C 18.5 19.5, 22 16.5, 26 13"/>
+    </svg>
+  </a>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="count-section" id="countdown-sec">
+    <img class="sprig s1" src="assets/g_leftflank.png" alt="" aria-hidden="true">
+  <div class="count-title fade-up heb" data-i18n="count_title">הספירה לאחור החלה</div>
+  <div class="countdown fade-up">
+    <div class="cd-unit"><div class="cd-num" id="cd-d">–</div><div class="cd-lbl heb" data-i18n="days">ימים</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-h">–</div><div class="cd-lbl heb" data-i18n="hours">שעות</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-m">–</div><div class="cd-lbl heb" data-i18n="minutes">דקות</div></div>
+    <div class="cd-unit"><div class="cd-num" id="cd-s">–</div><div class="cd-lbl heb" data-i18n="seconds">שניות</div></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+    <img class="sprig s2" src="assets/g_leftflank.png" alt="" aria-hidden="true">
+    <img class="sprig s3" src="assets/g_sprig_tr.png" alt="" aria-hidden="true">
+    <img class="sprig s4" src="assets/g_leftflank.png" alt="" aria-hidden="true">
+  <h2 class="timeline-title fade-up" data-i18n="tl_title">לוח הזמנים של הערב</h2>
+  <div class="timeline" id="timeline">
+    <svg class="tl-svg" viewBox="0 0 120 990" preserveAspectRatio="none">
+      <path class="tl-path" id="goldPath"
+        d="M60 0 C 20 88, 100 154, 60 242 C 20 330, 100 396, 60 484 C 20 572, 100 638, 60 726 C 20 814, 100 880, 60 990"/>
+      <circle class="tl-dot" cx="43" cy="83"  r="4"/>
+      <circle class="tl-dot" cx="77" cy="248" r="4"/>
+      <circle class="tl-dot" cx="43" cy="413" r="4"/>
+      <circle class="tl-dot" cx="77" cy="578" r="4"/>
+      <circle class="tl-dot" cx="43" cy="743" r="4"/>
+      <circle class="tl-dot" cx="77" cy="908" r="4"/>
+    </svg>
+
+    <!-- 19:00 reception -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_glasses_sq.mp4" poster="assets/icon_glasses_sq_poster.jpg" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">19:00</div><div class="tl-label" data-i18n="tl_reception">קבלת פנים</div></div>
+    </div>
+
+    <!-- 20:30 chuppah -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_rings_sq.mp4" poster="assets/icon_rings_sq_poster.jpg" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">20:30</div><div class="tl-label" data-i18n="tl_chuppah">חופה</div></div>
+    </div>
+
+    <!-- 21:15 dinner -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_dinner_sq.mp4" poster="assets/icon_dinner_sq_poster.jpg" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">21:15</div><div class="tl-label" data-i18n="tl_dinner">ארוחת ערב</div></div>
+    </div>
+
+    <!-- 22:00 dance -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_dance_sq.mp4" poster="assets/icon_dance_sq_poster.jpg" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">22:00</div><div class="tl-label" data-i18n="tl_dance">ריקודים</div></div>
+    </div>
+
+    <!-- 23:30 desserts -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_desserts_sq.mp4" poster="assets/icon_desserts_sq_poster.jpg" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">22:30</div><div class="tl-label" data-i18n="tl_desserts">מתוקים</div></div>
+    </div>
+
+    <!-- end — wedding car -->
+    <div class="tl-item">
+      <video class="tl-vid" src="assets/icon_car_sq.mp4" poster="assets/icon_car_sq_poster.jpg" autoplay muted loop playsinline></video>
+      <div><div class="tl-time">02:00</div><div class="tl-label" data-i18n="tl_end">מעגל סיום</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REBBE BLESSING (dati only) -->
+<section class="blessing" hidden>
+  <div class="rule fade-up"><span class="rule-line"></span><svg class="rule-heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 20.5C12 20.5 2.5 14.6 2.5 8.2 2.5 4.9 5 2.5 8 2.5c1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 3 0 5.5 2.4 5.5 5.7 0 6.4-9.5 12.3-9.5 12.3z" fill="none" stroke="#c3ac7d" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="rule-line"></span></div>
+  <img class="bl-img fade-up" src="assets/rebbe_blessing.png" alt="ברכת הרבי — בנין עדי עד על יסודי התורה והמצוה">
+  <div class="bl-caption fade-up heb">מברכתו של הרבי מליובאוויטש</div>
+</section>
+
+<!-- ACTIONS -->
+<section class="actions">
+  <div class="actions-inner">
+    <a class="btn heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes"><img class="btn-ic" src="assets/icon_waze.svg" alt=""><span data-i18n="btn_waze">ניווט עם Waze</span></a>
+    <div class="cal-group heb">
+      <span class="cal-label" data-i18n="btn_cal">הוסיפו ליומן</span>
+      <a class="btn icon-only" aria-label="Google Calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D7%94%D7%97%D7%AA%D7%95%D7%A0%D7%94%20%D7%A9%D7%9C%20%D7%9E%D7%99%D7%9B%D7%9C%20%D7%95%D7%90%D7%95%D7%A4%D7%99%D7%A8&dates=20261103T170000Z/20261104T000000Z&location=%D7%91%D7%99%D7%A2%D7%A8%2C%20%D7%97%D7%93%D7%A8%D7%94" target="_blank" rel="noopener"><img class="btn-ic" src="assets/icon_googlecalendar.svg" alt="Google"></a>
+      <a class="btn icon-only" aria-label="Apple Calendar" id="calBtn" href="#"><img class="btn-ic" src="assets/icon_apple.svg" alt="Apple"></a>
+    </div>
+  </div>
+</section>
+
+<div class="credit heb" data-i18n="credit">מיכל ואופיר · 3.11.2026</div>
+
+<!-- sticky essentials -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sb-text heb" data-i18n="sb_text"><b>3.11.26</b> · קבלת פנים 19:00 · חופה 20:30 · <b>ביער, חדרה</b></div>
+  <a class="sb-btn heb" href="https://waze.com/ul?q=ביער%20חדרה&navigate=yes" data-i18n="sb_btn">ניווט</a>
+</div>
+
+<script>
+
+  // ---- i18n (Dutch) — single page, ?lang=nl ----
+  const NL = {
+    invite1: 'Met veel liefde nodigen wij jullie uit',
+    invite2: 'om onze bruiloft samen te vieren',
+    names: 'Michal <span class="amp">&</span> Ophir',
+    hebdate: 'dinsdag 3 november 2026',
+    venue: '\u201cBaYaar\u201d \u00b7 Hadera, Isra\u00ebl',
+    reception: 'Ontvangst · 19:00 · Choepa · 20:30',
+    plabel_bride: 'Ouders van de bruid', pnames_bride: 'Ronen & Nirit Peled‑Hadad',
+    plabel_groom: 'Ouders van de bruidegom', pnames_groom: 'Rudi & Hagit Gruteke',
+    scroll: 'scroll omlaag',
+    count_title: 'Aftellen naar de grote dag',
+    days: 'dagen', hours: 'uren', minutes: 'minuten', seconds: 'seconden',
+    tl_title: 'PROGRAMMA',
+    tl_reception: 'Ontvangst', tl_chuppah: 'Choepa (ceremonie)', tl_dinner: 'Diner',
+    tl_dance: 'Dansfeest', tl_desserts: 'Zoetigheden', tl_end: 'Afsluitende kring',
+    btn_waze: 'Navigeer met Waze', btn_cal: 'Zet in agenda:',
+    sb_text: '<b>3.11.26</b> · ontvangst 19:00 · choepa 20:30 · <b>Hadera</b>',
+    sb_btn: 'Route',
+    credit: 'Michal & Ophir \u00b7 3.11.2026'
+  };
+  // ---- religious (dati) variant — same page, ?lang=dati ----
+  const DATI = {
+    bsd: 'בעזה״ת',
+    invite1: 'בלב מלא שמחה והודיה לה׳ יתברך על כל הטוב אשר גמלנו',
+    invite2: 'אנו מתכבדים להזמינכם להשתתף עמנו בשמחת כלולות ילדינו היקרים',
+    reception: 'קבלת פנים · 19:00 · חופה וקידושין · 20:30'
+  };
+  const lang = new URLSearchParams(location.search).get('lang');
+  if (lang === 'dati') {
+    document.body.classList.add('dati');
+    document.querySelectorAll('[data-i18n]').forEach(el => { const t = DATI[el.dataset.i18n]; if (t) el.innerHTML = t; });
+    const pasuk = document.querySelector('.pasuk'), inv1 = document.querySelector('.invite1');
+    inv1.parentNode.insertBefore(pasuk, inv1);
+    pasuk.hidden = false;
+    document.querySelector('.aye').hidden = false;
+    document.querySelector('.seeyou').hidden = false;
+    document.querySelector('.blessing').hidden = false;
+    document.querySelector('.timeline-section').style.display = 'none';
+    const hd = document.querySelector('.hebdate'), dt = document.querySelector('.date');
+    dt.parentNode.insertBefore(hd, dt);
+    document.querySelector('.hero-text').appendChild(document.querySelector('.scroll-hint'));
+  }
+  if (lang === 'nl') {
+    document.documentElement.lang = 'nl';
+    document.documentElement.dir = 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(el => { const t = NL[el.dataset.i18n]; if (t) el.innerHTML = t; });
+    document.title = 'Michal & Ophir gaan trouwen \u00b7 3.11.2026 \u00b7 Hadera';
+  }
+  // floating watercolor petals — contained in a clipped fixed layer
+  const petalLayer = document.createElement('div');
+  petalLayer.className = 'petals-layer';
+  document.body.appendChild(petalLayer);
+  const sprites = ['petal6','petal7','petal0','petal6','petal4','petal7','petal5','petal6'];
+  sprites.forEach((s, i) => {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    const mobile = innerWidth < 640;
+    let size = (s === 'petal6' || s === 'petal7') ? 18 + Math.random()*10 : 24 + Math.random()*14;
+    if (mobile) size *= 0.7;
+    p.style.width = size + 'px';
+    p.style.left = (i / sprites.length * 100 + Math.random()*8) + 'vw';
+    p.style.animationDuration = (16 + Math.random()*14) + 's';
+    p.style.animationDelay = (-Math.random()*25) + 's';
+    const img = document.createElement('img');
+    img.src = 'assets/' + s + '.png';
+    img.style.animationDuration = (7 + Math.random()*6) + 's';
+    p.appendChild(img);
+    petalLayer.appendChild(p);
+  });
+
+  // gentle parallax on the hero bouquet
+  const bq = document.querySelector('.bouquet');
+  if (bq) addEventListener('scroll', () => {
+    bq.style.translate = '0 ' + Math.min(scrollY * 0.12, 70) + 'px';
+  }, { passive: true });
+
+  // sticky essentials bar — appears after the hero
+  const bar = document.getElementById('stickyBar');
+  addEventListener('scroll', () => {
+    bar.classList.toggle('on', scrollY > innerHeight * 0.9);
+  }, { passive: true });
+
+  // fade-up + icon draw on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('show')), { threshold: .25 });
+  document.querySelectorAll('.fade-up, .tl-item').forEach(el => io.observe(el));
+
+  // countdown to 3.11.2026 19:00
+  const target = new Date('2026-11-03T19:00:00+02:00');
+  function tick() {
+    const s = Math.max(0, Math.floor((target - new Date())/1000));
+    document.getElementById('cd-d').textContent = Math.floor(s/86400);
+    document.getElementById('cd-h').textContent = Math.floor(s/3600)%24;
+    document.getElementById('cd-m').textContent = Math.floor(s/60)%60;
+    document.getElementById('cd-s').textContent = s%60;
+  }
+  tick(); setInterval(tick, 1000);
+
+  // scroll-drawn gold path + dots
+  const path = document.getElementById('goldPath');
+  const len = path.getTotalLength();
+  path.style.strokeDasharray = len;
+  path.style.strokeDashoffset = len;
+  const tl = document.getElementById('timeline');
+  const dots = [...document.querySelectorAll('.tl-dot')];
+  addEventListener('scroll', () => {
+    const r = tl.getBoundingClientRect();
+    const prog = Math.min(1, Math.max(0, (innerHeight - r.top) / (r.height + innerHeight*0.5)));
+    path.style.strokeDashoffset = len * (1 - prog);
+    dots.forEach((d, i) => d.style.opacity = prog > (i + .6) / dots.length ? 1 : 0);
+  }, { passive: true });
+
+  // never land mid-page: always start at the top (no browser scroll restoration)
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  addEventListener('pageshow', e => { if (e.persisted) scrollTo(0, 0); });
+  if (location.hash) {
+    history.replaceState(null, '', location.pathname + location.search);
+    scrollTo(0, 0);
+    addEventListener('load', () => scrollTo(0, 0));
+  }
+  // scroll-hint: smooth scroll without putting a #hash in the URL
+  document.querySelector('.scroll-hint').addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('countdown-sec').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // iOS Low-Power Mode blocks video autoplay -> swap blocked videos to their poster image
+  document.querySelectorAll('video.tl-vid').forEach(v => {
+    const toImg = () => {
+      const img = document.createElement('img');
+      img.className = v.className; img.src = v.poster; img.alt = '';
+      v.replaceWith(img);
+    };
+    const p = v.play();
+    if (p) p.catch(toImg);
+  });
+
+  // add to calendar (ICS)
+  document.getElementById('calBtn').addEventListener('click', e => {
+    e.preventDefault();
+    const ics = ['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT',
+      'DTSTART:20261103T170000Z','DTEND:20261104T000000Z',
+      'SUMMARY:החתונה של מיכל ואופיר 💍','LOCATION:ביער, חדרה',
+      'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'}));
+    a.download = 'ophir-michal-wedding.ics'; a.click();
+  });
+</script>
+</body>
+</html>

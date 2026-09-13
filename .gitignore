@@ -27,3 +27,7 @@ assets/bouquet_ink.png
 assets/intro.mp4
 assets/bouquet_colorful.png
 .DS_Store
+
+# generated icon experiments (kept on disk, not in git)
+icons/rejected/
+tools/.venv/
