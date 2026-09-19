@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&family=Heebo:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #f8f3ed;   /* matches the new art's paper: 248/243/237 */
+    --cream: #f6f0eb;   /* matches the art's paper: 246/240/235 */
     --wine: #4b4f39;
     --gold: #c3ac7d;
     /* the light gold is decorative only - it is 2.0:1 on the paper.
@@ -115,7 +115,7 @@
        separate width/height stretched every leaf 18% wider than drawn */
     background: url('assets/g_bg.jpg') center center / cover no-repeat;
   }
-  .hero-text { position: absolute; top: 19%; left: 12.5%; right: 16.5%; width: auto; z-index: 2;  padding-block: 2.5rem 1rem; text-align: center; direction: ltr; min-width: 0; }
+  .hero-text { position: absolute; top: 19%; left: 14%; right: 15%; width: auto; z-index: 2;  padding-block: 2.5rem 1rem; text-align: center; direction: ltr; min-width: 0; }
   .invite1 {
     font-family: "Frank Ruhl Libre", serif;
     font-size: clamp(1.5rem, 4.5vw, 2.1rem);
@@ -174,8 +174,8 @@
   body.dati .parents { margin-top: .8rem; }
   body.dati .bouquet { margin-top: 3svh; }
   .parents { margin-top: 2rem; display: flex; justify-content: center; gap: 2.8rem; }
-  .parent-label { color: var(--gold-text); font-size: .72rem; letter-spacing: .28em; margin-bottom: .25rem; }
-  .parent-names { color: var(--ink); font-size: .95rem; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
+  .parent-label { color: var(--gold-text); font-weight: 600; font-size: .72rem; letter-spacing: .28em; margin-bottom: .25rem; }
+  .parent-names { color: var(--wine); font-size: .95rem; font-weight: 600; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
 
   .scroll-hint {
     position: absolute; bottom: 1.4rem; left: 50%; transform: translateX(-50%);
@@ -383,19 +383,19 @@
   .hero .date       { font-size: 6.6cqw !important; margin-top: 4.5cqw; }
   .hero .hebdate    { font-size: 3.6cqw !important; margin-top: 1cqw; letter-spacing: .1em; }
   .hero .venue      { font-size: 4.0cqw !important; margin-top: 5cqw; letter-spacing: .18em; }
-  .hero .reception  { font-size: 3.5cqw !important; padding-right: 4cqw; margin-top: 2.6cqw; white-space: nowrap; }
+  .hero .reception  { font-size: 3.6cqw !important; padding-right: 0; margin-top: 2.6cqw; white-space: nowrap; }
   /* the leaf still reaches this line, but far less than when the art was
      stretched - 13cqw was tuned against the distorted version */
-  .hero .seeyou-wrap { padding-right: 16cqw; }
-  .hero .rule        { padding-right: 16cqw; }
+  .hero .seeyou-wrap { padding-right: 0; }
+  .hero .rule        { padding-right: 0; }
   .hero .seeyou     { font-size: 4.0cqw !important; margin-top: 2.2cqw; color: var(--gold-text); letter-spacing: .16em; font-style: normal; }
-  .hero .parents    { margin-top: 7.5cqw !important; gap: 5cqw !important; padding-right: 5cqw; }
+  .hero .parents    { margin-top: 7.5cqw !important; gap: 6cqw !important; padding-right: 0; }
   /* Dutch names are far longer than the Hebrew ones and ran under the monstera */
   /* 'Met veel liefde nodigen wij jullie uit' is far longer than the Hebrew and
      is nowrap, so at hero scale it ran under the left-hand leaf */
   body.nl .hero .invite1      { font-size: 3.9cqw !important; }
   body.nl .hero .invite2      { font-size: 3.1cqw !important; }
-  body.nl .hero .parents      { padding-right: 21cqw; gap: 2.5cqw !important; }
+  body.nl .hero .parents      { padding-right: 0; gap: 3.5cqw !important; }
   body.nl .hero .parent-label { font-size: 2.7cqw !important; white-space: nowrap; }
   body.nl .hero .parent-names { font-size: 3.1cqw !important; }
   body.nl .hero .seeyou       { letter-spacing: .1em; }
@@ -408,7 +408,7 @@
   body.dati .hero .date    { font-size: 5.8cqw !important; margin-top: 2.4cqw; }
   body.dati .hero .hebdate { font-size: 3.1cqw !important; }
   body.dati .hero .venue   { font-size: 3.7cqw !important; margin-top: 3.4cqw; }
-  body.dati .hero .parents { margin-top: 4.5cqw !important; padding-right: 22cqw; gap: 3cqw !important; }
+  body.dati .hero .parents { margin-top: 4.5cqw !important; padding-right: 0; gap: 4cqw !important; }
   /* חופה וקידושין makes this line much longer than the secular one, and it ran
      into the vine on the right */
   body.dati .hero .venue     { padding-right: 9cqw; }
