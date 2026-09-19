@@ -12,7 +12,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ophirg123.github.io/wedding/">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&family=Heebo:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Frank+Ruhl+Libre:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --cream: #f6f0eb;   /* matches the art's paper: 246/240/235 */
@@ -29,10 +29,13 @@
   ::selection { background: var(--wine); color: var(--cream); }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   html, body { overflow-x: clip; }
+  /* a missing weight must fail visibly, not be synthesised into a smear */
+  * { font-synthesis: none; }
   body {
     background: var(--cream);
     color: var(--ink);
-    font-family: "Heebo", sans-serif;
+    /* two families only: Cormorant for display, Frank Ruhl Libre for text */
+    font-family: "Frank Ruhl Libre", serif;
     font-weight: 400;
     overflow-x: hidden;
   }
@@ -42,7 +45,6 @@
   html[dir="ltr"] .heb, html[dir="ltr"] .tl-item > div { direction: ltr; }
   html[dir="ltr"] .bsd { display: none; }
   html[dir="ltr"] .heb { font-family: "Cormorant Garamond", "Frank Ruhl Libre", serif; }
-  html[dir="ltr"] .sb-text, html[dir="ltr"] .cd-lbl, html[dir="ltr"] .count-title { font-family: "Heebo", sans-serif; }
 
   /* ---------- paper grain — stationery feel ---------- */
   body::after {
@@ -175,8 +177,8 @@
   body.dati .parents { margin-top: .8rem; }
   body.dati .bouquet { margin-top: 3svh; }
   .parents { margin-top: 2rem; display: flex; justify-content: center; gap: 2.8rem; }
-  .parent-label { color: var(--gold-text); font-weight: 600; font-size: .72rem; letter-spacing: .28em; margin-bottom: .25rem; }
-  .parent-names { color: var(--wine); font-size: .95rem; font-weight: 600; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
+  .parent-label { color: var(--gold-text); font-weight: 500; font-size: .72rem; letter-spacing: .22em; margin-bottom: .45rem; }
+  .parent-names { color: var(--wine); font-size: .95rem; font-weight: 500; letter-spacing: .04em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
 
   .scroll-hint {
     position: absolute; bottom: 1.4rem; left: 50%; transform: translateX(-50%);
@@ -215,7 +217,7 @@
   }
   .sticky-bar.on { opacity: 1; pointer-events: auto; }
   .sb-text { font-size: .95rem; color: var(--ink); letter-spacing: .02em; }
-  .sb-text b { color: var(--wine); font-weight: 600; }
+  .sb-text b { color: var(--wine); font-weight: 700; }
   .sb-btn {
     flex-shrink: 0; background: var(--wine); color: #fff; text-decoration: none;
     padding: .65rem 1.5rem; border-radius: 999px; font-size: .95rem; font-weight: 500; letter-spacing: .05em;
@@ -275,7 +277,7 @@
     content: '·'; position: absolute; left: -0.32em; top: 0; color: var(--gold-light); font-size: 1.6rem;
   }
   .cd-num { font-size: clamp(1.8rem, 6.5vw, 3.2rem); color: var(--wine); font-weight: 300; font-variant-numeric: tabular-nums; }
-  .cd-lbl { font-family: "Heebo"; font-size: .8rem; color: var(--sage); letter-spacing: .25em; margin-top: .1rem; }
+  .cd-lbl { font-family: "Frank Ruhl Libre", serif; font-size: .8rem; color: var(--sage); letter-spacing: .25em; margin-top: .1rem; }
 
   /* ---------- timeline ---------- */
   .timeline-section {
