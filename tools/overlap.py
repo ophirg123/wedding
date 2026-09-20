@@ -18,6 +18,7 @@ SEL = ('.hero-text .invite1,.hero-text .invite2,.hero-text .names,.hero-text .da
        '.hero-text .hebdate,.hero-text .venue,.hero-text .reception,.hero-text .parent-names,'
        '.hero-text .parent-label,.hero-text .seeyou,.hero-text .aye,.hero-text .pasuk')
 MIN_ELEMENTS = 8        # if we see fewer than this, the measurement is broken
+MIN_GAP = 4.0           # % of card width of clear paper required beside any text
 
 src = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
 page = src.replace("</style>", "  .fade-up{opacity:1!important;transform:none!important;filter:none!important}\n</style>", 1)
@@ -71,7 +72,20 @@ try:
             Y0, Y1 = int(it['y0']/100*H), int(it['y1']/100*H)
             box = mask[max(Y0, 0):Y1, max(X0, 0):X1]
             if box.size and box.mean()*100 > 0.5:
-                bad.append(f"{it['n']} \"{it['t']}\" {box.mean()*100:.1f}% (x {it['x0']:.0f}-{it['x1']:.0f})")
+                bad.append(f"{it['n']} \"{it['t']}\" OVERLAPS {box.mean()*100:.1f}%")
+                continue
+            # not colliding is not enough - text touching a leaf looks wrong even
+            # when it technically does not intersect. Require real breathing room.
+            band = mask[max(Y0, 0):Y1]
+            if not band.size: continue
+            r = np.where(band[:, min(X1, W-1):].any(0))[0]
+            l = np.where(band[:, :max(X0, 1)].any(0))[0]
+            gr = r.min()/W*100 if len(r) else 99
+            gl = (X0 - l.max())/W*100 if len(l) else 99
+            if min(gr, gl) < MIN_GAP:
+                side = 'RIGHT' if gr <= gl else 'LEFT'
+                bad.append(f"{it['n']} \"{it['t']}\" only {min(gr, gl):.1f}% clear on the {side} "
+                           f"(L {gl:.1f}% R {gr:.1f}%)")
         print(f'{label:12s} {"OK" if not bad else "OVERLAP"}  ({len(items)} lines checked)')
         for b in bad: print('    ', b)
         failures += len(bad)

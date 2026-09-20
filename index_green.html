@@ -80,7 +80,7 @@
   .rule-heart { width: .85em; height: .85em; flex: none; overflow: visible; }
 
   /* ---------- hero ---------- */
-  .hero { container-type: inline-size;
+  .hero { --hs: .90; container-type: inline-size;
     min-height: 0;
     aspect-ratio: 1024 / 1536;
     background: none;
@@ -178,6 +178,8 @@
   body.dati .reception { margin-top: .35rem; }
   body.dati .seeyou { margin-top: .7rem; }
   /* Ronen's reference card has no hearts - keep the rule, drop the glyph */
+  body.dati .hero { --hs: .76; }
+  body.nl .hero   { --hs: .84; }
   body.dati .rule-heart { display: none; }
   body.dati .hero .date { letter-spacing: .02em; }
   body.dati .rule-line  { width: 26%; }
@@ -387,49 +389,49 @@
 
   /* ===== green variant: hero type locked to the card, like the reference ===== */
   .hero .bsd-fixed { position: absolute; top: 4.5%; right: 7%; font-size: 2.5cqw; color: var(--sage); letter-spacing: .05em; z-index: 2; }
-  .hero .invite1    { font-size: 5.0cqw !important; letter-spacing: .04em !important; white-space: nowrap; line-height: 1.5; }
-  .hero .invite2    { font-size: 4.1cqw !important; letter-spacing: .04em !important; line-height: 1.5; }
-  .hero .names      { font-size: 10.4cqw !important; margin-top: 3.4cqw; line-height: 1.15; }
-  .hero .date       { font-size: 6.4cqw !important; margin-top: 3.2cqw; }
-  .hero .hebdate    { font-size: 3.6cqw !important; margin-top: 1cqw; letter-spacing: .1em; }
-  .hero .venue      { font-size: 4.0cqw !important; margin-top: 3.2cqw; letter-spacing: .18em; }
-  .hero .reception  { font-size: 3.6cqw !important; padding-right: 0; margin-top: 2cqw; white-space: nowrap; }
+  .hero .invite1    { font-size: calc(var(--hs, 1) * 5.0cqw) !important; letter-spacing: .04em !important; white-space: nowrap; line-height: 1.5; }
+  .hero .invite2    { font-size: calc(var(--hs, 1) * 4.1cqw) !important; letter-spacing: .04em !important; line-height: 1.5; }
+  .hero .names      { font-size: calc(var(--hs, 1) * 10.4cqw) !important; margin-top: 3.4cqw; line-height: 1.15; }
+  .hero .date       { font-size: calc(var(--hs, 1) * 6.4cqw) !important; margin-top: 2.4cqw; }
+  .hero .hebdate    { font-size: calc(var(--hs, 1) * 3.6cqw) !important; margin-top: 1cqw; letter-spacing: .1em; }
+  .hero .venue      { font-size: calc(var(--hs, 1) * 4.0cqw) !important; margin-top: 2.4cqw; letter-spacing: .18em; }
+  .hero .reception  { font-size: calc(var(--hs, 1) * 3.3cqw) !important; padding-right: 2cqw; margin-top: 1.6cqw; white-space: nowrap; }
   /* the leaf still reaches this line, but far less than when the art was
      stretched - 13cqw was tuned against the distorted version */
-  .hero .seeyou-wrap { padding-right: 0; }
-  .hero .rule        { padding-right: 0; }
-  .hero .seeyou     { font-size: 4.0cqw !important; margin-top: 1.2cqw; color: var(--gold-text); letter-spacing: .16em; font-style: normal; }
-  .hero .parents    { margin-top: 4cqw !important; gap: 5cqw !important; padding-right: 4cqw; }
+  .hero .seeyou-wrap { padding-right: 4cqw; }
+  .hero .rule        { padding-right: 4cqw; }
+  .hero .seeyou     { font-size: calc(var(--hs, 1) * 3.9cqw) !important; margin-top: 1cqw; color: var(--gold-text); letter-spacing: .16em; font-style: normal; }
+  .hero .parents    { margin-top: 2.6cqw !important; gap: 4.5cqw !important; padding-right: 7cqw; }
   /* Dutch names are far longer than the Hebrew ones and ran under the monstera */
   /* 'Met veel liefde nodigen wij jullie uit' is far longer than the Hebrew and
      is nowrap, so at hero scale it ran under the left-hand leaf */
-  body.nl .hero .invite1      { font-size: 3.9cqw !important; }
-  body.nl .hero .invite2      { font-size: 3.1cqw !important; }
-  body.nl .hero .parents      { padding-right: 9cqw; gap: 2.5cqw !important; }
-  body.nl .hero .parent-label { font-size: 2.5cqw !important; white-space: nowrap; }
-  body.nl .hero .parent-names { font-size: 2.9cqw !important; }
+  body.nl .hero .invite1      { font-size: calc(var(--hs, 1) * 3.9cqw) !important; }
+  body.nl .hero .invite2      { font-size: calc(var(--hs, 1) * 3.1cqw) !important; }
+  body.nl .hero .parents      { padding-right: 7.5cqw; gap: 2.5cqw !important; }
+  body.nl .hero .parent-label { font-size: calc(var(--hs, 1) * 2.2cqw) !important; white-space: nowrap; }
+  body.nl .hero .parent-names { font-size: calc(var(--hs, 1) * 2.9cqw) !important; }
   body.nl .hero .seeyou       { letter-spacing: .1em; }
   /* the dati wording is much longer, so the block grows down into the leaf */
-  body.dati .hero .invite1 { font-size: 3.4cqw !important; }
-  body.dati .hero .invite2 { font-size: 3.0cqw !important; }
-  body.dati .hero .pasuk   { font-size: 3.0cqw !important; }
-  body.dati .hero .aye     { font-size: 2.8cqw !important; margin-top: 1cqw; }
-  body.dati .hero .names   { font-size: 8.0cqw !important; margin-top: 2cqw; }
-  body.dati .hero .date    { font-size: 5.5cqw !important; margin-top: 1.8cqw; }
-  body.dati .hero .hebdate { font-size: 3.1cqw !important; }
-  body.dati .hero .venue   { font-size: 3.6cqw !important; margin-top: 2.4cqw; }
-  body.dati .hero .parents { margin-top: 1.6cqw !important; padding-right: 10cqw; gap: 2.5cqw !important; }
-  body.dati .hero .parent-names { font-size: 3.3cqw !important; }
-  body.dati .hero .parent-label { font-size: 2.8cqw !important; }
+  body.dati .hero .invite1 { font-size: calc(var(--hs, 1) * 3.4cqw) !important; padding-right: 3cqw; }
+  body.dati .hero .invite2 { font-size: calc(var(--hs, 1) * 2.7cqw) !important; padding-right: 0; }
+  body.dati .hero .pasuk   { font-size: calc(var(--hs, 1) * 3.0cqw) !important; }
+  body.dati .hero .aye     { font-size: calc(var(--hs, 1) * 2.8cqw) !important; margin-top: 1cqw; }
+  body.dati .hero .names   { font-size: calc(var(--hs, 1) * 8.0cqw) !important; margin-top: 2cqw; }
+  body.dati .hero .date    { font-size: calc(var(--hs, 1) * 5.5cqw) !important; margin-top: 1.8cqw; }
+  body.dati .hero .hebdate { font-size: calc(var(--hs, 1) * 3.1cqw) !important; }
+  body.dati .hero .venue   { font-size: calc(var(--hs, 1) * 3.6cqw) !important; margin-top: 2.4cqw; }
+  body.dati .hero .parents { margin-top: 1.6cqw !important; padding-right: 6cqw; gap: 2.5cqw !important; }
+  body.dati .hero .parent-names { font-size: calc(var(--hs, 1) * 3.3cqw) !important; }
+  body.dati .hero .parent-label { font-size: calc(var(--hs, 1) * 2.8cqw) !important; }
   /* חופה וקידושין makes this line much longer than the secular one, and it ran
      into the vine on the right */
   body.dati .hero .venue     { padding-right: 9cqw; }
-  body.dati .hero .reception { padding-right: 4cqw; font-size: 2.85cqw !important; }
+  body.dati .hero .reception { padding-right: 3cqw; font-size: calc(var(--hs, 1) * 2.85cqw) !important; }
   body.dati .count-section   { display: none; }   /* no countdown on the dati card */
   body.dati .hero .rule, body.dati .hero .seeyou-wrap { padding-right: 11cqw; }
   body.nl .bsd-fixed          { display: none; }   /* Dutch guests: no בס״ד */
-  .hero .parent-label { font-size: 3.1cqw !important; letter-spacing: .12em; }
-  .hero .parent-names { font-size: 3.7cqw !important; line-height: 1.45; white-space: nowrap; }
+  .hero .parent-label { font-size: calc(var(--hs, 1) * 3.1cqw) !important; letter-spacing: .12em; }
+  .hero .parent-names { font-size: calc(var(--hs, 1) * 3.45cqw) !important; line-height: 1.45; white-space: nowrap; }
   .hero .rule       { margin: 4.5cqw auto !important; width: 52%; gap: .7em; }
   .hero .scroll-hint { display: none; }
   html, body { overflow-x: clip; max-width: 100%; }
