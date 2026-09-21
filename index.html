@@ -12,10 +12,10 @@
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ophirg123.github.io/wedding/">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #f3ebe7;   /* matches the art's paper: 243/235/231 */
+    --cream: #f6f0eb;   /* matches the art's paper: 246/240/235 */
     --wine: #4b4f39;
     --gold: #c3ac7d;
     /* the light gold is decorative only - it is 2.0:1 on the paper.
@@ -34,8 +34,8 @@
   body {
     background: var(--cream);
     color: var(--ink);
-    /* two families only: Cormorant for display, Frank Ruhl Libre for text */
-    font-family: "Heebo", sans-serif;
+    /* ONE family: Frank Ruhl Libre throughout */
+    font-family: "Frank Ruhl Libre", serif;
     font-weight: 400;
     overflow-x: hidden;
   }
@@ -44,7 +44,7 @@
   /* Dutch (LTR) mode */
   html[dir="ltr"] .heb, html[dir="ltr"] .tl-item > div { direction: ltr; }
   html[dir="ltr"] .bsd { display: none; }
-  html[dir="ltr"] .heb { font-family: "Cormorant Garamond", "Frank Ruhl Libre", serif; }
+  html[dir="ltr"] .heb { font-family: "Frank Ruhl Libre", serif; }
 
   /* ---------- paper grain — stationery feel ---------- */
   body::after {
@@ -128,28 +128,26 @@
     font-size: clamp(1.05rem, 3.2vw, 1.4rem);
     letter-spacing: .14em; color: var(--wine); font-weight: 300; margin-top: .4rem;
   }
-  /* Heebo for text, Frank Ruhl Libre for the names: a contrasted serif for the
-     names with a Hebrew SANS
-     for everything small - sans holds its stroke at these sizes, the book serif
-     does not. Same pairing here. */
+  /* ONE family throughout: Frank Ruhl Libre, the Hebrew book face (Rafael Frank,
+     1908), which is what this botanical idiom wants. No second or third family. */
   .heb { direction: rtl; font-family: "Frank Ruhl Libre", serif; }
   /* the reference sets the names light and airy, not bookish - same family,
      lighter weight. Frank Ruhl Libre 300 with a touch of tracking. */
   .names { font-size: 10.5cqw; line-height:1.05; letter-spacing:.03em; margin-top: .4rem; color: var(--wine); font-weight: 400;
            font-family: "Frank Ruhl Libre", serif; }
   /* upright gold, as chosen - the italic mauve was left over from the pink design */
-  .amp { font-family: "Cormorant Garamond", serif; font-style: normal; color: var(--gold); font-size:.95em; }
+  .amp { font-family: "Frank Ruhl Libre", serif; font-style: normal; color: var(--gold); font-size:.95em; }
   .date {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Frank Ruhl Libre", serif;
     font-size: 6.6cqw; letter-spacing: .28em; text-indent: .3em;
     color: var(--wine); margin-top: 1.1rem; font-weight: 400;
   }
   .hebdate { margin-top: .5rem; color: var(--sage); font-size: 1.05rem; letter-spacing: .2em; }
-  .reception { margin-top: .9rem; color: var(--wine); font-size: 1.05rem; letter-spacing: .12em; font-family: "Heebo", sans-serif; }
+  .reception { margin-top: .9rem; color: var(--wine); font-size: 1.05rem; letter-spacing: .12em; font-family: "Frank Ruhl Libre", serif; }
   .venue { margin-top: .7rem; color: var(--gold-text); font-size: 1.2rem; letter-spacing: .25em; }
   .pasuk {
     color: var(--gold); font-size: .95rem; letter-spacing: .06em; margin-top: .5rem;
-    font-family: "Heebo", sans-serif;
+    font-family: "Frank Ruhl Libre", serif;
   }
   .aye {
     color: var(--ink); font-size: .92rem; letter-spacing: .05em; margin-top: .5rem;
@@ -179,7 +177,7 @@
   body.dati .seeyou { margin-top: .7rem; }
   /* Ronen's reference card has no hearts - keep the rule, drop the glyph */
   body.dati .hero { --hs: .79; }
-  body.nl .hero   { --hs: .84; }
+  body.nl .hero   { --hs: .80; }
   body.dati .rule-heart { display: none; }
   body.dati .hero .date { letter-spacing: .02em; }
   body.dati .rule-line  { width: 26%; }
@@ -187,7 +185,7 @@
   body.dati .bouquet { margin-top: 3svh; }
   .parents { margin-top: 2rem; display: flex; justify-content: center; gap: 2.8rem; }
   .parent-label { color: var(--gold-text); font-weight: 500; font-size: .72rem; letter-spacing: .22em; margin-bottom: .45rem; }
-  .parent-names { color: var(--wine); font-size: .95rem; font-weight: 600; letter-spacing: .02em; font-family: "Heebo", sans-serif; white-space: pre-line; }
+  .parent-names { color: var(--wine); font-size: .95rem; font-weight: 600; letter-spacing: .02em; font-family: "Frank Ruhl Libre", serif; white-space: pre-line; }
 
   .scroll-hint {
     position: absolute; bottom: 1.4rem; left: 50%; transform: translateX(-50%);
@@ -279,14 +277,14 @@
   }
   .countdown {
     display: flex; justify-content: center; align-items: baseline; direction: ltr;
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Frank Ruhl Libre", serif;
   }
   .cd-unit { padding: 0 clamp(.5rem, 2.4vw, 1.1rem); position: relative; }
   .cd-unit + .cd-unit::before {
     content: '·'; position: absolute; left: -0.32em; top: 0; color: var(--gold-light); font-size: 1.6rem;
   }
   .cd-num { font-size: clamp(1.8rem, 6.5vw, 3.2rem); color: var(--wine); font-weight: 300; font-variant-numeric: tabular-nums; }
-  .cd-lbl { font-family: "Heebo", sans-serif; font-size: .8rem; color: var(--sage); letter-spacing: .25em; margin-top: .1rem; }
+  .cd-lbl { font-family: "Frank Ruhl Libre", serif; font-size: .8rem; color: var(--sage); letter-spacing: .25em; margin-top: .1rem; }
 
   /* ---------- timeline ---------- */
   .timeline-section {
@@ -317,8 +315,8 @@
   .tl-item:nth-of-type(even) { margin-right: 54%; margin-left: 0; transform: translateX(-40px); text-align: left; }
   .tl-item > div { direction: rtl; min-width: 0; flex: 0 1 auto; }
   .tl-item.show { opacity: 1; transform: none; }
-  .tl-time { font-family: "Cormorant Garamond", serif; color: var(--gold-text); font-weight: 500; font-size: 1.4rem; letter-spacing: .08em; direction: ltr; }
-  .tl-label { font-family: "Heebo", sans-serif; color: var(--wine); letter-spacing: .1em; font-size: 1.02rem; margin-top: .2rem; font-family: "Frank Ruhl Libre", serif; }
+  .tl-time { font-family: "Frank Ruhl Libre", serif; color: var(--gold-text); font-weight: 500; font-size: 1.4rem; letter-spacing: .08em; direction: ltr; }
+  .tl-label { font-family: "Frank Ruhl Libre", serif; color: var(--wine); letter-spacing: .1em; font-size: 1.02rem; margin-top: .2rem; font-family: "Frank Ruhl Libre", serif; }
 
   @media (max-width: 640px) {
     .tl-item { flex-direction: column; gap: 0; align-items: center; justify-content: center; }
