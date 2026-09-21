@@ -174,7 +174,7 @@ def main():
     try:
         # the printed card: 900px wide artboard = 127mm
         for lang, q in [("he", ""), ("dati", "?lang=dati"), ("nl", "?lang=nl")]:
-            n, bad = run(f"file://{ROOT}/_card.html{q}", f"card {lang}", 900, 1600, CARD_W_MM)
+            n, bad = run(f"file://{ROOT}/_card.html{q}", f"card {lang}", 900, 1360, CARD_W_MM)
             total += n; allbad += bad
         # the live page on a phone: 430px viewport ~ 66mm of real glass
         for lang, q in [("he", ""), ("dati", "?lang=dati"), ("nl", "?lang=nl")]:
