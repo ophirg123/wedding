@@ -22,7 +22,7 @@ the he / nl / dati variants, 325+ guests in a live Google Sheet.
 2. **Wax seal break.** The card arrives sealed with the logo seal; one tap and
    the seal cracks and the card unfolds. Uses an asset already approved for the
    favour tags. Must be skippable and once-per-device.
-3. **Addressed envelope.** With `?g=`, the envelope is addressed to the guest in
+3. ~~**Addressed envelope.**~~ REJECTED - no per-guest links. With `?g=`, the envelope is addressed to the guest in
    Hebrew calligraphy before it opens.
 
 ## B. Hero
@@ -48,7 +48,8 @@ the he / nl / dati variants, 325+ guests in a live Google Sheet.
 9. **RSVP** — matched against the guest sheet: attending, how many, bus seat,
    dietary, kids. The page is currently a poster, not a tool.
 10. **Bus registration** — the two sheets already exist (הלוך / חזור).
-11. **Personalisation** — `?g=name`, `?side=bride|groom`, `?lang`, `?dati`.
+11. ~~**Personalisation** — `?g=name`, `?side=bride|groom`~~ REJECTED - no per-guest
+    links. `?lang` and `?dati` stay (they are variants, not per-guest).
     Replaces the separate `nl/` and `dati/` files with one page.
 12. **Practical answers** — parking, it is a forest in November (bring a layer),
     heels on grass, kids, when it really ends, gift/Bit.
@@ -82,7 +83,7 @@ the he / nl / dati variants, 325+ guests in a live Google Sheet.
 ## Judgement
 
 - Biggest *delight* per unit of risk: **1 (rooting) and 16 (the cutting)**.
-- Biggest *value*: **9 + 11** (RSVP and personalisation) — turns a poster into
+- Biggest *value*: **9** (RSVP). Personalisation (11) is rejected. — turns a poster into
   the thing 325 guests actually need.
 - Biggest *embarrassment risk if ignored*: **20 and 21**.
 - Rejected, do not retry: redrawing the timeline icons; decorative vines and
