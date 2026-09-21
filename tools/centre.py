@@ -158,7 +158,7 @@ def main():
     total, allbad = 0, []
     try:
         for lang, q in [("he", ""), ("dati", "?lang=dati"), ("nl", "?lang=nl")]:
-            n, bad = run(f"file://{ROOT}/_card.html{q}", f"card {lang}", 900, 1360)
+            n, bad = run(f"file://{ROOT}/_card.html{q}", f"card {lang}", 900, 1600)
             total += n; allbad += bad
         for lang, q in [("he", ""), ("dati", "?lang=dati"), ("nl", "?lang=nl")]:
             n, bad = run(f"file://{ROOT}/index.html{q}", f"page {lang}", 430, 932)
