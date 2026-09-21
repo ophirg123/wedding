@@ -17,7 +17,7 @@ LANGS = ['', '?lang=dati', '?lang=nl']
 SEL = ('.hero-text .invite1,.hero-text .invite2,.hero-text .names,.hero-text .date,'
        '.hero-text .hebdate,.hero-text .venue,.hero-text .reception,.hero-text .parent-names,'
        '.hero-text .parent-label,.hero-text .seeyou,.hero-text .aye,.hero-text .pasuk')
-MIN_ELEMENTS = 8        # if we see fewer than this, the measurement is broken
+MIN_ELEMENTS = 8  # DEBUG_DUMP        # if we see fewer than this, the measurement is broken
 MIN_GAP = 4.0           # % of card width of clear paper required beside any text
 
 src = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
@@ -37,6 +37,20 @@ sat = art.max(2) - art.min(2)
 # foliage/stem = anything with real colour or real darkness; the pale blossoms
 # and the paper have neither. Deliberately generous - a false alarm is cheap.
 mask = (art.sum(2) < 640) | (sat > 34)
+# The scattered gold specks are decorative dots a few pixels across, not
+# foliage. Counting them as obstacles is what forced every line to shrink:
+# a 3px dot 2% from a word was reported as a clearance failure. Drop any blob
+# smaller than MIN_BLOB pixels so only real leaves and stems count.
+from scipy import ndimage as _nd
+_lab, _n = _nd.label(mask)
+if _n:
+    _sz = np.bincount(_lab.ravel())
+    MIN_BLOB = int(0.00035 * H * W)     # ~550 px on the 1024x1536 art
+    _keep = np.zeros(_sz.size, bool)
+    _keep[_sz >= MIN_BLOB] = True
+    _keep[0] = False
+    mask = _keep[_lab]
+    print(f'foliage mask: {_n} blobs -> {int(_keep.sum())} kept (specks dropped)')
 
 chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 proc = subprocess.Popen([chrome, "--headless", "--disable-gpu", "--remote-debugging-port=9377",
@@ -90,5 +104,9 @@ try:
         for b in bad: print('    ', b)
         failures += len(bad)
 finally:
-    proc.terminate(); os.remove(tmp)
+    proc.terminate()
+    if os.environ.get('KEEP'):
+        print('kept', tmp)
+    else:
+        os.remove(tmp)
 sys.exit(1 if failures else 0)

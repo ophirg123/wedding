@@ -81,7 +81,7 @@
   .rule-heart { width: .85em; height: .85em; flex: none; overflow: visible; }
 
   /* ---------- hero ---------- */
-  .hero { --hs: 1.04; container-type: inline-size;
+  .hero { --hs: 1.00; container-type: inline-size;
     min-height: 0;
     aspect-ratio: 1024 / 1536;
     background: none;
@@ -91,7 +91,7 @@
     align-items: center;
     max-width: 980px;
     margin: 0 auto;
-    padding: 0;
+    
     position: relative;
     overflow: hidden;
   }
@@ -157,6 +157,7 @@
   .seeyou {
     color: #b99a6b; font-size: 1.05rem; letter-spacing: .05em; margin-top: 1.1rem;
     font-family: "Frank Ruhl Libre", serif; font-style: normal;
+    text-align: center;   /* never inherit RTL start-alignment here */
   }
   body.dati .invite1, body.dati .invite2, body.dati .reception { white-space: normal; }
   body.dati .pasuk { margin: 0 0 .7rem; }
@@ -177,8 +178,8 @@
   body.dati .reception { margin-top: .35rem; }
   body.dati .seeyou { margin-top: .7rem; }
   /* Ronen's reference card has no hearts - keep the rule, drop the glyph */
-  body.dati .hero { --hs: .81; }
-  body.nl .hero   { --hs: .81; }
+  body.dati .hero { --hs: 1.00; }
+  body.nl .hero   { --hs: 1.00; }
   body.dati .rule-heart { display: none; }
   body.dati .hero .date { letter-spacing: .02em; }
   body.dati .rule-line  { width: 26%; }
@@ -236,7 +237,7 @@
   /* mobile hero — same frame, delicate flowers, big type */
   @media (max-width: 640px) {
     .hero {
-      grid-template-columns: minmax(0,1fr); gap: 0; padding: 0; min-height: 0;
+      grid-template-columns: minmax(0,1fr); gap: 0;  min-height: 0;
       aspect-ratio: 1024 / 1536;
       background: none;
     }
@@ -394,13 +395,13 @@
   .hero .date       { font-size: calc(var(--hs, 1) * 6.4cqw) !important; margin-top: 2.4cqw; }
   .hero .hebdate    { font-size: calc(var(--hs, 1) * 3.6cqw) !important; margin-top: 1cqw; letter-spacing: .1em; }
   .hero .venue      { font-size: calc(var(--hs, 1) * 4.0cqw) !important; margin-top: 2.4cqw; letter-spacing: .06em; }
-  .hero .reception  { font-size: calc(var(--hs, 1) * 3.3cqw) !important; padding-right: 3.2cqw; margin-top: 1.6cqw; white-space: nowrap; }
+  .hero .reception  { font-size: calc(var(--hs, 1) * 3.3cqw) !important;  margin-top: 1.6cqw; white-space: nowrap; }
   /* the leaf still reaches this line, but far less than when the art was
      stretched - 13cqw was tuned against the distorted version */
-  .hero .seeyou-wrap { padding-right: 4cqw; }
-  .hero .rule        { padding-right: 4cqw; }
+  .hero .seeyou-wrap {  }
+  .hero .rule        {  }
   .hero .seeyou     { font-size: calc(var(--hs, 1) * 3.9cqw) !important; margin-top: 1cqw; color: var(--gold-text); letter-spacing: .05em; font-style: normal; }
-  .hero .parents    { margin-top: 2.6cqw !important; gap: 4.5cqw !important; padding-right: 7cqw; }
+  .hero .parents    { margin-top: 2.6cqw !important; gap: 4.5cqw !important;  }
   /* Dutch names are far longer than the Hebrew ones and ran under the monstera */
   /* 'Met veel liefde nodigen wij jullie uit' is far longer than the Hebrew and
      is nowrap, so at hero scale it ran under the left-hand leaf */
@@ -408,32 +409,33 @@
   body.nl .hero .invite2      { font-size: max(12px, calc(var(--hs, 1) * 3.1cqw)) !important; }
   /* Dutch labels ('Ouders van de bruidegom') are far longer than the Hebrew.
      Two columns only fit by shrinking below a readable size, so stack them. */
-  body.nl .hero .parents      { flex-direction: column; align-items: center;
-                                padding-right: 0; gap: 1.6cqw !important; }
+  body.nl .hero .parents      { flex-direction: column; align-items: center; max-width: 46cqw !important; margin-top: 1.8cqw !important;
+                                 gap: 1.6cqw !important; }
   body.nl .hero .parent-label { font-size: max(12.5px, calc(var(--hs, 1) * 2.9cqw)) !important; white-space: normal; line-height: 1.25; }
-  body.nl .hero .parent-names { font-size: max(12.5px, calc(var(--hs, 1) * 2.9cqw)) !important; }
-  body.nl .hero .seeyou       { letter-spacing: .1em; }
+  body.nl .hero .parent-names { font-size: max(12.5px, calc(var(--hs, 1) * 2.2cqw)) !important; }
+  body.nl .hero .seeyou       { letter-spacing: .1em; margin-top: .6cqw !important; }
   /* the dati wording is much longer, so the block grows down into the leaf */
-  body.dati .hero .invite1 { font-size: calc(var(--hs, 1) * 3.25cqw) !important; padding: 0 2cqw 0 1cqw; }
-  body.dati .hero .invite2 { font-size: calc(var(--hs, 1) * 2.7cqw) !important; padding-right: 0; }
+  body.dati .hero .invite1 { font-size: calc(var(--hs, 1) * 3.25cqw) !important;  }
+  body.dati .hero .invite2 { font-size: calc(var(--hs, 1) * 2.7cqw) !important;  }
   body.dati .hero .pasuk   { font-size: max(12px, calc(var(--hs, 1) * 3.0cqw)) !important; }
-  body.dati .hero .aye     { font-size: max(12px, calc(var(--hs, 1) * 2.8cqw)) !important; margin-top: 1cqw; }
+  body.dati .hero .aye     { font-size: max(12px, calc(var(--hs, 1) * 2.8cqw)) !important; margin-top: .6cqw; }
   body.dati .hero .names   { font-size: calc(var(--hs, 1) * 8.0cqw) !important; margin-top: 2cqw; }
   body.dati .hero .date    { font-size: calc(var(--hs, 1) * 5.5cqw) !important; margin-top: 1.8cqw; }
   body.dati .hero .hebdate { font-size: calc(var(--hs, 1) * 3.1cqw) !important; }
-  body.dati .hero .venue   { font-size: calc(var(--hs, 1) * 3.6cqw) !important; margin-top: 2.4cqw; }
-  body.dati .hero .parents { margin-top: 1.6cqw !important; padding-right: 6cqw; gap: 2.5cqw !important; }
+  body.dati .hero .venue   { font-size: calc(var(--hs, 1) * 3.6cqw) !important; margin-top: 1.6cqw; }
+  body.dati .hero .parents { margin-top: 1.2cqw !important;  gap: 2.5cqw !important; }
   body.dati .hero .parent-names { font-size: max(12.5px, calc(var(--hs, 1) * 3.3cqw)) !important; }
   body.dati .hero .parent-label { font-size: max(12px, calc(var(--hs, 1) * 3.1cqw)) !important; }
   /* חופה וקידושין makes this line much longer than the secular one, and it ran
      into the vine on the right */
-  body.dati .hero .venue     { padding-right: 9cqw; }
-  body.dati .hero .reception { padding-right: 3cqw; font-size: calc(var(--hs, 1) * 2.85cqw) !important; }
+  body.dati .hero .venue     {  }
+  body.dati .hero .reception {  font-size: calc(var(--hs, 1) * 2.85cqw) !important; }
   body.dati .count-section   { display: none; }   /* no countdown on the dati card */
-  body.dati .hero .rule, body.dati .hero .seeyou-wrap { padding-right: 11cqw; }
+  body.dati .hero .rule, body.dati .hero .seeyou-wrap {  }
   body.nl .bsd-fixed          { display: none; }   /* Dutch guests: no בס״ד */
   .hero .parent-label { font-size: max(12.5px, calc(var(--hs, 1) * 3.1cqw)) !important; letter-spacing: .04em; }
-  .hero .parent-names { font-size: max(12.5px, calc(var(--hs, 1) * 3.45cqw)) !important; line-height: 1.45; white-space: nowrap; }
+  .hero .parent-names { font-size: max(12.5px, calc(var(--hs, 1) * 3.15cqw)) !important; line-height: 1.45; white-space: nowrap; }
+
   .hero .rule       { margin: 4.5cqw auto !important; width: 52%; gap: .7em; }
   .hero .scroll-hint { display: none; }
   html, body { overflow-x: clip; max-width: 100%; }
@@ -466,6 +468,37 @@
     background-size: 1014px auto;
     background-position: top center;
   }
+
+  /* ONE scale for every language (--hs: 1.00). Instead of giving each language
+     its own shrink factor and each line its own padding nudge to dodge the
+     foliage, every hero line is limited to the artwork's clear centre column
+     and wraps inside it. That keeps all three versions the same size AND
+     genuinely centred. */
+  .hero .invite1, .hero .invite2, .hero .venue, .hero .reception,
+  .hero .hebdate, .hero .seeyou, .hero .aye, .hero .pasuk,
+  .hero .names, .hero .parents {
+    white-space: normal !important;
+    margin-inline: auto !important; text-align: center;
+    padding-left: 0 !important; padding-right: 0 !important;
+  }
+  .hero .invite1, .hero .invite2, .hero .venue, .hero .reception,
+  .hero .hebdate, .hero .seeyou, .hero .aye, .hero .pasuk {
+    max-width: 54cqw !important;
+  }
+  .hero .names   { max-width: 74cqw !important; white-space: nowrap !important; }
+  .hero .parents { max-width: 44cqw !important; gap: 3.5cqw !important; }
+
+  /* Dutch runs longest and its parents stack, so the block overflowed the
+     hero and clipped the last line. Compact its vertical rhythm only. */
+  body.nl .hero .names    { margin-top: 2.2cqw !important; }
+  body.nl .hero .date     { margin-top: 1.8cqw !important; }
+  body.nl .hero .hebdate  { margin-top: .6cqw !important; }
+  body.nl .hero .reception{ margin-top: 1.1cqw !important; max-width: 64cqw !important; }
+  body.nl .hero .invite1  { max-width: 54cqw !important; }
+  /* Latin names are simply wider than the Hebrew at the same size, so only
+     the names are scaled for Dutch - the body text stays identical. */
+  body.nl .hero .names    { font-size: calc(var(--hs, 1) * 8.0cqw) !important; }
+  body.nl .hero .rule     { margin: 1.2cqw auto !important; }
 </style>
 </head>
 <body>
@@ -476,7 +509,7 @@
     <div class="hero-text">
     
     <div class="invite1 fade-up heb" data-i18n="invite1">מתרגשים להזמינכם</div>
-    <div class="invite2 fade-up heb" data-i18n="invite2">לחגוג עמנו את יום נישואינו</div>
+    <div class="invite2 fade-up heb" data-i18n="invite2">לחגוג עמנו את נישואינו</div>
     <div class="rule fade-up"><span class="rule-line"></span><svg class="rule-heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 20.5C12 20.5 2.5 14.6 2.5 8.2 2.5 4.9 5 2.5 8 2.5c1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 3 0 5.5 2.4 5.5 5.7 0 6.4-9.5 12.3-9.5 12.3z" fill="none" stroke="#c3ac7d" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="rule-line"></span></div>
     <div class="names fade-up heb" data-i18n="names">מיכל <span class="amp">&</span> אופיר</div>
     <div class="pasuk fade-up heb" hidden>קוֹל שָׂשׂוֹן וְקוֹל שִׂמְחָה, קוֹל חָתָן וְקוֹל כַּלָּה</div>
@@ -607,7 +640,7 @@
     hebdate: 'dinsdag 3 november 2026',
     venue: '\u201cBaYaar\u201d \u00b7 Hadera, Isra\u00ebl',
     reception: 'Ontvangst · 19:00 · Choepa · 20:30',
-    plabel_bride: 'Ouders van de bruid', pnames_bride: 'Ronen & Nirit Peled‑Hadad',
+    plabel_bride: 'Ouders van de bruid', pnames_bride: 'Ronen & Nirit\nPeled‑Hadad',
     plabel_groom: 'Ouders van de bruidegom', pnames_groom: 'Rudi & Hagit Gruteke',
     scroll: 'scroll omlaag',
     count_title: 'Aftellen naar de grote dag',
