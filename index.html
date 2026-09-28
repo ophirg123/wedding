@@ -730,7 +730,9 @@
     pasuk.hidden = false;
     document.querySelector('.aye').hidden = false;
     document.querySelector('.seeyou').hidden = false;
-    document.querySelector('.blessing').hidden = false;
+    const blessing = document.querySelector('.blessing');
+    blessing.hidden = false;
+    blessing.after(document.querySelector('.timeline-section'));
     const hd = document.querySelector('.hebdate'), dt = document.querySelector('.date');
     dt.parentNode.insertBefore(hd, dt);
     document.querySelector('.hero-text').appendChild(document.querySelector('.scroll-hint'));
