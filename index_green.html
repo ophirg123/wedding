@@ -516,17 +516,22 @@
   body.dati .hero .parents { margin-top: 1.4cqw !important; }
   body.dati .hero .seeyou  { margin-top: .8cqw !important; }
 
-  /* dati cannot get much bigger before it hits the foliage, so give it more
-     presence by weight instead. All of these weights are really loaded, so
-     nothing is faux-bolded. */
+  /* dati cannot get much bigger before it hits the foliage, so the presence
+     comes from weight. ONE step of hierarchy only: everything is 500, the
+     names alone are 600. Previously the small lines were 600 while the names
+     were 500, so the venue and the parents outweighed the couple. */
+  body.dati .hero .pasuk,
   body.dati .hero .invite1,
   body.dati .hero .invite2,
   body.dati .hero .aye,
-  body.dati .hero .pasuk     { font-weight: 500 !important; }
+  body.dati .hero .date,
   body.dati .hero .hebdate,
   body.dati .hero .venue,
-  body.dati .hero .reception { font-weight: 600 !important; }
-  body.dati .hero .names     { font-weight: 500 !important; }
+  body.dati .hero .reception,
+  body.dati .hero .seeyou,
+  body.dati .hero .parent-label,
+  body.dati .hero .parent-names { font-weight: 500 !important; }
+  body.dati .hero .names         { font-weight: 600 !important; }
 </style>
 </head>
 <body>
