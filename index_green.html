@@ -178,7 +178,7 @@
   body.dati .reception { margin-top: .35rem; }
   body.dati .seeyou { margin-top: .7rem; }
   /* Ronen's reference card has no hearts - keep the rule, drop the glyph */
-  body.dati .hero { --hs: 1.00; }
+  body.dati .hero { --hs: 1.04; }
   body.nl .hero   { --hs: 1.00; }
   body.dati .rule-heart { display: none; }
   body.dati .hero .date { letter-spacing: .02em; }
@@ -499,6 +499,22 @@
      the names are scaled for Dutch - the body text stays identical. */
   body.nl .hero .names    { font-size: calc(var(--hs, 1) * 8.0cqw) !important; }
   body.nl .hero .rule     { margin: 1.2cqw auto !important; }
+
+  /* dati carries the most lines, so its block grows down into the bottom
+     foliage before the type gets big. Tighten its vertical rhythm to buy the
+     room, rather than keep the text small. */
+  body.dati .hero-text   { top: 20% !important; }
+  body.dati .hero .invite1 { line-height: 1.5 !important; }
+  body.dati .hero .invite2 { line-height: 1.5 !important; margin-top: .6cqw !important; }
+  body.dati .hero .pasuk   { margin-bottom: 1.2cqw !important; }
+  body.dati .hero .names   { margin-top: 1.8cqw !important; }
+  body.dati .hero .aye     { margin-top: .5cqw !important; }
+  body.dati .hero .hebdate { margin-top: .5cqw !important; }
+  body.dati .hero .date    { margin-top: 1.2cqw !important; }
+  body.dati .hero .venue   { margin-top: 1.4cqw !important; }
+  body.dati .hero .reception { margin-top: 1.0cqw !important; }
+  body.dati .hero .parents { margin-top: 1.4cqw !important; }
+  body.dati .hero .seeyou  { margin-top: .8cqw !important; }
 </style>
 </head>
 <body>
@@ -656,7 +672,7 @@
   };
   // ---- religious (dati) variant — same page, ?lang=dati ----
   const DATI = {
-    bsd: 'בעהזה״ית',
+    bsd: 'בעזהי״ת',
     // Shira's card (Ronen's older daughter, June 2026) reads שירה עב״ל שלמה -
     // bride first, עב״ל. Same family, same house format.
     names: 'מיכל <span class="amp">עב״ל</span> אופיר',
