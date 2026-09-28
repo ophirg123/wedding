@@ -417,7 +417,7 @@
   /* the dati wording is much longer, so the block grows down into the leaf */
   body.dati .hero .invite1 { font-size: calc(var(--hs, 1) * 3.25cqw) !important;  }
   body.dati .hero .invite2 { font-size: calc(var(--hs, 1) * 2.7cqw) !important;  }
-  body.dati .hero .pasuk   { font-size: max(12px, calc(var(--hs, 1) * 3.0cqw)) !important; }
+  body.dati .hero .pasuk   { font-size: max(12px, calc(var(--hs, 1) * 3.3cqw)) !important; }
   body.dati .hero .aye     { font-size: max(12px, calc(var(--hs, 1) * 2.8cqw)) !important; margin-top: .6cqw; }
   body.dati .hero .names   { font-size: calc(var(--hs, 1) * 8.0cqw) !important; margin-top: 2cqw; }
   body.dati .hero .date    { font-size: calc(var(--hs, 1) * 5.5cqw) !important; margin-top: 1.8cqw; }
@@ -532,6 +532,12 @@
   body.dati .hero .parent-label,
   body.dati .hero .parent-names { font-weight: 500 !important; }
   body.dati .hero .names         { font-weight: 600 !important; }
+  /* the opening verse gets its own size step - it is the first thing read.
+     3.3cqw is the ceiling: 3.4 collides, and the block cannot start higher
+     without the verse running into the top-left monstera. */
+  body.dati .hero .pasuk   { max-width: 62cqw !important; line-height: 1.45 !important;
+                             margin-bottom: .8cqw !important; }
+  body.dati .hero .invite1 { margin-top: .5cqw !important; }
 </style>
 </head>
 <body>
