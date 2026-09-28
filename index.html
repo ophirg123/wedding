@@ -731,7 +731,6 @@
     document.querySelector('.aye').hidden = false;
     document.querySelector('.seeyou').hidden = false;
     document.querySelector('.blessing').hidden = false;
-    document.querySelector('.timeline-section').style.display = 'none';
     const hd = document.querySelector('.hebdate'), dt = document.querySelector('.date');
     dt.parentNode.insertBefore(hd, dt);
     document.querySelector('.hero-text').appendChild(document.querySelector('.scroll-hint'));
@@ -817,7 +816,10 @@
   // scroll-hint: smooth scroll without putting a #hash in the URL
   document.querySelector('.scroll-hint').addEventListener('click', e => {
     e.preventDefault();
-    document.getElementById('countdown-sec').scrollIntoView({ behavior: 'smooth' });
+    const target = lang === 'dati'
+      ? document.querySelector('.timeline-section')
+      : document.getElementById('countdown-sec');
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 
   // iOS Low-Power Mode blocks video autoplay -> swap blocked videos to their poster image
