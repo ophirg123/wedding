@@ -538,6 +538,17 @@
   body.dati .hero .pasuk   { max-width: 62cqw !important; line-height: 1.45 !important;
                              margin-bottom: .8cqw !important; }
   body.dati .hero .invite1 { margin-top: .5cqw !important; }
+  /* The opening verse is the display line of the dati card. Making it big
+     costs vertical room, and the block was already saturated - so the room is
+     bought from the two invitation lines below it, which were competing with
+     it at almost the same size. 3.0 -> 5.0cqw is a 67%% increase. */
+  body.dati .hero .pasuk   { font-size: calc(var(--hs,1) * 4.2cqw) !important; max-width: 56cqw !important; line-height: 1.3 !important; margin-bottom: 1.0cqw !important; }
+  body.dati .hero .invite1 { font-size: max(12px, calc(var(--hs,1) * 2.75cqw)) !important; max-width: 62cqw !important; line-height: 1.4 !important; margin-top: .5cqw !important; }
+  body.dati .hero .invite2 { font-size: max(12px, calc(var(--hs,1) * 2.7cqw)) !important; max-width: 56cqw !important; line-height: 1.4 !important; margin-top: .3cqw !important; }
+  body.dati .hero .aye     { font-size: max(12px, calc(var(--hs,1) * 2.7cqw)) !important; margin-top: .3cqw !important; }
+  body.dati .hero .names   { margin-top: 1.2cqw !important; }
+  body.dati .hero .parents { margin-top: 1.0cqw !important; }
+  body.dati .hero .seeyou  { margin-top: .6cqw !important; }
 </style>
 </head>
 <body>
@@ -551,7 +562,7 @@
     <div class="invite2 fade-up heb" data-i18n="invite2">לחגוג עמנו את נישואינו</div>
     <div class="rule fade-up"><span class="rule-line"></span><svg class="rule-heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 20.5C12 20.5 2.5 14.6 2.5 8.2 2.5 4.9 5 2.5 8 2.5c1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 3 0 5.5 2.4 5.5 5.7 0 6.4-9.5 12.3-9.5 12.3z" fill="none" stroke="#c3ac7d" stroke-width="1.7" stroke-linejoin="round"/></svg><span class="rule-line"></span></div>
     <div class="names fade-up heb" data-i18n="names">מיכל <span class="amp">&</span> אופיר</div>
-    <div class="pasuk fade-up heb" hidden>קוֹל שָׂשׂוֹן וְקוֹל שִׂמְחָה, קוֹל חָתָן וְקוֹל כַּלָּה</div>
+    <div class="pasuk fade-up heb" hidden>קוֹל שָׂשׂוֹן וְקוֹל שִׂמְחָה,<br>קוֹל חָתָן וְקוֹל כַּלָּה</div>
     <div class="aye fade-up heb" hidden>שתתקיים אי״ה בשעה טובה ומוצלחת</div>
     <div class="date fade-up" data-i18n="date">3 . 11 . 26</div>
     <div class="hebdate fade-up heb" data-i18n="hebdate">יום שלישי · כ״ד בחשון תשפ״ז</div>
