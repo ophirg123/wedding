@@ -88,3 +88,36 @@ the he / nl / dati variants, 325+ guests in a live Google Sheet.
 - Biggest *embarrassment risk if ignored*: **20 and 21**.
 - Rejected, do not retry: redrawing the timeline icons; decorative vines and
   leaves added to the timeline; tinting the icon linework.
+
+---
+
+## Decision: the pasuk is a display line, deliberately against convention
+
+`קול ששון וקול שמחה / קול חתן וקול כלה` is set large (4.2cqw, ~39px on the
+900px card) and broken into two lines. **Approved as a departure from the house
+style — do not "correct" it back.**
+
+What the research actually showed (searched real invitations, Sept 2026):
+
+- **Both line treatments exist.** A wedding kuntres cover (HebrewBooks) breaks it
+  in two at the comma; a Chabad invitation sets it on one line. There is no
+  "most invitations" convention either way — an earlier claim that there was is
+  retracted, it was unsupported.
+- **The break point is not arbitrary.** In the Masoretic text of ירמיהו לג:יא,
+  `שִׂמְחָה` carries a **revia**, a disjunctive accent, and `כַּלָּה` a segol.
+  The line breaks where the verse itself pauses.
+- **Size is where we depart.** The convention in this format is a *small quoted
+  citation* (`"..."` in quotation marks, above בס״ד-level small print). Ours is
+  the second-largest thing on the card after the names.
+- One line would be **smaller**, not bigger: 3.4cqw (32px) vs 4.2cqw (39px),
+  because a single line's width is capped by the narrowest point of the clear
+  channel, high on the card where the top-left monstera pushes in.
+
+## Open questions for Ronen (updated from that same research)
+
+A real Chabad invitation found online matches our dati wording almost line for
+line, which independently validates the text taken from Shira's card. Two
+differences worth asking about:
+
+- it uses **עב״ג** where we use **עב״ל**
+- it ends **נשמח לראותכם בין אורחנו**, not bare נשמח לראותכם
