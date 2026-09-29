@@ -547,6 +547,7 @@
   body.dati .hero .invite2 { font-size: max(12px, calc(var(--hs,1) * 2.7cqw)) !important; max-width: 56cqw !important; line-height: 1.4 !important; margin-top: .3cqw !important; }
   body.dati .hero .aye     { font-size: max(12px, calc(var(--hs,1) * 2.7cqw)) !important; margin-top: .3cqw !important; }
   body.dati .hero .names   { margin-top: 1.2cqw !important; }
+  body.dati .hero .names .amp { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; color: inherit; letter-spacing: inherit; }
   body.dati .hero .parents { margin-top: 1.0cqw !important; }
   body.dati .hero .seeyou  { margin-top: .6cqw !important; }
 
@@ -756,8 +757,8 @@
     // 3.11.2026 is a Tuesday; the chuppah is after nightfall, so the Hebrew day
     // has already turned over from כ״ג to כ״ד בחשון.
     hebdate: 'יום שלישי, אור לכ״ד בחשון ה׳תשפ״ז',
-    invite1: 'בלב מלא שמחה והודיה לה׳ יתברך על כל הטוב אשר גמלנו',
-    invite2: 'אנו מתכבדים להזמינכם להשתתף עמנו בשמחת כלולות ילדינו היקרים',
+    invite1: 'בלב מלא שמחה והודיה לה׳ יתברך<br>על כל הטוב אשר גמלנו',
+    invite2: 'אנו מתכבדים להזמינכם להשתתף<br>עמנו בשמחת כלולות ילדינו היקרים',
     reception: 'קבלת פנים · 19:00 · חופה וקידושין · 20:30'
   };
   const lang = new URLSearchParams(location.search).get('lang');
@@ -769,8 +770,9 @@
     pasuk.hidden = false;
     document.querySelector('.aye').hidden = false;
     document.querySelector('.seeyou').hidden = false;
-    document.querySelector('.blessing').hidden = false;
-    document.querySelector('.timeline-section').style.display = 'none';
+    const blessing = document.querySelector('.blessing');
+    blessing.hidden = false;
+    blessing.after(document.querySelector('.timeline-section'));
     const hd = document.querySelector('.hebdate'), dt = document.querySelector('.date');
     dt.parentNode.insertBefore(hd, dt);
     document.querySelector('.hero-text').appendChild(document.querySelector('.scroll-hint'));
@@ -856,7 +858,10 @@
   // scroll-hint: smooth scroll without putting a #hash in the URL
   document.querySelector('.scroll-hint').addEventListener('click', e => {
     e.preventDefault();
-    document.getElementById('countdown-sec').scrollIntoView({ behavior: 'smooth' });
+    const target = lang === 'dati'
+      ? document.querySelector('.timeline-section')
+      : document.getElementById('countdown-sec');
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 
   // iOS Low-Power Mode blocks video autoplay -> swap blocked videos to their poster image
