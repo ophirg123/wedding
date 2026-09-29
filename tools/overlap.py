@@ -71,38 +71,43 @@ try:
         while True:
             r = json.loads(ws.recv())
             if r.get("id") == n[0]: return r
-    cmd("Emulation.setDeviceMetricsOverride", {"width": 430, "height": 932, "deviceScaleFactor": 2, "mobile": True})
     cmd("Page.enable")
-    for lang in LANGS:
-        cmd("Page.navigate", {"url": "file://" + tmp + lang}); time.sleep(3.0)
-        res = cmd("Runtime.evaluate", {"expression": "JSON.stringify(window.__M())", "returnByValue": True})
-        items = json.loads(res["result"]["result"]["value"])
-        label = lang or 'he'
-        if len(items) < MIN_ELEMENTS:
-            print(f'{label:12s} BROKEN - only {len(items)} elements measured'); failures += 1; continue
-        bad = []
-        for it in items:
-            X0, X1 = int(it['x0']/100*W), int(it['x1']/100*W)
-            Y0, Y1 = int(it['y0']/100*H), int(it['y1']/100*H)
-            box = mask[max(Y0, 0):Y1, max(X0, 0):X1]
-            if box.size and box.mean()*100 > 0.5:
-                bad.append(f"{it['n']} \"{it['t']}\" OVERLAPS {box.mean()*100:.1f}%")
-                continue
-            # not colliding is not enough - text touching a leaf looks wrong even
-            # when it technically does not intersect. Require real breathing room.
-            band = mask[max(Y0, 0):Y1]
-            if not band.size: continue
-            r = np.where(band[:, min(X1, W-1):].any(0))[0]
-            l = np.where(band[:, :max(X0, 1)].any(0))[0]
-            gr = r.min()/W*100 if len(r) else 99
-            gl = (X0 - l.max())/W*100 if len(l) else 99
-            if min(gr, gl) < MIN_GAP:
-                side = 'RIGHT' if gr <= gl else 'LEFT'
-                bad.append(f"{it['n']} \"{it['t']}\" only {min(gr, gl):.1f}% clear on the {side} "
-                           f"(L {gl:.1f}% R {gr:.1f}%)")
-        print(f'{label:12s} {"OK" if not bad else "OVERLAP"}  ({len(items)} lines checked)')
-        for b in bad: print('    ', b)
-        failures += len(bad)
+    # Real phones are not all 430px. Checking only the iPhone Pro Max width is
+    # what let Ronen's name sit under a leaf on someone else's phone.
+    WIDTHS = [int(x) for x in os.environ.get("WIDTHS", "320,360,375,390,412,430").split(",")]
+    # NB: the artwork dims are already named W/H - do not shadow them here.
+    for VW in WIDTHS:
+      cmd("Emulation.setDeviceMetricsOverride", {"width": VW, "height": 900, "deviceScaleFactor": 2, "mobile": True})
+      for lang in LANGS:
+          cmd("Page.navigate", {"url": "file://" + tmp + lang}); time.sleep(3.0)
+          res = cmd("Runtime.evaluate", {"expression": "JSON.stringify(window.__M())", "returnByValue": True})
+          items = json.loads(res["result"]["result"]["value"])
+          label = lang or 'he'
+          if len(items) < MIN_ELEMENTS:
+              print(f'{VW:>4}px {label:12s} BROKEN - only {len(items)} elements measured'); failures += 1; continue
+          bad = []
+          for it in items:
+              X0, X1 = int(it['x0']/100*W), int(it['x1']/100*W)
+              Y0, Y1 = int(it['y0']/100*H), int(it['y1']/100*H)
+              box = mask[max(Y0, 0):Y1, max(X0, 0):X1]
+              if box.size and box.mean()*100 > 0.5:
+                  bad.append(f"{it['n']} \"{it['t']}\" OVERLAPS {box.mean()*100:.1f}%")
+                  continue
+              # not colliding is not enough - text touching a leaf looks wrong even
+              # when it technically does not intersect. Require real breathing room.
+              band = mask[max(Y0, 0):Y1]
+              if not band.size: continue
+              r = np.where(band[:, min(X1, W-1):].any(0))[0]
+              l = np.where(band[:, :max(X0, 1)].any(0))[0]
+              gr = r.min()/W*100 if len(r) else 99
+              gl = (X0 - l.max())/W*100 if len(l) else 99
+              if min(gr, gl) < MIN_GAP:
+                  side = 'RIGHT' if gr <= gl else 'LEFT'
+                  bad.append(f"{it['n']} \"{it['t']}\" only {min(gr, gl):.1f}% clear on the {side} "
+                             f"(L {gl:.1f}% R {gr:.1f}%)")
+          print(f'{VW:>4}px {label:12s} {"OK" if not bad else "OVERLAP"}  ({len(items)} lines checked)')
+          for b in bad: print('    ', b)
+          failures += len(bad)
 finally:
     proc.terminate()
     if os.environ.get('KEEP'):

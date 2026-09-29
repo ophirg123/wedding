@@ -550,6 +550,46 @@
   body.dati .hero .names .amp { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; color: inherit; letter-spacing: inherit; }
   body.dati .hero .parents { margin-top: 1.0cqw !important; }
   body.dati .hero .seeyou  { margin-top: .6cqw !important; }
+
+  /* PROPORTIONAL SPACING - the fix for 'it overlaps on her phone'.
+     Font sizes were in cqw (scale with width) but the gaps were in rem (fixed
+     px). On a narrow phone the fixed gaps eat proportionally more height, so
+     the block sat lower and the last lines slid under the foliage: the
+     parents' bottom edge was 78.3% of the hero at 430px but 86.8% at 320px,
+     and the clear channel narrows badly below 80%. Everything is cqw now, so
+     the layout is identical at every width. 1rem = 3.72cqw at the 430px
+     reference, so the 430px rendering is unchanged. */
+  .hero .rule      { margin: 2.6cqw auto !important; }
+  .hero .names     { margin-top: 1.5cqw !important; }
+  .hero .hebdate   { margin-top: 1.9cqw !important; }
+  .hero .venue     { margin-top: 2.6cqw !important; }
+  .hero .reception { margin-top: 3.3cqw !important; }
+  .hero .seeyou    { margin-top: 4.1cqw !important; }
+  .hero .pasuk     { margin: 0 0 2.6cqw !important; }
+  .hero .invite1   { margin-top: 0 !important; }
+  .hero .invite2   { margin-top: 1.7cqw !important; }
+
+
+  /* Very narrow phones (SE-class, <=345px): the dati block is the tallest of
+     the three and will not fit the clear channel at full size, so it scales
+     down AND sits a little lower to clear the top-left monstera. */
+  /* Narrow phones: the block is proportionally taller than the artwork's
+     clear channel allows, so scale it down in steps rather than let the last
+     lines slide under the foliage. */
+  @media (max-width: 400px) { body.dati .hero { --hs: .93 !important; } }
+  @media (max-width: 370px) { body.dati .hero { --hs: .88 !important; }
+                              .hero .parent-names { font-size: max(11px, calc(var(--hs,1) * 3.15cqw)) !important; } }
+  @media (max-width: 340px) {
+    body.dati .hero { --hs: .82 !important; }
+    .hero { --hs: .94; }
+    /* At SE width the readability floor makes the two-column parents row wider
+       than the artwork's channel, so stack it - the Dutch version already does
+       this for the same reason. */
+    .hero .parents { flex-direction: column !important; align-items: center !important;
+                     gap: 1.6cqw !important; max-width: 70cqw !important; }
+    body.nl .hero { --hs: .88 !important; }
+    body.nl .hero .parent-names { font-size: max(11px, calc(var(--hs,1) * 2.2cqw)) !important; }
+  }
 </style>
 </head>
 <body>
